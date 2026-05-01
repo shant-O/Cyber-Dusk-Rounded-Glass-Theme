@@ -640,4 +640,105 @@ popover contents listview > child:hover label {
 }
 /********************/
 * { border-radius: 30px; }
-* { -st-icon-style: regular; }
+/**************************************/
+
+/* Base Tab Styling: Target the 'tab' node directly */
+tabbar tab {
+  margin: 4px 2px;
+  transition: all 200ms ease;
+  background: none;
+  border: 1px solid transparent;
+}
+/* ACTIVE TAB: The Wizard Shadow & Rim Light */
+/* Note: Libadwaita 1.4+ often prefers :checked or :selected */
+tabbar tab:checked, 
+tabbar tab:selected,
+tabbar tab:hover {
+  background-color: @view_bg_color;
+  color: white;
+  box-shadow: 0 4px 21px rgba(168, 85, 247, 0.666), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);   
+  border: 1px solid rgba(84, 184, 255, 0.666);
+}
+/* Centered Bold Label */
+tabbar tab label {
+  font-weight: 800; /* 999 is often clamped to 800/900 by Pango */
+  color: inherit;
+  margin: 0 6px;
+}
+/* Hover State for Inactive Tabs */
+tabbar tab:hover:not(:checked):not(:selected) {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(84, 184, 255, 0.3);
+}
+/* Kill the default bottom indicator */
+tabbar tab indicator {
+  background-color: transparent;
+  min-height: 0;
+  opacity: 0;
+}
+/**********/
+/* 1. Target Entries: Force the glow during active focus */
+entry:focus,
+entry:focus-within,
+searchbar entry:focus,
+searchbar entry:focus-within {
+  background-color: @view_bg_color;
+  color: white;
+  box-shadow: 0 4px 21px rgba(168, 85, 247, 0.666), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);   
+  border: 1px solid rgba(84, 184, 255, 0.666);
+  outline: none; /* Kills the 'dull cyan' system outline */
+}
+/* Optional: Subtle glass hover for entries only (Safe) */
+entry:hover:not(:focus) {
+  border: 1px solid rgba(84, 184, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+/* 2. Target General Buttons: Hover/Active only */
+button:hover,
+button:active,
+button:checked {
+  background-color: @view_bg_color;
+  color: white;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 
+              0 0 10px rgba(168, 85, 247, 0.6);            
+}
+/********************/
+/* 1. LEFT SIDEBAR: Selected rows in GNOME 50's new sidebar widgets */
+.navigation-sidebar row:selected,
+navigation-split-view .sidebar-pane list row:selected,
+sidebar list row:selected,
+.navigation-sidebar row:hover {
+  background-color: @view_bg_color;
+  color: white;
+  box-shadow: 0 4px 21px rgba(168, 85, 247, 0.666), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2),
+              inset 0 0 0 1px rgba(84, 184, 255, 0.666);
+  outline: none;
+}
+/* 2.1 MAIN AREA CARDS: Hover & Active state (Glow) */
+preferencesgroup > box > list:hover,
+preferencesgroup > box > list:active {
+  box-shadow: 0 4px 21px rgba(168, 85, 247, 0.666), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2),
+              inset 0 0 0 1px rgba(84, 184, 255, 0.666);
+}
+
+/* TARGET MAIN AREA ROWS ON HOVER */
+/* FIXED HOVER: No more bouncing */
+.boxed-list row:hover,
+preferencesgroup > list row:hover,
+preferencesgroup > box > list row:hover,
+row.property:hover,
+.card:hover {
+  background-color: @view_bg_color;
+  color: white;
+  /* Use box-shadow to simulate the border so it doesn't take up space */
+  box-shadow: 0 4px 21px rgba(168, 85, 247, 0.666), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2),
+              inset 0 0 0 1px rgba(84, 184, 255, 0.666); /* This is 'border' now */
+  transition: all 150ms ease-in-out;
+}
+
+
