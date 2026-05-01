@@ -541,3 +541,126 @@ StEntry {
     background-color: @window_bg_color;
     color: #ffffff;
 }
+/***********/
+.notification-banner {
+  margin: 0 10px 10px 10px; /* Top, Right, Bottom, Left */
+  padding: 12px;
+  border: 1px solid #7aa2f7; 
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  background-color: #1c1c2e;
+  /* Add this to force proper stacking in newer GNOME versions */
+  min-height: 64px; 
+}
+/*************************************/
+
+
+/* --- THE BRIGHT WIZARD HOVER OVERRIDE --- */
+
+/* 1. QUICK SETTINGS TILES: Hover & Checked */
+.quick-toggle:checked,
+.quick-settings-tile:checked,
+.quick-toggle-menu-button:checked {
+    /* Very bright, light, transparent Purple-Blue */
+    background-color: rgba(191, 148, 255, 0.25) !important; 
+    color: #ffffff !important;    
+    /* Ultra-Bright Glow */
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.5), 
+                0 0 10px rgba(122, 162, 247, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 0 0 1.5px rgba(130, 180, 255, 0.6) !important;
+    transition: all 150ms ease-in-out;
+}
+.quick-toggle:hover, 
+.quick-settings-tile:hover,
+.quick-toggle-menu-button:hover {
+    /* Very bright, light, transparent Purple-Blue */
+    background-color: rgba(191, 148, 255, 0.25) !important; 
+    color: #ffffff !important;    
+    /* Ultra-Bright Glow */
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.8), 
+                0 0 10px rgba(122, 162, 247, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                inset 0 0 0 1.5px rgba(130, 180, 255, 0.9) !important;
+    transition: all 150ms ease-in-out;
+}
+
+
+
+
+
+
+
+/* 2. SUB-MENU ITEMS: WiFi/BT list rows on Hover */
+.popup-menu-item:focus,
+.popup-menu-item:selected {
+    background-color: rgba(191, 148, 255, 0.2) !important;
+    color: #ffffff !important;
+    
+    /* Matches the tile glow but slightly softer for list density */
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4), 
+                inset 0 0 0 1px rgba(130, 180, 255, 0.5) !important;
+    
+    border-radius: 12px;
+}
+.popup-menu-item:hover {
+    background-color: rgba(191, 148, 255, 0.2) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.6), 
+                inset 0 0 0 1px rgba(130, 180, 255, 0.7) !important;    
+    border-radius: 12px;
+}
+
+/* 3. ARROW SYNC: Side-button glow */
+.quick-toggle-has-menu .quick-toggle-menu-button:checked {
+    border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background-color: rgba(191, 148, 255, 0.6) !important;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.6), 
+                inset 0 0 0 1px rgba(130, 180, 255, 0.7) !important;
+                    color: #ffffff !important;
+}
+/* 4. CALENDAR TODAY: Radioactive Circle with Glow */
+.calendar-today {
+    background-color: #1c1c2e !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.8), 
+                inset 0 0 0 2px #7aa2f7 !important;
+    border-radius: 99px;
+        color: #ffffff !important;
+}
+/* THE SSID HAMMER: Fixes black text in Wi-Fi / Bluetooth lists */
+.quick-toggle-menu .popup-menu-item,
+.quick-toggle-menu .popup-menu-item StLabel,
+.quick-toggle-menu .popup-menu-item:hover,
+.quick-toggle-menu .popup-menu-item:hover StLabel,
+.quick-toggle-menu .popup-menu-item:focus StLabel {
+    color: #ffffff !important;
+}
+
+/* Fixes the "Title" and "Description" labels specifically */
+.quick-settings-menu .popup-menu-item .clutter-text,
+.quick-settings-menu .popup-menu-item label {
+    color: #ffffff !important;
+}
+/* THE NUCLEAR TOP-RIGHT RESET */
+.quick-settings-system-indicator,
+.quick-settings-header .quick-settings-action-button,
+.quick-settings-header .quick-settings-action-button > StButton,
+.quick-settings-header .quick-settings-action-button > StWidget,
+.quick-settings-header .quick-settings-action-button .button {
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* THE WIZARD HOVER: Re-injecting the glow only when you mouse over */
+.quick-settings-header .quick-settings-action-button:hover,
+.quick-settings-header .quick-settings-action-button:active,
+.quick-settings-header .quick-settings-action-button:checked {
+    background-color: rgba(191, 148, 255, 0.25) !important;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.8), 
+                inset 0 0 0 1px rgba(130, 180, 255, 0.9) !important;
+    border-radius: 99px; /* Keeps the glow a perfect circle */
+}
