@@ -1,5 +1,9 @@
+/* Color Definitions */
 @define-color window_bg_color rgba(28, 28, 46, 1.0);
-@define-color view_bg_color rgba(28, 28, 46, 0.8); /* Glass surface */
+@define-color window_fg_color #ffffff; /* Added for Firefox/Apps text contrast */
+@define-color view_bg_color rgba(28, 28, 46, 0.8);
+@define-color view_fg_color #ffffff;
+
 @define-color destructive_bg_color #c84053; 
 @define-color destructive_color #ff7b72;
 @define-color success_bg_color #26a269;
@@ -8,31 +12,71 @@
 @define-color warning_color #f8e45c;
 @define-color error_bg_color #c01c28;
 @define-color error_color #ff7b72;
+
 @define-color card_bg_color rgba(122, 162, 247, 0.05); 
 @define-color shadow_color rgba(0, 0, 0, 0.5);
 @define-color shade_color rgba(0, 0, 0, 0.36);
 @define-color scrollbar_outline_color rgba(0, 0, 0, 0.36);
-@define-color border_color rgba(255, 255, 255, 0.1); /* Very faint edges */
-@define-color outline_color rgba(160, 191, 232, 0.9); /* light blue */
-@define-color accent_bg_color #7aa2f7; /* Standard blue, or #5e81ac for a muted vibe */
-@define-color accent_color #7aa2f7;    /* Brighter blue for text/icons */
+@define-color border_color rgba(255, 255, 255, 0.1);
+@define-color outline_color rgba(160, 191, 232, 0.9);
+@define-color accent_bg_color #7aa2f7;
+@define-color accent_color #7aa2f7;
 @define-color dialog_bg_color rgba(28, 28, 46, 0.8);
-@define-color popover_bg_color rgba(28, 28, 46, 0.8);
-@define-color headerbar_backdrop_color #1f1f47; /* Slightly darker when out of focus */
+@define-color popover_bg_color rgba(28, 28, 46, 0.95); /* Increased opacity for readability */
+@define-color headerbar_backdrop_color #1f1f47;
 /*****************************************************/
-* { border-radius: 24px; }
+/* The main Toast popup */
+toast {
+  background-color: @view_bg_color;
+  color: @view_fg_color;
+  border: 1px solid @border_color;
+  box-shadow: 0 4px 12px @shadow_color;
+}
+
+/* The button inside the toast (e.g., "Open Folder") */
+toast button {
+  /* This creates a slightly lighter version of your background for the button */
+  background-color: alpha(@window_fg_color, 0.1);
+  color: @view_fg_color;
+  border-radius: 12px;
+}
+
+/* Hover state for the toast button */
+toast button:hover {
+  background-color: alpha(@window_fg_color, 0.15);
+}
+
+
+
+/* Fix for Menu/Popover Padding and Highlights */
+popover.menu,
+popover.background {
+    padding: 4px; /* Reduced from default thick padding */
+}
+
+popover.menu contents {
+    padding: 2px;
+}
+
+/* Fix for the boxy 100% label and selection clipping */
+popover.menu contents modelbutton {
+  margin: 2px 4px;     /* Gives it room so it doesn't touch the edge */
+  padding: 6px 10px;
+}
+
 /****************************************/
+/* Sidebar Styling */
 .navigation-sidebar {
   background-image: none;
   background-clip: padding-box;
   margin: 12px;
   border-right: none;
- /* backdrop-filter: blur(20px) brightness(1.1);*/
   background-color: @window_bg_color;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(84, 184, 255, 0.666);
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 
               0 12px 24px rgba(0, 0, 0, 0.65);
 }
+
 navigation-split-view,
 .navigation-sidebar-container,
 widget.sidebar-pane,
@@ -42,31 +86,30 @@ widget.content-pane {
   border: none;
   box-shadow: none;
 }
+
 navigation-split-view > separator {
   background-color: transparent;
   min-width: 0;
   min-height: 0;
   margin: 0;
 }
+
 navigation-split-view > widget.content-pane > stack {
   border-left: none;
   background-color: transparent;
 }
-.navigation-sidebar {
-  border-right: none;
-}
 
-/* Targets the main file viewing area */
+/* Main View Styling */
 .navigation-view,
 scrolledwindow.main-view,
 .view,
 iconview,
 listview {
     background-color: @window_bg_color;
-    color: #ffffff;
+    color: @window_fg_color;
 }
 
-/* Fixes the 'empty state' background (when a folder is empty) */
+/* Fixes the 'empty state' background */
 statuspage {
     background-color: @window_bg_color;
 }
@@ -75,8 +118,6 @@ statuspage {
 .navigation-view:drop(active) {
     background-color: @window_bg_color;
 }
-
-
 /***********fix png*******************/
 /* Target the checkerboard by being more specific than the default theme */
 .nautilus-window image.purity,
@@ -121,7 +162,6 @@ window.main-window,
 }
 /**************NO CHANGES ABOVE**************/
 /**************** window control buttons ***********/
-
 /* Individual button styling for extra depth */
 headerbar windowcontrols button {
   margin: 0 2px;
@@ -142,17 +182,15 @@ headerbar windowcontrols button.close:hover {
 }
 /*****************************************************/
 /* 1. The Main Window Frame & Glow */
-/* Using .csd to target modern windows specifically */
 window.csd,
 window.main-window,
 .nautilus-window.window {
-  border: 1px solid rgba(84, 184,255, 0.666);  
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.09),
-              0 10px 30px 5px rgba(0, 0, 0, 0.6); 
-  margin: 0px; 
+  border: 1px solid rgba(84, 184, 255, 0.666);
+  box-shadow: inset 0 0 0 0px rgba(84, 184, 255, 0.009),
+              0 12px 24px 5px rgba(0, 0, 0, 0.666); 
+  margin: 0; 
 }
 /* 2. Fix the "Double Border" in the sidebar */
-/* Since the window now has a 2px border, we kill the sidebar's own edge */
 .navigation-sidebar, 
 .sidebar-pane, 
 .navigation-sidebar list {
@@ -160,97 +198,47 @@ window.main-window,
   outline: none;
 }
 /* 3. Handle backdrop (inactive) state */
-/* Mute the outline color when the window isn't focused */
-/* Target the actual decoration node specifically */
+window.csd:backdrop,
 window.csd:backdrop decoration,
 window.csd:backdrop .window-frame {
   box-shadow: none;
-  border: none;
+  border: 1px solid rgba(84, 184, 255, 0.2); /* Muted instead of gone */
   outline: none;
 }
-/* Fallback to zeroing the margin so the 'ghost' has no space to render */
 window.csd:backdrop {
   margin: 0;
   padding: 0;
 }
-
 /*********************************************/
-/* 1. Context Menus & Popups (The big ones) */
+/* 4. Context Menus & Popups (Padding Fixes) */
 popover > contents,
-menu > contents,
-.context-menu {
+popover.menu contents {
   background-image: none;
   background-clip: padding-box;
-  margin: 12px; /* Gives that floating detached look */
+  margin: 4px; /* Reduced from 12px to fix the "floating" look */
   backdrop-filter: blur(20px) brightness(1.1);
   background-color: @window_bg_color;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.65);
-  border-radius: 24px;
-  padding: 8px;
+  border: 1px solid rgba(84, 184, 255, 0.666);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.666);
+  padding: 12px; /* Reduced to make highlights hit the edges */
+  border-radius: 30px;
 }
-popover
-    {
-  background-color: transparent;
-  background-image: none;
-}
-menu 
-    {
-  background-color: transparent;
-  background-image: none;
-}
-/* 4. PROTECT THE BUTTONS: Keep them from inheriting the glass look */
-popover button,
-menu button,
-popover modelbutton {
-  background-image: none;
-  background-color: transparent; /* Makes them feel 'etched' into the glass */
-  box-shadow: none;
-  border: none;
-}
-popover modelbutton:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Subtle hover glow */
-  border-radius: 12px;
-}
-/*******************************/
 
-/*CONTEXT MENU READABILITY FIX*/
-/* Targets context menus and popover menus specifically */
-popover contents /*gnome extensions detials menu popup*/
-    {
-  background-color: @view_bg_color;  
-  border: 1px solid rgba(84, 184,255, 0.666);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.36);
-  padding: 20px;
-}
-.popup /*those pesky headerbar icons/hamburger menus*/
-    {
-  background-color: rgba(23, 28, 46, 0.0);  
-  border: 1px solid rgba(84, 184,255, 0.0); 
-  backdrop-filter: none; 
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.0);
-}
-popover.menu contents,
-menu
-    {
-  /* Increase background opacity to 95% (almost solid) for readability */
+menu {
   background-color: @window_bg_color;  
-  /* Add a stronger purple border to define the menu edges*/
-  border: 1px solid rgba(84, 184,255, 0.666); 
-  /* Kill the blur if it's causing flickering, or keep it low */
+  border: 1px solid rgba(84, 184, 255, 0.666); 
   backdrop-filter: none; 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.666);
+  padding: 12px;
 }
 
-/* Make the text inside menus extra sharp */
-popover.menu label,
-popover label {
-  color: #ffffff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+/* gnome extensions details menu popup */
+popover contents {
+  background-color: @window_bg_color;  
+  border: 1px solid rgba(84, 184, 255, 0.666);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.666);
+  padding: 12px; /* Balanced padding */
 }
-/*************************/
-
-/**********************/
 /* --- THEME OVERRIDES --- */
 @define-color accent_color #1793d1; /* Radioactive #1793d1 */
 @define-color accent_dark #1793d1;   /* Deep shadow version */
@@ -260,13 +248,11 @@ popover label {
 progressbar trough {
     background: linear-gradient(to bottom, #111, #222);
     border: 1px solid #000;
-    border-radius: 12px;
     min-height: 8px;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.8);
 }
 progressbar progress {
     background: linear-gradient(to bottom, @accent_color, @accent_dark);
-    border-radius: 10px;
     /* The Glow that bleeds into the UI */
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 
                 0 0 15px rgba(121, 131, 212, 0.5);
@@ -276,13 +262,11 @@ progressbar progress {
 scale trough {
     background: linear-gradient(to bottom, #111, #222);
     border: 1px solid #000;
-    border-radius: 12px;
     min-height: 6px;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.8);
 }
 scale highlight {
     background: linear-gradient(to bottom, @accent_color, @accent_dark);
-    border-radius: 10px;
     box-shadow: 0 0 10px rgba(121, 131, 212, 0.4);
 }
 /* The Mini-Orb for EVERY scale */
@@ -317,13 +301,32 @@ radio:checked {
                 inset 0 1px 1px rgba(255,255,255,0.5),
                 0 1px 3px rgba(0,0,0,0.8);
 }
+
+radio:hover {
+    background-color: rgba(84, 184, 255, 0.1);
+    border: 1px solid rgba(84, 184, 255, 0.5);
+}
+
 /* 4. TARGET CHECKBOXES ONLY */
+check {
+    background-color: rgba(255, 255, 255, 0.066); /* Faint white-ish haze */
+    border: 1px solid rgba(84, 184, 255, 0.2);   /* Subtle blue rim */
+    border-radius: 99px;                         /* Keep it circular */
+    min-height: 16px;
+    min-width: 16px;
+    margin-right: 8px;
+}
 check:checked {
   background-image: none;
   background-color: #1793d1;
   border-color: #1793d1;
   color: #171c2e; 
 }
+check:hover {
+    background-color: rgba(84, 184, 255, 0.1);
+    border: 1px solid rgba(84, 184, 255, 0.5);
+}
+
 /* --- TACTILE 3D SCROLLBARS (Volume Slider Match) --- */
 scrollbar trough {
     /*background: #0a0a0a;*/
@@ -340,7 +343,6 @@ scrollbar slider {
     background: linear-gradient(to bottom, @accent_color, @accent_dark);
     box-shadow: 0 0 3px rgba(121, 131, 212, 0.4), 
                 inset 0 1px 1px rgba(255,255,255,0.2);
-    
     margin: 1px;
     min-width: 4px;
     min-height: 40px;
@@ -365,7 +367,6 @@ scrollbar slider {
   background-color: rgba(255, 255, 255, 0.1); /* Ghostly white/navy mix */
   border: 2px solid transparent; /* Acts as invisible padding to keep it thin */
   background-clip: padding-box;
-  border-radius: 20px;
   min-width: 5px;
   min-height: 6px;
   transition: all 0.1s ease-in-out;
@@ -472,176 +473,148 @@ button.destructive-action {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 /***********************************/
+/* Text Entries & Search Bars */
 entry,
 text {
-      padding-left: 8px;
-      padding-right: 8px;
-      margin: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 2px;
+    caret-color: @accent_bg_color; /* Added to keep cursor visible */
 }
+
 entry.search-bar,
 .location-bar entry {
-      padding: 4px 12px;
+    padding: 6px 12px; /* Slight bump for better touch/click targets */
 }
+
 /******************************************/
-/* Target the 'chromium' class specifically to override their sampling */
+/* Chromium & Edge Overrides (Fixes text contrast & selection) */
 window.background.chromium contents selection,
 window.background.chromium text selection,
 window.background.chromium *:selected,
 window.background.chromium selection:focus,
 window.background.chromium selection:backdrop {
-    background-color: #1793d1; /* Your Arch Blue */
+    background-color: #1793d1;
     color: #ffffff;
 }
-/* Force the context menu (popovers in GTK4) to behave */
+
+/* Fix browser context menu highlights */
 window.background.chromium popover.menu contents modelbutton:selected,
 window.background.chromium popover.menu contents modelbutton:hover,
 window.background.chromium menu contents item:selected {
     background-color: #1793d1;
     color: #ffffff;
 }
-/* Target Edge selection specifically so we don't mess up system apps */
+
+/* Chrome/Edge specific selection halo */
 window.background.chromium selection,
 window.background.chromium text selection {
-    /* Restore your Arch Blue BG */
     background-color: #1793d1;
     color: #ffffff;
-    /* RE-ENABLE OUTLINE: Using text-shadow for a clean 'halo' effect */
-    text-shadow: -1px -1px 0 #000, 
-                  1px -1px 0 #000, 
-                 -1px  1px 0 #000, 
-                  1px  1px 0 #000;
+    text-shadow: none; /* Removed shadow to keep text sharp on blue */
 }
-/* If you meant the box-outline around the selection area */
+
+/* Selection area outline */
 window.background.chromium selection {
     outline: 1px solid rgba(255, 255, 255, 0.4);
     outline-offset: -1px;
 }
-/**************************************/
-/* Headerbar: Completely Seamless Glass */
-headerbar {
-  background-image: none;
-  border-bottom: none;
-  padding: 0 12px;
-}
-/* Target the container that holds the tab's background */
-tabbar tab > stack > box {
-  border-radius: 12px;
-  margin: 4px 2px;
-  transition: all 200ms ease;
-  border: 1px solid transparent;
-}
-/* THE ACTIVE STATE: Target the specific box inside a checked tab */
-tabbar tab:checked > stack > box {
-  background-color: @accent_bg_color;
-  color: white; 
-/* Your signature Wizard Shadow & Rim Light */
-  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.6), 
-              inset 0 1px 0 rgba(255, 255, 255, 0.2);   
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-/* Ensure the label is readable and centered */
-tabbar tab:checked label {
-  font-weight: 999;
-  color: white;
-}
-/* Kill the default underline indicator that clashes with our glow */
-tabbar tab > indicator {
-  background-color: transparent;
-  min-height: 0;
-}
-/* Hover state for inactive tabs: Glass-style outline */
-tabbar tab:hover:not(:checked) > stack > box {
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(168, 85, 247, 0.4);
-}
-/**********/
-/* Force specific sidebar transparency when unfocused */
+
+/* Force transparency when window is unfocused */
 window:backdrop .navigation-sidebar,
 window:backdrop .navigation-pane,
 window:backdrop .nautilus-window {
-  background-color: transparent;
-  background-image: none; /* Kills the default grey gradient image */
-  backdrop-filter: blur(20px) brightness(1.1);
-  box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    backdrop-filter: blur(20px) brightness(1.1);
+    box-shadow: none;
 }
 /*************/
-/* This forces the tinting engine to use your blue instead of system purple */
+/* Color Tints & Accent Overrides */
 :root {
     --accent-bg-color: #1793d1;
     --accent-color: #1793d1;
 }
 
-/* This specifically targets the trough background to strip the tint */
-switch trough, scale trough {
-    background-image: none; /* Libadwaita uses images for tinting */
-    background-color: #0a0a0a; 
+/* Kill the default Libadwaita purple/blue tint on sliders and switches */
+switch trough, 
+scale trough {
+    background-image: none;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle dark glass look */
     box-shadow: none;
 }
 
-/* If you want a slight glow instead of purple */
+/* Blue glow when Switch is ON */
 switch:checked trough {
-    background-color: rgba(121, 131, 212, 0.2);
+    background-color: rgba(23, 147, 209, 0.3);
+    border: 1px solid #1793d1;
+}
+
+/* Switch handle color */
+switch slider {
+    background-color: #ffffff;
+    margin: 2px;
 }
 /************/
-/* Target all interactive elements inside your specific popover box */
+/* Target all interactive elements inside popovers */
 popover contents button,
 popover contents modelbutton,
 popover contents list row,
-popover contents listview row {
+popover contents listview row,
+popover contents listview > child {
   transition: all 200ms ease;
-  border-radius: 12px;
-  margin: 2px 0;
+  margin: 1px 2px; /* Small horizontal margin prevents the "cutoff" look */
+  padding: 8px 12px;
   background-color: transparent;
   color: white;
 }
-
-/* THE HOVER: The radioactive highlight */
+/* THE HOVER: Clean Blue Highlight */
 popover contents button:hover,
 popover contents modelbutton:hover,
 popover contents list row:hover,
-popover contents listview row:hover {
-  background-color: rgba(23, 147, 209, 0.2); /* Your Blue */
-  /* Add a subtle neon rim */
-  box-shadow: inset 0 0 0 1px rgba(84, 184, 255, 0.3);
+popover contents listview row:hover,
+popover contents listview > child:hover,
+popover contents listview > child:selected {
+  background-color: @view_bg_color;
+  color: white;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2),
+              inset 0 0 0 1px rgba(84, 184, 255, 0.6);
+  /*outline: none;*/
+  
 }
-
-
+/* Icon Glow on Hover */
 popover contents button:hover image,
 popover contents modelbutton:hover image,
 popover contents list row:hover image {
   -gtk-icon-shadow: 0 0 8px rgba(23, 147, 209, 0.4);
 }
 /*****************/
-/* 1. Target the 'Child' of the listview (The EasyEffects Special) */
+/* EasyEffects & Complex Listview Fixes */
+
+/* Target the 'Child' of the listview */
 popover contents listview > child {
-  padding: 0;
-  margin: 0;
   background: transparent;
 }
-
-/* 2. THE HOVER: Targeting the selection/hover on the internal child */
-popover contents listview > child:hover,
-popover contents listview > child:selected {
-  background-color: rgba(23, 147, 209, 0.2);
-  border-radius: 12px;
-}
-
-/* 3. The 'Separator' fix (EasyEffects often has lines between presets) */
+/* The 'Separator' fix */
 popover contents listview > separator {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1); /* Brighter for better separation */
   min-height: 1px;
-  margin: 4px 0;
+  margin: 1px 2px;
 }
-
-/* 4. Force text color inside the EasyEffects selection */
-popover contents listview > child:hover label {
+/* Force text color inside selection */
+popover contents listview > child:hover label,
+popover contents listview > child:selected label {
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 500; /* Medium weight looks cleaner than Bold on small fonts */
+  text-shadow: 0 0 5px rgba(23, 147, 209, 0.5);
 }
-/********************/
-* { border-radius: 30px; }
-/**************************************/
-
+/* Fix for the 'untidy' edges at the top and bottom of lists */
+popover contents list,
+popover contents listview {
+  background-color: transparent;
+  padding: 2px;
+}
 /* Base Tab Styling: Target the 'tab' node directly */
 tabbar tab {
   margin: 4px 2px;
@@ -685,60 +658,310 @@ searchbar entry:focus,
 searchbar entry:focus-within {
   background-color: @view_bg_color;
   color: white;
-  box-shadow: 0 4px 21px rgba(168, 85, 247, 0.666), 
-              inset 0 1px 0 rgba(255, 255, 255, 0.2);   
-  border: 1px solid rgba(84, 184, 255, 0.666);
-  outline: none; /* Kills the 'dull cyan' system outline */
+  /* Balanced the purple and blue for a smoother neon transition */
+  box-shadow: 0 4px 18px rgba(168, 85, 247, 0.4), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2),
+              0 0 0 1px rgba(84, 184, 255, 0.6);   
+  border: 1px solid transparent; /* Shadow handles the 'border' to prevent jumping */
+  outline: none;
 }
-/* Optional: Subtle glass hover for entries only (Safe) */
+/* Subtle glass hover for entries */
 entry:hover:not(:focus) {
-  border: 1px solid rgba(84, 184, 255, 0.3);
-  background-color: rgba(255, 255, 255, 0.05);
+  /*border: 1px solid rgba(84, 184, 255, 0.4);*/
+  background-color: rgba(255, 255, 255, 0.15);
 }
-/* 2. Target General Buttons: Hover/Active only */
+/* 2. Target General Buttons: Hover/Active/Checked */
 button:hover,
 button:active,
 button:checked {
   background-color: @view_bg_color;
   color: white;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 
-              0 0 10px rgba(168, 85, 247, 0.6);            
+              0 0 12px rgba(168, 85, 247, 0.5);            
 }
 /********************/
-/* 1. LEFT SIDEBAR: Selected rows in GNOME 50's new sidebar widgets */
+/* 3. SIDEBAR: Selection & Hover */
 .navigation-sidebar row:selected,
 navigation-split-view .sidebar-pane list row:selected,
 sidebar list row:selected,
 .navigation-sidebar row:hover {
   background-color: @view_bg_color;
   color: white;
-  box-shadow: 0 4px 21px rgba(168, 85, 247, 0.666), 
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4), 
               inset 0 1px 0 rgba(255, 255, 255, 0.2),
-              inset 0 0 0 1px rgba(84, 184, 255, 0.666);
-  outline: none;
+              inset 0 0 0 1px rgba(84, 184, 255, 0.6);
+  /*outline: none;*/
 }
-/* 2.1 MAIN AREA CARDS: Hover & Active state (Glow) */
-preferencesgroup > box > list:hover,
-preferencesgroup > box > list:active {
-  box-shadow: 0 4px 21px rgba(168, 85, 247, 0.666), 
-              inset 0 1px 0 rgba(255, 255, 255, 0.2),
-              inset 0 0 0 1px rgba(84, 184, 255, 0.666);
+/* Fix for uneven corners (The GTK4 way) */
+.boxed-list,
+list,
+listview,
+popover.menu contents {
+  /* This tells GTK to keep the background inside the border radius */
+  background-clip: padding-box; 
+}
+/* Force the first row/button to bend its top corners */
+.boxed-list row:first-child,
+preferencesgroup > list row:first-child,
+row.property:first-child,
+popover.menu contents modelbutton:first-child {
+  border-top-left-radius: 30px; 
+  border-top-right-radius: 30px;
 }
 
-/* TARGET MAIN AREA ROWS ON HOVER */
-/* FIXED HOVER: No more bouncing */
+/* Force the last row/button to bend its bottom corners */
+.boxed-list row:last-child,
+preferencesgroup > list row:last-child,
+row.property:last-child,
+popover.menu contents modelbutton:last-child {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+/* Standard radius for items in the middle of the list */
+popover.menu contents modelbutton {
+  border-radius: 30px;
+  margin: 2px 4px;
+}
+/*********************/
+/* 1. The Headerbar (Top Bar) */
+headerbar {
+  background-color: @window_bg_color; /* Matches your main theme */
+  background-image: none;
+  padding: 0 6px;
+  transition: all 200ms ease;
+}
+/* Fix for Libadwaita apps that "stick" to Adwaita colors */
+headerbar.titlebar,
+.navigation-view headerbar,
+adwheaderbar {
+  background-color: @window_bg_color;
+  color: white;
+  box-shadow: none;
+}
+/* 2. Window Controls (Minimize, Maximize, Close) */
+windowcontrols button {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+headerbar button:hover {
+  background-color: @view_bg_color;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.4); /* Your signature purple glow */
+}
+/* 4. Search Bars inside Headerbars (Fixing padding) */
+headerbar entry {
+
+  padding: 0 12px;
+}
+/* 5. Backdrop (Inactive) state for Top Bars */
+headerbar:backdrop {
+  background-color: @headerbar_backdrop_color;
+  background-image: none;
+  border-bottom: 1px solid rgba(84, 184, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  
+}
+
+/*********************************************/
+/* Targets Settings cards/rows on the right side/main area */
+.card:hover,
+.boxed-list list row:hover,
 .boxed-list row:hover,
-preferencesgroup > list row:hover,
-preferencesgroup > box > list row:hover,
-row.property:hover,
-.card:hover {
+row.activatable:hover {
   background-color: @view_bg_color;
   color: white;
-  /* Use box-shadow to simulate the border so it doesn't take up space */
-  box-shadow: 0 4px 21px rgba(168, 85, 247, 0.666), 
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4), 
               inset 0 1px 0 rgba(255, 255, 255, 0.2),
-              inset 0 0 0 1px rgba(84, 184, 255, 0.666); /* This is 'border' now */
-  transition: all 150ms ease-in-out;
+              inset 0 0 0 1px rgba(84, 184, 255, 0.6);
+  /*outline: none;*/
+  background-image: none; 
+}
+/* Ensure child labels within these cards also turn white on hover */
+.card:hover label,
+.boxed-list row:hover label {
+  color: white;
+}
+/*****************************************/
+/* 1. TIGHTEN TEXT SPACING */
+popover.menu contents list,
+popover.menu contents modelbutton {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+/* 2. KILL THE ARROW (The "Tail") */
+/* GTK4 uses 'node' names for the arrow; we set it to transparent and 0 size */
+popover > arrow {
+    background-color: transparent;
+    background-image: none;
+    border-style: none;
+    -gtk-icon-shadow: none;
+    color: transparent;
+    min-width: 0;
+    min-height: 0;
+}
+/*********************/
+
+/* Target labels and icons inside hovered cards/rows */
+.card:hover label,
+.card:hover image,
+.boxed-list row:hover label,
+.boxed-list row:hover image,
+row.activatable:hover label,
+row.activatable:hover image,
+navigation-row:hover label,
+navigation-row:hover image {
+  color: white;
+  /* Syncs the text/icon glow with your card's blue inset */
+  text-shadow: 0 0 10px rgba(84, 184, 255, 0.5);
+  -gtk-icon-shadow: 0 0 10px rgba(84, 184, 255, 0.5);
 }
 
+/* Ensure sub-buttons (like arrows or settings gears) also flip to white */
+.card:hover button,
+row.activatable:hover button,
+navigation-row:hover button {
+  color: white;
+}
+
+/* Special fix for the Equalizer sidebar items */
+stacksidebar row:hover label {
+    color: white;
+    text-shadow: 0 0 8px rgba(84, 184, 255, 0.6);
+}
+/**************/
+/* 2. REMOVE CLIPPING ON THE POPUP CONTAINER */
+popover.menu contents {
+    /* Adds internal padding so shadows don't hit the edge of the box */
+    padding: 12px; 
+}
+
+/* 3. ENSURE THE HOVER HIGHLIGHT STAYS WITHIN BOUNDS */
+popover.menu modelbutton:hover {
+    /* Slightly reduces the shadow spread if it's still too large for the box */
+    box-shadow: 0 2px 10px rgba(168, 85, 247, 0.4), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 0 0 1px rgba(84, 184, 255, 0.6);
+}
+/*************/
+* {
+    border-radius: 30px;
+}
+/*****************************************************/
+/* Snap to 0 when taking up the whole screen */
+window.maximized, 
+window.maximized .background,
+window.fullscreen,
+window.fullscreen .background {
+  border-radius: 0;
+}
+
+/************/
+
+/* Combined Maximized & Fullscreen targets */
+window.maximized,
+window.fullscreen,
+window.maximized decoration,
+window.fullscreen decoration,
+window.maximized .background,
+window.fullscreen .background {
+    border-radius: 0;
+    box-shadow: none;
+    outline-style: none;
+    border-style: none;
+}
+/* Specific fix for top-level containers and Showtime's video surface */
+window.maximized > contents,
+window.maximized > box,
+window.fullscreen > contents,
+window.fullscreen > box,
+window.fullscreen video,
+window.fullscreen .video-area {
+    border-radius: 0;
+}
+/* Ensure titlebars and Showtime's overlay headerbars snap to corners */
+window.maximized headerbar,
+window.maximized .titlebar,
+window.fullscreen headerbar,
+window.fullscreen .titlebar {
+    border-radius: 0;
+}
+/* Override internal Libadwaita variables used by Showtime */
+window.maximized,
+window.fullscreen {
+    --window-radius: 0;
+    --window-border-width: 0;
+}
+/* Target Showtime's internal content layers */
+window.maximized video,
+window.fullscreen video,
+window.maximized .video-area,
+window.fullscreen .video-area,
+window.maximized .content,
+window.fullscreen .content {
+    border-radius: 0;
+}
+
+/* Force the internal GtkStack/AdwViewStack to fill corners */
+window.maximized stack,
+window.fullscreen stack,
+window.maximized adwviewstack,
+window.fullscreen adwviewstack {
+    border-radius: 0;
+}
+/* Specifically target the rounded clipping on the 'bin' */
+window.maximized > box > stack,
+window.fullscreen > box > stack {
+    border-radius: 0;
+}
+/* Target the absolute top-level decoration for maximized/fullscreen states */
+window.maximized decoration,
+window.fullscreen decoration,
+window.maximized .background,
+window.fullscreen .background {
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+/* Specific target for Showtime's window-level container */
+window.maximized > box,
+window.fullscreen > box {
+    border-radius: 0;
+}
+
+/* Remove any remaining internal border-radius variables */
+window.maximized,
+window.fullscreen {
+    --window-radius: 0;
+    --window-border-width: 0;
+}
+/***************
+/* Target the background of the entire tab bar */
+tabbar {
+  background-color: @window_bg_color;
+}
+
+/* Target the inactive (unselected) tabs */
+tab:not(:checked) {
+  background-color: @view_bg_color;
+  color: alpha(@window_fg_color, 0.6); /* Dim the text slightly for inactive tabs */
+  border: none;
+}
+
+/* The active tab - keeping it clear */
+tab:checked {
+  background-color: @view_bg_color;
+  color: @window_fg_color;
+  /* Optional: Add your accent blue as a bottom line to show which is active */
+  box-shadow: inset 0 -2px 0 0 @accent_bg_color;
+}
+
+/* Hover state for inactive tabs so they still feel interactive */
+tab:not(:checked):hover {
+  background-color: alpha(@window_fg_color, 0.05);
+}
+/*******************/
 
