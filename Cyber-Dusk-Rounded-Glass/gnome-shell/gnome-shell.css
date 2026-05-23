@@ -1,5 +1,14 @@
+/****************************/
+stage {
+    -st-accent-color: #54b8ff; /* Hardcoded Neon Blue */
+    -st-accent-bg-color: rgba(28, 28, 46, 0.9);
+    -st-accent-fg-color: #ffffff;
+}
 
 
+* {
+  border-radius: 30px;
+}
 /********************************************************************************/
 /* --- POLKIT / PASSWORD PROMPT MAGIC --- */
 .user-icon {
@@ -19,7 +28,7 @@
   height: 40px;
 }
 .user-icon.user-avatar {
-  border: 2px rgba(255, 255, 255, 0.7);
+  border: 1px rgba(255, 255, 255, 0.7);
 }
 .user-widget.vertical .user-icon {
   icon-size: 128px;
@@ -36,7 +45,7 @@
     width: 320px; /* Forces a much sleeker, thinner profile */
     border-radius: 24px;
     background-color: #1c1c2e; /* Your Blue-Grey */
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Glow */
+    border: 2px solid rgba(255, 255, 255, 0.555); /* Glow */
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.55);
 }
 /* 2. Make the User Icon/Avatar massive (120px) */
@@ -57,7 +66,7 @@
     width: 240px;
     border-radius: 17px;
     background-color: #1c1c2e;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.555);
 }
 /* 5. Clean up buttons */
 .modal-dialog-button-box {
@@ -74,7 +83,7 @@
     background-color: rgba(28, 28, 46, 1.0);
     color: white;
     font-weight: 999;
-    border: 1px solid rgba(160, 191, 232, 0.9);
+    border: 1px solid rgba(160, 191, 232, 0.555);
 }
 /* The "Electric" Focus Glow */
 .run-dialog-entry:focus {
@@ -89,7 +98,7 @@
 .osd-window {
     background-color: rgba(40, 42, 54, 0.9);
     border-radius: 20px;
-    border: 1px solid rgba(122, 162, 247, 0.6);
+    border: 2px solid rgba(122, 162, 247, 0.6);
 }
 /* The actual bar background (the empty part) */
 .osd-window .level {
@@ -113,12 +122,6 @@
 .osd-window {
     /* Lower the last number (0.6) for more transparency on the main box */
     background-color: rgba(40, 42, 54, 0.6); 
-}
-/****************************/
-stage {
-    -st-accent-color: #54b8ff; /* Hardcoded Neon Blue */
-    -st-accent-bg-color: rgba(28, 28, 46, 0.9);
-    -st-accent-fg-color: #ffffff;
 }
 
 /*************************************/
@@ -159,7 +162,7 @@ stage {
 .notification-banner {
     color: #ffffff;
     background-color: rgba(28, 28, 46, 0.95); /* Unified Navy */
-    border: 1px solid rgba(84, 184, 255, 0.3); /* Soft Edge Blue */
+    border: 2px solid rgba(84, 184, 255, 0.555); /* Soft Edge Blue */
     margin: 5px 10px;
     padding: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6),
@@ -172,7 +175,7 @@ stage {
 .message:focus,
 .notification-banner:hover {
     background-color: rgba(28, 28, 46, 1.0);
-    border: 1px solid rgba(84, 184, 255, 0.9) !important;
+    border: 2px solid rgba(84, 184, 255, 0.555) !important;
     box-shadow: 0 0 20px rgba(84, 184, 255, 0.6), 
                 inset 0 0 20px rgba(84, 184, 255, 0.3) !important;
 }
@@ -203,24 +206,39 @@ StEntry {
 }
 
 .search-entry:focus {
-    border: 1px solid rgba(84, 184, 255, 0.9);
+    border: 1px solid rgba(84, 184, 255, 0.555);
     box-shadow: inset 0 0 10px rgba(84, 184, 255, 0.2);
 }
 
 /* 3. THE PANEL (Matches Window Navy) */
 #panel {
     background-color: rgba(28, 28, 46, 0.9); 
-    height: 32px;
+    height: 30px;
     border-radius: 0px; 
     border-bottom: 1px solid rgba(84, 184, 255, 0.3); /* Blue Accent Line */
 }
+#panel {
+    width: -1px; /* GNOME's magic value for 'fill screen' */
+    margin: 0px !important;
+    padding: 0px !important;
+    border-radius: 0px !important; /* Panel must be square to avoid clipping */
+}
+
+/* Ensure the main container doesn't have an offset */
+.panel-main-box {
+    margin: 0px !important;
+    padding: 0px !important;
+    spacing: 0px; 
+}
+
 
 /* --- THE WIZARD MENU SURFACES --- */
 .datemenu-menu,
 .quick-settings,
 .popup-menu-content {
-    background-color: #1c1c2e; 
-    border: 1px solid #7aa2f7; 
+    /*background-color: #1c1c2e; */
+    background-color: rgba(28, 28, 46, 0.8);
+    border: 2px solid #7aa2f7; 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Heavier shadow for depth */
     color: #ffffff;
     margin: 10px;
@@ -256,7 +274,7 @@ StEntry {
     transition: all 150ms ease-out;
 }
 
-/* 5. SLIDER SYNC (Volume & Brightness Glowing Blue) */
+/* 5. SLIDER SYNC (Volume & Brightness Glowing Blue)*/
 .slider {
     -bar-level-active-background-color: rgba(84, 184, 255, 0.9);
     -bar-level-background-color: rgba(255, 255, 255, 0.1);
@@ -271,9 +289,9 @@ StEntry {
     border-radius: 20px;
     padding: 8px;
     margin: 8px 12px 0;
-    background-color: rgba(28, 28, 46, 1.0); 
+    background-color: rgba(28, 28, 46, 0.85); 
     color: #ffffff; 
-    border: 1px solid rgba(84, 184, 255, 0.4); 
+    border: 2px solid rgba(84, 184, 255, 0.555); 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7),
                 inset 0 0 20px rgba(84, 184, 255, 0.2);
 }
@@ -352,15 +370,13 @@ StEntry {
 /* 4. SYNCING THE SUB-MENUS (WiFi lists etc.) */
 .quick-toggle-menu {
     background-color: rgba(28, 28, 46, 1.0);
-    border: 1px solid rgba(84, 184, 255, 1.0);
+    border: 2px solid rgba(84, 184, 255, 1.0);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.666),
                 inset 0 0 2px rgba(84, 184, 255, 0.2) !important;
 
 }
 /*******************/
-* {
-    border-radius: 30px !important;
-}
+
 /*********************/
 /* 1. Define the colors at the top so the Shell understands them */
 @define-color shell_view_bg rgba(28, 28, 46, 0.8);
@@ -422,6 +438,13 @@ StEntry {
   color: #ffffff !important;
   font-weight: bold !important;
   padding: 8px 0;
+  font-weight: bold !important;
+  font-size: 1.1em;
+}
+.calendar-month-label {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 99px;
+  padding: 8px 8px !important;
 }
 
 /* Navigation Arrows ( < and > ) */
@@ -430,8 +453,8 @@ StEntry {
   background-color: rgba(255, 255, 255, 0.05) !important;
   color: #ffffff !important;
   border-radius: 99px;
-  padding: 8px;
-  margin: 0 4px;
+  padding: 0px;
+  margin: 0 0px;
 }
 
 /* Arrow Hover Effect */
@@ -451,7 +474,7 @@ StEntry {
 .calendar-day-heading {
   color: #7aa2f7 !important; /* Your blue accent */
   font-weight: bold !important;
-  font-size: 0.9em;
+  font-size: 1.0em;
   padding-bottom: 8px;
 }
 .calendar-change-month-back,
@@ -459,11 +482,7 @@ StEntry {
   border: 1px solid transparent !important;
   box-shadow: none !important;
 }
-.calendar-month-label {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-  border-radius: 99px;
-  padding: 4px 20px !important;
-}
+
 /*************************************/
 
 /* Target the sub-menus (like the Vitals dropdown list) */
@@ -586,3 +605,137 @@ StEntry {
 .popup-menu-item:checked .popup-menu-ornament {
     color: #7aa2f7 !important;
 }
+/***********************************************************/
+/***********************************************************/
+/* 1. RESET THE PANEL */
+#panel {
+    background-color: rgba(28, 28, 46, 0.25) !important;
+}
+/* 2. THE UNIVERSAL PILL */
+/* This targets standard buttons, the clock, and the app menu */
+#panel .panel-button {
+    background-color: rgba(28, 28, 46, 1.0) !important;
+    border-radius: 24px !important;    
+    /* Exact 2px padding on all sides */
+    padding: 0px 0px !important;    
+    /* Vertical/Horizontal spacing between pills */
+    margin: 0px 2px !important;    
+    /* Signature Blue Edge */
+    border: 2px solid rgba(84, 184, 255, 0.45) !important;
+    /* Reset height to let 2px padding dictate the size */
+    height: auto !important;
+    min-height: 0 !important;
+}
+#panel .date-menu-button {
+    background-color: rgba(28, 28, 46, 1.0) !important;
+    border-radius: 24px !important;
+    padding: 0px 0px !important;
+    margin: 2px 0px !important;
+    border: 2px solid rgba(84, 184, 255, 0.0) !important;
+    height: auto !important;
+    min-height: 0 !important;
+}
+#panel .dash-item-container {
+    background-color: rgba(28, 28, 46, 0) !important;
+    border-radius: 0px !important;
+    padding: 0px 0px !important;
+    margin: 0px 0px !important;
+    border: 0px solid rgba(84, 184, 255, 0.0) !important;
+    height: auto !important;
+    min-height: 0 !important;
+}
+/* 3. SIGNATURE HOVER GLOW */
+#panel .panel-button:hover,
+#panel .date-menu-button:hover {
+    background-color: rgba(45, 45, 75, 1.0) !important;
+    box-shadow: inset 0 0 8px rgba(84, 184, 255, 0.4),
+                0 0 10px rgba(84, 184, 255, 0.2) !important;
+    border: 2px solid rgba(84, 184, 255, 0.555) !important;
+    border-radius: 24px !important;
+}
+/* 4. CLEAN CONTENT ALIGNMENT */
+#panel .panel-button StBoxLayout,
+#panel .panel-button StIcon,
+#panel .panel-button StLabel {
+    vertical-align: middle !important;
+}
+/***********************************************************/
+/**************** NO CHANGES ABOVE ************************/
+/***********************************************************/
+#panel {
+    /* ... your existing colors/height ... */
+    
+    /* SAFETY RAILS: Prevents the panel from ever growing past the screen */
+    width: 100vw !important;
+    max-width: 100vw !important;
+    
+    /* Ensures the panel is centered so if it 'bloats' by 1px, it's invisible */
+    left: 0px !important;
+    right: 0px !important;
+    
+    /* Force internal box to respect the edges */
+    box-sizing: border-box;
+}
+
+/* Add a tiny padding to the right-side container to keep it away from the 'dead zone' */
+#panelRight {
+    padding-right: 0px !important;
+}
+/*****************************************************************/
+
+
+/* Targets the container to prevent vertical stretching */
+.mpris-thumbnail {
+    width: auto !important;
+    height: auto !important;
+    min-width: 80px; 
+    min-height: 80px;
+    background-size: contain !important; /* 'contain' ensures the whole image fits without stretch */
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    border-radius: 8px;
+}
+
+/* Specifically stops the icon from forcing a square shape */
+.mpris-thumbnail > StIcon, 
+.mpris-thumbnail st-icon {
+    width: -1px !important; /* -1 tells the Shell to use the natural width */
+    height: -1px !important; 
+    st-icon-style: regular !important;
+}
+
+
+/* 1. Reset the nuclear white and target the actual 'hole' */
+.quick-slider .slider-bin {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    /* This creates the 'Inset' trench look */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.8) !important;
+    border-radius: 99px;
+    padding: 2px 8px;
+    border: none !important;
+}
+
+/* 2. Precision strike on the drawn bars */
+.quick-slider StSlider {
+    /* Make the trough (background bar) disappear or go dark */
+    -barlevel-background-color: transparent !important;
+    -barlevel-height: 8px;
+    
+    /* Change that stubborn blue to your theme color + GLOW */
+    -barlevel-active-background-color: #3281EA !important;
+    
+    /* Give the active bar a drop shadow (glow) */
+    -st-shadow: 0 0 10px rgba(50, 129, 234, 0.6);
+}
+
+/* 3. The Handle (The 3D Knob) */
+.quick-slider .slider-handle {
+    background-color: #ffffff !important;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    /* This gives the knob its elevation */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6) !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
