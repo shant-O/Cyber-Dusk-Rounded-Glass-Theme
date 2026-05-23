@@ -1,11 +1,27 @@
-/* GTK3 Equivalent - Tokyo Night Glass */
-/* Define the same palette for consistency */
-@define-color theme_bg_color #171c2e;
-@define-color theme_fg_color #c0caf5;
-@define-color theme_base_color #1a1b26;
-@define-color theme_selected_bg_color #7aa2f7;
-@define-color theme_selected_fg_color #ffffff;
-@define-color headerbar_bg #171c2e;
+/* Color Definitions */
+@define-color window_bg_color rgba(28, 28, 46, 1.0);
+@define-color window_fg_color #ffffff; 
+@define-color view_bg_color rgba(28, 28, 46, 0.99);
+@define-color view_fg_color #ffffff;
+@define-color destructive_bg_color #c84053; 
+@define-color destructive_color #ff7b72;
+@define-color success_bg_color #26a269;
+@define-color success_color #1793d1;
+@define-color warning_bg_color #cd9309;
+@define-color warning_color #f8e45c;
+@define-color error_bg_color #c01c28;
+@define-color error_color #ff7b72;
+@define-color card_bg_color rgba(122, 162, 247, 0.05); 
+@define-color shadow_color rgba(0, 0, 0, 0.5);
+@define-color shade_color rgba(0, 0, 0, 0.36);
+@define-color scrollbar_outline_color rgba(0, 0, 0, 0.36);
+@define-color border_color rgba(255, 255, 255, 0.1);
+@define-color outline_color rgba(160, 191, 232, 0.99);
+@define-color accent_bg_color #7aa2f7;
+@define-color accent_color #7aa2f7;
+@define-color dialog_bg_color rgba(28, 28, 46, 0.99);
+@define-color popover_bg_color rgba(28, 28, 46, 0.99); 
+@define-color headerbar_backdrop_color #1f1f47;
 /* 2. Main Window Glow & Frame */
 /* GTK3 uses 'decoration' for the window shadows/borders */
 window.csd decoration {
@@ -36,11 +52,13 @@ popover {
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   padding: 8px;
+  border-radius: 30px;
 }
 
 menu, .menu, .context-menu {
   background-color: #1f223d;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
 }
 
 /* 5. Sidebar (Nautilus GTK3/Older apps) */
@@ -100,7 +118,7 @@ iconview item:selected,
 .view:selected {
   background-color: rgba(122, 162, 247, 0.25);
   color: #ffffff;
-  border-radius: 8px; /* Slightly tighter rounding for items */
+  border-radius: 30px; /* Slightly tighter rounding for items */
 }
 
 /* 4. The "Rubberband" Selection Box */
@@ -129,6 +147,7 @@ menubar,
   background-image: none;
   color: #c0caf5;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
 }
 
 /* Fix the individual menu items in that bar */
@@ -154,6 +173,7 @@ toolbar {
   background-color: #171c2e;
   background-image: none;
   border: none;
+    border-radius: 30px;
 }
 
 /*****************/
@@ -161,7 +181,7 @@ toolbar {
 /* 1. Target all titlebar buttons globally */
 headerbar.titlebar button.titlebutton,
 .titlebar button.titlebutton {
-    background-image: none !important; /* Kills stubborn theme images */
+    background-image: none; /* Kills stubborn theme images */
     transition: all 0.2s ease-in-out;
     border-radius: 50%; /* Keeps them as circles/dots */
     margin: 4px;
@@ -173,32 +193,32 @@ headerbar.titlebar button.titlebutton,
 /* 2. CLOSE Button: Red Glow on Hover */
 headerbar.titlebar button.titlebutton.close:hover,
 .titlebar button.titlebutton.close:hover {
-    background-color: #c84053 !important;
-    box-shadow: 0 0 10px 2px rgba(200, 64, 83, 0.6) !important;
+    background-color: #c84053;
+    box-shadow: 0 0 10px 2px rgba(200, 64, 83, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* 3. MAXIMIZE Button: #1793d1 Glow on Hover */
 headerbar.titlebar button.titlebutton.maximize:hover,
 .titlebar button.titlebutton.maximize:hover {
-    background-color: #26a269 !important;
-    box-shadow: 0 0 10px 2px rgba(23, 147, 209, 0.6) !important;
+    background-color: #26a269;
+    box-shadow: 0 0 10px 2px rgba(23, 147, 209, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* 4. MINIMIZE Button: Yellow/Amber Glow on Hover */
 headerbar.titlebar button.titlebutton.minimize:hover,
 .titlebar button.titlebutton.minimize:hover {
-    background-color: #cd9309 !important;
-    box-shadow: 0 0 10px 2px rgba(205, 147, 9, 0.6) !important;
+    background-color: #cd9309;
+    box-shadow: 0 0 10px 2px rgba(205, 147, 9, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* 5. Force icons to be visible inside the buttons */
 headerbar.titlebar button.titlebutton image,
 .titlebar button.titlebutton image {
-    opacity: 1 !important;
-    color: white !important;
+    opacity: 1;
+    color: white;
 }
 
 /* --- Ultra-Sharp Button Outlines --- */
@@ -207,10 +227,10 @@ headerbar.titlebar button.titlebutton image,
 headerbar.titlebar button.titlebutton,
 .titlebar button.titlebutton {
     /* Use a solid, brighter grey/blue so it doesn't blur */
-    border: 1.5px solid #4a5a8a !important; 
+    border: 1.5px solid #4a5a8a; 
     background-color: rgba(255, 255, 255, 0.03);
-    margin: 0 6px !important; /* Extra spacing for clarity */
-    box-shadow: none !important; /* Remove fuzzy shadows in idle state */
+    margin: 0 6px; /* Extra spacing for clarity */
+    box-shadow: none; /* Remove fuzzy shadows in idle state */
 }
 
 /* 2. Hover States - Sharp Colored Outlines */
@@ -218,55 +238,55 @@ headerbar.titlebar button.titlebutton,
 
 headerbar.titlebar button.titlebutton.close:hover,
 .titlebar button.titlebutton.close:hover {
-    border: 1.5px solid #ff7b72 !important; /* Solid Pastel Red */
-    background-color: #c84053 !important;
+    border: 1.5px solid #ff7b72; /* Solid Pastel Red */
+    background-color: #c84053;
 }
 
 headerbar.titlebar button.titlebutton.maximize:hover,
 .titlebar button.titlebutton.maximize:hover {
-    border: 1.5px solid #1793d1 !important; /* Solid Pastel #1793d1 */
-    background-color: #26a269 !important;
+    border: 1.5px solid #1793d1; /* Solid Pastel #1793d1 */
+    background-color: #26a269;
 }
 
 headerbar.titlebar button.titlebutton.minimize:hover,
 .titlebar button.titlebutton.minimize:hover {
-    border: 1.5px solid #f8e45c !important; /* Solid Pastel Yellow */
-    background-color: #cd9309 !important;
+    border: 1.5px solid #f8e45c; /* Solid Pastel Yellow */
+    background-color: #cd9309;
 }
 
 /* 3. High-Visibility Icons */
 headerbar.titlebar button.titlebutton image,
 .titlebar button.titlebutton image {
-    color: #ffffff !important;
-    -gtk-icon-shadow: none !important; /* Keeps the X and - icons crisp */
+    color: #ffffff;
+    -gtk-icon-shadow: none; /* Keeps the X and - icons crisp */
 }
 /* --- Permanent "Ghost" Buttons (Normal State) --- */
 
 headerbar.titlebar button.titlebutton,
 .titlebar button.titlebutton {
     /* 1. Permanent Sharp Outline - Tokyo Slate Blue */
-    border: 1.5px solid #4a5a8a !important; 
+    border: 1.5px solid #4a5a8a; 
     
     /* 2. Subtle Fill - So they aren't invisible holes */
-    background-color: rgba(255, 255, 255, 0.05) !important;
-    background-image: none !important;
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: none;
     
     /* 3. Spacing & Shape */
-    margin: 0 6px !important;
+    margin: 0 6px;
     min-width: 18px;
     min-height: 18px;
     border-radius: 50%;
     
     /* 4. Keep icons faintly visible even when not hovering */
-    color: rgba(255, 255, 255, 0.3) !important; 
+    color: rgba(255, 255, 255, 0.3); 
     transition: all 0.2s ease-in-out;
 }
 
 /* --- Keep your Hover States from the previous step --- */
 headerbar.titlebar button.titlebutton.close:hover {
-    background-color: #c84053 !important;
-    border-color: #ff7b72 !important;
-    color: white !important;
+    background-color: #c84053;
+    border-color: #ff7b72;
+    color: white;
 }
 /* ... (and so on for max/min) */
 
@@ -274,8 +294,8 @@ headerbar.titlebar button.titlebutton.close:hover {
 /* Dim them slightly more so you know which window is active */
 headerbar:backdrop button.titlebutton,
 .titlebar:backdrop button.titlebutton {
-    border-color: rgba(74, 90, 138, 0.3) !important;
-    background-color: transparent !important;
+    border-color: rgba(74, 90, 138, 0.3);
+    background-color: transparent;
     opacity: 0.5;
 }
 /*************************/
@@ -398,15 +418,15 @@ tooltip decoration {
 .chromium selection,
 .chromium *:selected,
 window.browser selection {
-    background-color: #3584e4 !important; /* Your bright blue */
-    color: #ffffff !important;           /* White text for contrast */
+    background-color: #3584e4; /* Your bright blue */
+    color: #ffffff;           /* White text for contrast */
 }
 
 /* Force it for input fields (URL bar, search boxes) inside browsers */
 .microsoft-edge entry selection,
 .chromium entry selection {
-    background-color: #3584e4 !important;
-    color: #ffffff !important;
+    background-color: #3584e4;
+    color: #ffffff;
 }
 
 /* FORCE Selection Color - Arch Blue (#1793d1) */
@@ -418,14 +438,14 @@ textview text selection,
 flowboxchild:selected,
 grid:selected,
 list row:selected {
-    background-color: #1793d1 !important;
-    color: #ffffff !important;
+    background-color: #1793d1;
+    color: #ffffff;
 }
 
 /* Specific fix for text inputs and browsers */
 entry:selected,
 entry selection {
-    background-color: #1793d1 !important;
+    background-color: #1793d1;
 }
 
 /* Chromium & Edge Internal Outline Fix */
@@ -434,9 +454,9 @@ window.csd.microsoft-edge,
 window.csd.chromium,
 window.csd.google-chrome-stable {
     /* Use a 1px spread shadow to simulate a border WITHOUT needing margins */
-    box-shadow: 0 0 0 1px rgba(122, 162, 247, 0.6) !important;
-    border: none !important;
-    margin: 0 !important;
+    box-shadow: 0 0 0 1px rgba(122, 162, 247, 0.6);
+    border: none;
+    margin: 0;
 }
 /**************/
 /* The 'Pill Tray' container in GTK3 */
@@ -463,21 +483,20 @@ selection,
 *:selected,
 *:selected:focus,
 *:selected:backdrop {
-    background-color: #1793d1 !important;
-    color: #ffffff !important;
+  background-color: @view_bg_color;
+  color: white;
+  box-shadow: 30px 4px 21px rgba(168, 85, 247, 0.666), 
+              inset 0px 1px 0 rgba(255, 255, 255, 0.2);   
+  border: 1px solid rgba(84, 184, 255, 0.666);
+  border-radius: 30px;
 }
 
 /* 1. Global Rounding & Borders */
 * {
-  border-radius: 24px;
+  border-radius: 30px;
   -gtk-secondary-caret-color: #7aa2f7;
 }
-/* 1. CORE COLOR PALETTE (Glass Foundation) */
-@define-color window_bg_color #171c2e;
-@define-color view_bg_color rgba(23, 28, 46, 0.6);
 
-/* 2. UNIVERSAL ROUNDING */
-* { border-radius: 24px; }
 
 /* 3. THE FLOATING SIDEBAR (GTK3 VERSION) */
 /* GTK3 uses .sidebar or stacksidebar instead of navigation-sidebar */
@@ -526,8 +545,9 @@ menu,
 .menu,
 .popup,
 popover {
-  background-color: transparent;
+  background-color: @view_bg_color;
   background-image: none;
+    border-radius: 30px;
 }
 
 menu > contents,
@@ -538,6 +558,7 @@ popover > contents {
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.65);
   margin: 10px;
+    border-radius: 30px;
 }
 
 /**************************************/
@@ -596,9 +617,9 @@ menubar,
 .menubar,
 toolbar,
 searchbar {
-    background-color: @window_bg_color !important;
-    background-image: none !important;
-    color: white !important;
+    background-color: @window_bg_color;
+    background-image: none;
+    color: white;
 }
 
 /* 2. FIX BLUEMAN (Legacy Menu Bars) */
@@ -610,36 +631,29 @@ menubar > menuitem {
 
 menubar > menuitem:hover {
     background-color: @accent_bg_color;
-    border-radius: 8px;
+    border-radius: 30px;
 }
 
 /* 3. FIX GNOME TWEAKS (The Headerbar/Middlebar Seam) */
 /* Tweaks uses a 'stack' that often stays grey */
 window.background.stack,
 stack > grid > scrolledwindow {
-    background-color: @window_bg_color !important;
+    background-color: @window_bg_color;
 }
 
 /* 4. THE CHROMIUM FIX (X11/GTK3 Mode) */
 /* Chromium uses 'frame' and 'render' nodes for its top bar */
 window.background.chromium {
-    background-color: @window_bg_color !important;
+    background-color: @window_bg_color;
 }
 
 /* Force the tab strip in Chromium/Edge to not be grey */
 window.background.chromium headerbar {
-    background-color: @window_bg_color !important;
+    background-color: @window_bg_color;
     border-bottom: 1px solid @accent_color;
 }
 
-/* 5. FIX SELECTION IN BLUEMAN/TWEAKS */
-/* Ensure lists in these apps use your Arch Blue */
-list row:selected,
-treeview.view:selected,
-treeview.view:hover {
-    background-color: @accent_bg_color !important;
-    color: white !important;
-}
+
 /* 1. REMOVE the global * { border-radius } rule you had earlier */
 /* Instead, target only the things that actually NEED rounding */
 window, 
@@ -648,7 +662,7 @@ headerbar,
 .sidebar, 
 button, 
 entry { 
-    border-radius: 24px; 
+    border-radius: 30px; 
 }
 
 /* 2. Fix the Resize Area without breaking window logic */
@@ -673,28 +687,28 @@ menu,
 .menu,
 .context-menu,
 window.popup {
-  background-color: @window_bg_color !important;
-  background-image: none !important;
+  background-color: @window_bg_color;
+  background-image: none;
   border: 1px solid @accent_color;
-  border-radius: 12px;
+  border-radius: 30px;
   padding: 5px;
 }
 
 /* Targets the individual items in the Blueman menus */
 menuitem,
 .menuitem {
-  background-color: transparent !important;
-  background-image: none !important;
-  color: white !important;
+  background-color: transparent;
+  background-image: none;
+  color: white;
   padding: 4px 10px;
 }
 
 /* Hover state for those menu items */
 menuitem:hover,
 menuitem:active {
-  background-color: @accent_bg_color !important;
-  color: white !important;
-  border-radius: 8px;
+  background-color: @accent_bg_color;
+  color: white;
+  border-radius: 30px;
 }
 
 /* Kill the separator lines that might still be grey */
@@ -705,43 +719,43 @@ separator {
 
 /* Force the text inside the submenus to be sharp */
 menuitem label {
-  color: white !important;
+  color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 /* 1. Target the specific Chromium/Edge window container */
 window.background.chromium,
 window.background.chromium decoration {
     /* Force rounding back on all corners */
-    border-radius: 24px !important;
+    border-radius: 30px;
     /* Use 'hidden' to clip the sharp browser contents to our curves */
-    overflow: hidden !important; 
+    overflow: hidden; 
     /* Kill any margin that might be forcing a square 'hitbox' */
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0;
+    padding: 0;
 }
 
 /* 2. Fix the inner "View" that often stays square */
 window.background.chromium contents {
-    border-radius: 0 0 24px 24px !important;
+    border-radius: 0 0 24px 24px;
 }
 
 /* 3. Handle the 'Black Corner' shadow bug */
 /* Sometimes the shadow engine fails at rounding, so we force it to be transparent */
 window.background.chromium decoration {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
-    border: none !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: none;
 }
 /* Final Purge for stubborn legacy app bars */
 .background,
 .csd,
 viewport,
 scrolledwindow {
-    background-image: none !important;
-    background-color: @window_bg_color !important;
+    background-image: none;
+    background-color: @window_bg_color;
 }
 /* FORCE ALL BACKGROUNDS TO BLUE */
 * {
-    background-image: none !important;
+    background-image: none;
 }
 
 /* Target the deepest possible nodes in Tweaks and Blueman */
@@ -753,17 +767,17 @@ viewport,
 scrolledwindow,
 headerbar,
 menubar {
-    background-color: @window_bg_color !important;
+    background-color: @window_bg_color;
 }
 
 /* Fix Blueman / Legacy Menubar text visibility */
 menubar menuitem label,
 .menubar menuitem label {
-    color: white !important;
+    color: white;
 }
 
 
-* { border-radius: 24px; }
+* { border-radius: 30px; }
 
 /****************************************/
 /* GTK3 uses .sidebar or .navigation-sidebar depending on the app */
@@ -827,7 +841,7 @@ treeview {
 * {
     border: none;
     box-shadow: none; 
-    background-color: @window_bg_color;
+    /*background-color: transparent;*/
     border-image: none;
     border-color: @theme_selected_bg_color;
 }
@@ -852,8 +866,8 @@ button {
 
 /* Target the Blueman window specifically */
 .blueman-manager-window {
-    min-width: 200px !important;
-    min-height: 200px !important;
+    min-width: 200px;
+    min-height: 200px;
 }
 /***********/
 
@@ -901,14 +915,14 @@ button label {
 progressbar trough {
     background-image: linear-gradient(to bottom, #111, #222);
     border: 1px solid #000;
-    border-radius: 12px;
+    border-radius: 30px;
     min-height: 10px;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.8);
 }
 
 progressbar progress {
     background-image: linear-gradient(to bottom, @accent_color, @accent_dark);
-    border-radius: 10px;
+    border-radius: 30px;
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 
                 0 0 15px rgba(23, 147, 209, 0.5);
 }
@@ -923,10 +937,10 @@ scrollbar trough {
 scrollbar slider {
     background-image: linear-gradient(to bottom, @accent_color, @accent_dark);
     border: 1px solid #000;
-    border-radius: 4px;
+    border-radius: 12px;
     margin: 2px;
-    min-width: 10px;
-    min-height: 40px;
+    min-width: 4px;
+    min-height: 4px;
     /* Clean look: no extra glow on hover/active in GTK3 either */
     box-shadow: 0 0 6px rgba(23, 147, 209, 0.4), 
                 inset 0 1px 1px rgba(255,255,255,0.2);
@@ -950,14 +964,14 @@ levelbar block {
 /* 4. TACTILE SLIDERS (Scale widgets) */
 scale trough {
     background-image: linear-gradient(to bottom, #111, #222);
-    border-radius: 12px;
+    border-radius: 30px;
     min-height: 6px;
 }
 
 scale slider {
     background-image: radial-gradient(circle at center, @accent_color 0%, @accent_dark 80%);
     border: 1px solid #000;
-    border-radius: 100%;
+    border-radius: 300%;
     min-width: 12px;
     min-height: 12px;
     box-shadow: 0 0 10px @accent_color, inset 0 1px 1px rgba(255,255,255,0.5);
@@ -967,7 +981,7 @@ scale slider {
 switch {
     background-image: none;
     background-color: #4a4a4a; /* OFF color */
-    border-radius: 20px;
+    border-radius: 30px;
     border: 1px solid #333333;
     outline: none;
 }
@@ -986,7 +1000,7 @@ switch slider {
     background-image: none;
     background-color: #eeeeee; /* White-ish circle */
     border: 1px solid #bbbbbb;
-    border-radius: 100%;
+    border-radius: 300%;
     margin: 2px;
     min-width: 18px;
     min-height: 18px;
@@ -1008,4 +1022,593 @@ switch:checked slider {
 switch image {
     opacity: 0;
 }
+/**********************/
+/* 3. SLIDER-STYLE RADIO BUTTONS */
+radio {
+    -gtk-icon-source: none;
+    border-radius: 300px;
+    border: 1px solid #000;
+    min-width: 14px;
+    min-height: 14px;
+    background-image: linear-gradient(to bottom, #333, #111);
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.1), 
+                0 1px 3px rgba(0,0,0,0.6);
+}
+radio:checked {
+    background-image: radial-gradient(circle at center, @accent_color 0%, @accent_dark 80%);
+    box-shadow: 0 0 8px @accent_color, 
+                inset 0 1px 1px rgba(255,255,255,0.5),
+                0 1px 3px rgba(0,0,0,0.8);
+}
+radio:hover {
+    background-color: rgba(84, 184, 255, 0.1);
+    border: 1px solid rgba(84, 184, 255, 0.5);
+}
 
+/* 4. TARGET CHECKBOXES ONLY */
+check {
+    -gtk-icon-source: none; /* Disables default hardcoded asset checkmarks */
+    background-color: rgba(255, 255, 255, 0.066); 
+    border: 1px solid rgba(84, 184, 255, 0.2);   
+    border-radius: 99px;                         
+    min-height: 16px;
+    min-width: 16px;
+}
+check:checked {
+  background-image: none;
+  background-color: #1793d1;
+  border-color: #1793d1;
+  color: #171c2e; 
+    border-radius: 30px;
+}
+check:hover {
+    background-color: rgba(84, 184, 255, 0.1);
+    border: 1px solid rgba(84, 184, 255, 0.5);
+}
+/* --- TACTILE 3D SCROLLBARS (Volume Slider Match) --- */
+scrollbar trough {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* 2. THE SLIDER (Smooth Glowing Liquid / Stealth Hybrid) */
+scrollbar slider {
+    -gtk-icon-source: none;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border: 2px solid transparent; 
+    background-clip: padding-box;
+    border-radius: 12px; 
+    min-width: 4px;
+    min-height: 4px;
+    transition: all 0.1s ease-in-out;
+}
+
+/* 3. The "Glow" state (On Hover/Drag mapped to GTK3 states) */
+scrollbar slider:hover,
+scrollbar slider:hover:active,
+scrollbar slider:active {
+    background-image: none;
+    background-color: @accent_bg_color; 
+    border: 1px solid transparent; 
+    min-width: 4px;
+    margin: 1px;
+    box-shadow: 0 0 10px rgba(121, 131, 212, 0.6), 
+                inset 0 1px 1px rgba(255,255,255,0.3);
+}
+
+/* 4. Kill the scrollbar buttons (the tiny arrows at the ends) */
+scrollbar button,
+scrollbar .button {
+  min-width: 0;
+  min-height: 0;
+  background-image: none;
+  background-color: transparent;
+  border: none;
+}
+
+/* 1. COMPACT SWITCH SLIDER */
+switch slider {
+    -gtk-icon-source: none;
+    border-radius: 300px;
+    border: 0px solid #000;
+    background-image: linear-gradient(to bottom, #333, #111);
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.1), 
+                0 2px 2px rgba(0,0,0,0.9);
+    min-width: 14px;
+    min-height: 14px;
+    margin: 3px;
+}
+
+switch:checked slider {
+    background-image: radial-gradient(circle at center, @accent_color 0%, @accent_dark 80%);
+    box-shadow: 0 0 8px @accent_color, 
+                inset 0 1px 1px rgba(255,255,255,0.5),
+                0 2px 2px rgba(0,0,0,0.8);
+}
+
+/* 2. COMPACT SCALE SLIDER (Stripped .contents node for GTK3 compatibility) */
+scale slider {
+    -gtk-icon-source: none;
+    border-radius: 300px;
+    border: 1px solid #000;
+    background-image: linear-gradient(to bottom, #333, #111);
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.1), 
+                0 2px 4px rgba(0,0,0,0.7);
+    min-width: 12px;
+    min-height: 12px;
+    margin: -3px; 
+}
+
+scale slider:hover,
+scale slider:active {
+    background-image: radial-gradient(circle at center, @accent_color 0%, @accent_dark 80%);
+    box-shadow: 0 0 10px @accent_color, 
+                inset 0 1px 2px rgba(255,255,255,0.6);
+}	
+
+/* --- THE NUCLEAR LEVEL MONITOR (Mic/Speaker Feedback) --- */
+/* 1. THE TRACK (The Recessed Trench) */
+levelbar trough {
+    background-color: #0a0a0a;
+    background-image: none;
+    border: 1px solid #000;
+    border-radius: 6px;
+    padding: 2px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* 2. THE GLOWING BLOCKS (Discrete segments) */
+levelbar block {
+    border-radius: 2px;
+    border: 1px solid #000;
+    min-height: 8px;
+    margin: 1px;
+    background-image: linear-gradient(to bottom, @accent_color, @accent_dark);
+    box-shadow: 0 0 8px rgba(121, 131, 212, 0.4), 
+                inset 0 1px 1px rgba(255,255,255,0.3);
+}
+
+/* 3. HANDLING THE "EMPTY" BLOCKS */
+levelbar block.empty {
+    background-color: #1a1a1a;
+    background-image: none;
+    box-shadow: none;
+    border: 1px solid #111;
+}
+
+/* 4. OVERRIDING SPECIFIC COLORS (Low, Mid, High/Full) */
+levelbar block.low,
+levelbar block.high,
+levelbar block.full {
+    background-image: linear-gradient(to bottom, @accent_color, @accent_dark);
+}
+
+/**********************************************************/
+/* Suggested Action (Blue) */
+button.suggested-action {
+  background-color: rgba(53, 132, 228, 0.15); 
+  border: 1px solid rgba(53, 132, 228, 0.4);
+  color: #78aeed; 
+  border-radius: 99px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Destructive Action (Red) */
+button.destructive-action {
+  background-color: rgba(224, 27, 36, 0.15); 
+  border: 1px solid rgba(224, 27, 36, 0.4);
+  color: #ff7b7b;
+  border-radius: 99px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+/* Kill default purple/blue engine tint on sliders and switches */
+switch trough, 
+scale trough {
+    background-image: none;
+    background-color: rgba(255, 255, 255, 0.1); 
+    box-shadow: none;
+}
+
+/* Blue glow when Switch is ON */
+switch:checked trough {
+    background-color: rgba(23, 147, 209, 0.3);
+    border: 1px solid #1793d1;
+}
+
+/* Switch handle color */
+switch slider {
+    background-color: #ffffff;
+    margin: 2px;
+}
+/* Base Tab Styling: Mapped from tabbar to GTK3 notebook tab */
+notebook tab {
+  margin: 4px 2px;
+  transition: all 200ms ease;
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+    border-radius: 30px;
+}
+
+/* ACTIVE TAB: The Wizard Shadow & Rim Light */
+notebook tab:checked, 
+notebook tab:selected,
+notebook tab:hover {
+  background-color: @view_bg_color;
+  color: white;
+  box-shadow: 0 4px 21px rgba(168, 85, 247, 0.666), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);   
+  border: 1px solid rgba(84, 184, 255, 0.666);
+    border-radius: 30px;
+}
+
+/* Centered Bold Label */
+notebook tab label {
+  font-weight: 800; 
+  color: inherit;
+  margin: 0 6px;
+}
+
+/* Hover State for Inactive Tabs */
+notebook tab:hover:not(:checked):not(:selected) {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(84, 184, 255, 0.3);
+}
+
+/*********************/
+/* 1. The Headerbar (Top Bar) */
+headerbar,
+.titlebar {
+  background-color: @window_bg_color; 
+  background-image: none;
+  padding: 0 6px;
+  transition: all 200ms ease;
+}
+
+/* Fix for legacy apps that try to lock hardcoded colors */
+headerbar.titlebar,
+.titlebar headerbar {
+  background-color: @window_bg_color;
+  color: white;
+  box-shadow: none;
+}
+
+/* 2. Window Controls (Minimize, Maximize, Close - Mapped from GTK4 nodes to GTK3 buttons) */
+headerbar button.titlebutton,
+.titlebar button.titlebutton {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+headerbar button.titlebutton:hover,
+.titlebar button.titlebutton:hover {
+  background-color: @view_bg_color;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.4); 
+}
+
+/* 4. Search Bars inside Headerbars */
+headerbar entry {
+  padding: 0 12px;
+}
+
+/* 5. Backdrop (Inactive) state for Top Bars */
+headerbar:backdrop,
+.titlebar:backdrop {
+  background-color: @headerbar_backdrop_color;
+  background-image: none;
+  border-bottom: 1px solid rgba(84, 184, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+}
+/*****************************************************/
+/* Snap to 0 when taking up the whole screen (GTK3 window structures) */
+window.maximized, 
+window.maximized .background,
+window.fullscreen,
+window.fullscreen .background,
+window.maximized decoration,
+window.fullscreen decoration {
+  border-radius: 0;
+  box-shadow: none;
+  outline-style: none;
+  border-style: none;
+  border: none;
+}
+
+/* Specific fix for top-level containers stretching across maximized workspaces */
+window.maximized > box,
+window.fullscreen > box,
+window.maximized > stack,
+window.fullscreen > stack,
+window.fullscreen .video-area {
+    border-radius: 0;
+}
+
+/* Ensure titlebars snap perfectly to screen bounds */
+window.maximized headerbar,
+window.maximized .titlebar,
+window.fullscreen headerbar,
+window.fullscreen .titlebar {
+    border-radius: 0;
+}
+
+/* Target internal content layers */
+window.maximized stack,
+window.fullscreen stack {
+    border-radius: 0;
+}
+
+/***************/* Completely ensure maximized layouts strip the radius cleanly */
+window.maximized, 
+window.maximized .background,
+window.fullscreen,
+window.fullscreen .background,
+window.maximized headerbar,
+window.maximized .titlebar,
+headerbar:maximized {
+    border-radius: 0px;
+}
+
+/**************** FORCE PURGE WHITE BUTTONS (DRAWING & BLUEMAN) ****************/
+/* Target toolbar layout structures and inline child controls */
+toolbar button,
+.toolbar button,
+headerbar button,
+.titlebar button,
+actionbar button,
+.action-bar button,
+infobar button,
+.info-bar button {
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: none;
+    color: @window_fg_color;
+    border: 1px solid @border_color;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+/* Force standard mouse interaction overrides to follow your theme */
+toolbar button:hover,
+headerbar button:hover,
+actionbar button:hover,
+.linked button:hover {
+    background-color: @view_bg_color;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 
+                0 0 12px rgba(168, 85, 247, 0.5);
+}
+
+/* Fix for specific native button nodes pulling from Adwaita presets */
+button.flat,
+button.text-button,
+button.image-button,
+.linked button,
+stackswitcher button {
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: none;
+    color: @window_fg_color;
+    border: 1px solid @border_color;
+}
+
+/* Active checked states on toolbars */
+toolbar button:checked,
+headerbar button:checked,
+button.flat:checked,
+stackswitcher button:checked {
+    background-color: @view_bg_color;
+    color: #ffffff;
+}
+
+/* Purge underlying canvas blocks leaking inside tool selectors */
+GtkToolPalette,
+GtkToolItemGroup,
+.tool-palette,
+.tool-item {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+}
+/**************** BRUTE FORCE THEME SHEET FALLBACK OVERRIDE ****************/
+/* Target every possible container state inside dialogs, notebooks and stacks */
+dialog,
+.dialog,
+dialog * {
+    background-image: none;
+}
+
+/* Force the base notebook viewport window to match your custom background color */
+notebook,
+notebook stack,
+notebook > stack > grid,
+notebook > stack > box,
+notebook > stack > viewport {
+    background-color: @window_bg_color;
+    background-image: none;
+}
+
+/* Specific fix for Blueman's layout engine structure elements */
+window.dialog > box,
+window.dialog > box > box,
+window.dialog > box > stack {
+    background-color: @window_bg_color;
+    background-image: none;
+}
+
+/* Force text labels to remain white over your dark panel */
+notebook label,
+notebook stack label,
+notebook grid label {
+    color: @window_fg_color;
+    text-shadow: none;
+}
+/**************** FORCE PURGE REMAINING WHITE VIEWPORTS ****************/
+/* Target the precise internal viewports and layout grids inside all notebook containers */
+notebook viewport,
+notebook grid,
+notebook box,
+notebook stack,
+.notebook viewport,
+.notebook grid,
+.notebook box,
+.notebook stack {
+    background-color: @window_bg_color;
+    background-image: none;
+    background: @window_bg_color;
+}
+
+/* Explicitly force Blueman's specific dialog properties to collapse to your dark theme */
+window.dialog,
+.dialog,
+window.dialog * {
+    background-image: none;
+
+}
+
+/* Direct element injection for the white pane layout behind the network/transfer tabs */
+notebook,
+notebook > header,
+notebook > header > tabs {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Ensure text headers and choices inside the notebook match your window_fg_color */
+notebook label,
+notebook radio,
+notebook check {
+    color: @window_fg_color;
+}
+/* Target the background of the entire tab bar (GTK3 Notebook wrapper fallback) */
+notebook {
+  background-color: @window_bg_color;
+}
+
+/* Target the inactive (unselected) tabs */
+notebook tab:not(:checked),
+notebook tab:not(:selected) {
+  background-color: @view_bg_color;
+  background-image: none;
+  color: alpha(@window_fg_color, 0.6); 
+  border: none;
+}
+
+/* The active tab - keeping it clear */
+notebook tab:checked,
+notebook tab:selected {
+  background-color: @view_bg_color;
+  background-image: none;
+  color: @window_fg_color;
+  box-shadow: inset 0 -2px 0 0 @accent_bg_color;
+}
+
+/* Hover state for inactive tabs */
+notebook tab:not(:checked):hover,
+notebook tab:not(:selected):hover {
+  background-color: alpha(@window_fg_color, 0.05);
+}
+/*********************/
+/* Target labels and icons inside hovered cards/rows */
+.card:hover label,
+.card:hover image,
+.boxed-list row:hover label,
+.boxed-list row:hover image,
+row.activatable:hover label,
+row.activatable:hover image {
+  color: white;
+  text-shadow: 0 0 10px rgba(84, 184, 255, 0.5);
+  icon-shadow: 0 0 10px rgba(84, 184, 255, 0.5);
+}
+
+/* Ensure sub-buttons also flip to white */
+.card:hover button,
+row.activatable:hover button {
+  color: white;
+}
+
+/* Special fix for the Equalizer sidebar items */
+stacksidebar row:hover label {
+    color: white;
+    text-shadow: 0 0 8px rgba(84, 184, 255, 0.6);
+}
+
+/**************/
+
+
+/* 4. Context Menus & Popups (Padding Fixes) */
+/* Translating GTK4 custom popover selectors down to GTK3 popover structures */
+popover,
+popover > box,
+popover contents,
+popover.menu contents {
+  background-image: none;
+  background-clip: padding-box;
+  margin: 4px; 
+  /* GTK3 support for backdrop-filter can be spotty; box fallback applied */
+  background-color: @window_bg_color;
+  border: 1px solid rgba(84, 184, 255, 0.666);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.666);
+  padding: 12px; 
+  border-radius: 30px;
+}
+/* THE HOVER: Clean Blue Highlight */
+popover button:hover,
+popover modelbutton:hover,
+popover list row:hover,
+menu menuitem:hover,
+popover list row:selected {
+  background-color: @view_bg_color;
+  color: white;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2),
+              inset 0 0 0 1px rgba(84, 184, 255, 0.6);
+}
+/* 3. ENSURE THE HOVER HIGHLIGHT STAYS WITHIN BOUNDS */
+popover modelbutton:hover,
+menu menuitem:hover {
+    box-shadow: 0 2px 10px rgba(168, 85, 247, 0.4), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 0 0 1px rgba(84, 184, 255, 0.6);
+}
+/* Maintain consistency on selection/checked states inside those elements */
+stackswitcher button:checked,
+.stack-switcher button:checked,
+.linked button:checked,
+.linked button:active {
+    background-color: @view_bg_color;
+    color: white;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), 
+                0 0 12px rgba(168, 85, 247, 0.5); 
+}
+
+/* Force text color inside selection */
+popover list row:hover label,
+popover list row:selected label,
+menu menuitem:hover label {
+  color: #ffffff;
+  font-weight: 500; 
+  text-shadow: 0 0 5px rgba(23, 147, 209, 0.5);
+}
+/* ACTIVE TAB: The Wizard Shadow & Rim Light */
+notebook tab:checked, 
+notebook tab:selected,
+notebook tab:hover {
+  background-color: @view_bg_color;
+  color: white;
+  box-shadow: 0 4px 21px rgba(168, 85, 247, 0.666), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);   
+  border: 1px solid rgba(84, 184, 255, 0.666);
+    border-radius: 30px;
+}
+
+
+
+/* 2. REMOVE CLIPPING ON THE POPUP CONTAINER */
+popover box,
+popover contents {
+  border-radius: 30px;
+}
