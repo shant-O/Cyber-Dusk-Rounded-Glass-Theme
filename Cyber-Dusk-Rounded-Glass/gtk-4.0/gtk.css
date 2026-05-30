@@ -1,29 +1,35 @@
 /* Color Definitions */
-@define-color window_bg_color rgba(28, 28, 46, 1.0);
-@define-color window_fg_color #ffffff; /* Added for Firefox/Apps text contrast */
-@define-color view_bg_color rgba(28, 28, 46, 0.8);
-@define-color view_fg_color #ffffff;
-
-@define-color destructive_bg_color #c84053; 
-@define-color destructive_color #ff7b72;
-@define-color success_bg_color #26a269;
-@define-color success_color #1793d1;
-@define-color warning_bg_color #cd9309;
-@define-color warning_color #f8e45c;
-@define-color error_bg_color #c01c28;
-@define-color error_color #ff7b72;
-
-@define-color card_bg_color rgba(122, 162, 247, 0.05); 
+@define-color window_bg_color rgba(26, 36, 50, 0.9);
+@define-color view_bg_color rgba(26, 36, 50, 0.9);
+@define-color dialog_bg_color rgba(26, 36, 50, 0.9);
+@define-color popover_bg_color rgba(26, 36, 50, 0.9);
+@define-color accent_bg_color #0b8bb0;
+@define-color accent_color #0ba8e0;
+@define-color accent_dark #07536e;
+/***************************/
+@define-color card_bg_color rgba(150, 190, 220, 0.05);
+@define-color headerbar_color rgba(5, 15, 35, 0.85);
+@define-color headerbar_backdrop_color rgba(26, 36, 50, 0.7);
+/***************************/
+@define-color border_color rgba(255, 255, 255, 0.1);
+@define-color outline_color rgba(160, 200, 230, 0.8);
+/***************************/
 @define-color shadow_color rgba(0, 0, 0, 0.5);
 @define-color shade_color rgba(0, 0, 0, 0.36);
 @define-color scrollbar_outline_color rgba(0, 0, 0, 0.36);
-@define-color border_color rgba(255, 255, 255, 0.1);
-@define-color outline_color rgba(160, 191, 232, 0.9);
-@define-color accent_bg_color #7aa2f7;
-@define-color accent_color #7aa2f7;
-@define-color dialog_bg_color rgba(28, 28, 46, 0.8);
-@define-color popover_bg_color rgba(28, 28, 46, 0.95); /* Increased opacity for readability */
-@define-color headerbar_backdrop_color #1f1f47;
+/*****************************/
+@define-color window_fg_color #ffffff;
+@define-color view_fg_color #ffffff;
+/*****************************/
+@define-color destructive_bg_color #c84053; 
+@define-color destructive_color #ff7b72;
+@define-color success_bg_color #029969;
+@define-color success_color #04cfcf;
+@define-color warning_bg_color #cd6e09;
+@define-color warning_color #f8e45c;
+@define-color error_bg_color #c01c28;
+@define-color error_color #ff7b72;
+/********************************************/
 /*****************************************************/
 /* The main Toast popup */
 toast {
@@ -72,7 +78,7 @@ popover.menu contents modelbutton {
   margin: 12px;
   border-right: none;
   background-color: @window_bg_color;
-  border: 1px solid rgba(84, 184, 255, 0.666);
+  border: 1px solid rgba(0, 180, 240, 0.666);
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 
               0 12px 24px rgba(0, 0, 0, 0.65);
 }
@@ -179,14 +185,18 @@ headerbar windowcontrols button:hover {
 headerbar windowcontrols button.close:hover {
   background-color: rgba(255, 85, 85, 0.5); 
   box-shadow: inset 0 0 0 1px #ff5555, 0 0 10px rgba(255, 85, 85, 0.6);
+}/* The 'Close' button - standard danger red, but themed */
+headerbar windowcontrols button.maximize:hover {
+  background-color: rgba(15, 90, 70, 0.5); 
+  box-shadow: inset 0 0 0 1px #33ff66, 0 0 10px rgba(15, 90, 70, 0.6);
 }
 /*****************************************************/
 /* 1. The Main Window Frame & Glow */
 window.csd,
 window.main-window,
 .nautilus-window.window {
-  border: 1px solid rgba(84, 184, 255, 0.666);
-  box-shadow: inset 0 0 0 0px rgba(84, 184, 255, 0.009),
+  border: 2px solid rgba(0, 180, 240, 0.555);
+  box-shadow: inset 0 0 0 0px rgba(0, 180, 240, 0.009),
               0 12px 24px 5px rgba(0, 0, 0, 0.666); 
   margin: 0; 
 }
@@ -202,7 +212,7 @@ window.csd:backdrop,
 window.csd:backdrop decoration,
 window.csd:backdrop .window-frame {
   box-shadow: none;
-  border: 1px solid rgba(84, 184, 255, 0.2); /* Muted instead of gone */
+  border: 1px solid rgba(0, 180, 240, 0.2); /* Muted instead of gone */
   outline: none;
 }
 window.csd:backdrop {
@@ -218,15 +228,15 @@ popover.menu contents {
   margin: 4px; /* Reduced from 12px to fix the "floating" look */
   backdrop-filter: blur(20px) brightness(1.1);
   background-color: @window_bg_color;
-  border: 1px solid rgba(84, 184, 255, 0.666);
+  border: 1px solid rgba(0, 180, 240, 0.666);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.666);
   padding: 12px; /* Reduced to make highlights hit the edges */
-  border-radius: 30px;
+  border-radius: 24px;
 }
 
 menu {
   background-color: @window_bg_color;  
-  border: 1px solid rgba(84, 184, 255, 0.666); 
+  border: 1px solid rgba(0, 180, 240, 0.666); 
   backdrop-filter: none; 
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.666);
   padding: 12px;
@@ -235,13 +245,11 @@ menu {
 /* gnome extensions details menu popup */
 popover contents {
   background-color: @window_bg_color;  
-  border: 1px solid rgba(84, 184, 255, 0.666);
+  border: 1px solid rgba(0, 180, 240, 0.666);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.666);
   padding: 12px; /* Balanced padding */
 }
-/* --- THEME OVERRIDES --- */
-@define-color accent_color #1793d1; /* Radioactive #1793d1 */
-@define-color accent_dark #1793d1;   /* Deep shadow version */
+
 /**********************************/
 /* --- GLOBAL RADIOACTIVE OVERHAUL --- */
 /* 1. UNIVERSAL PROGRESS BARS (Pamac, File Ops, Web Browsers) */
@@ -274,7 +282,7 @@ scale slider {
     -gtk-icon-source: none;
     border-radius: 100%;
     border: 1px solid #000;
-    background: radial-gradient(circle at center, @accent_color 0%, @accent_dark 80%);
+    background: radial-gradient(circle at center, @accent_color 30%, @accent_dark 70%);
     min-width: 12px;
     min-height: 12px;
     margin: -4px; 
@@ -287,7 +295,6 @@ radio {
     -gtk-icon-source: none;
     border-radius: 100%;
     border: 1px solid #000;
-    /* Exactly matching your slider dimensions and unchecked styling */
     min-width: 14px;
     min-height: 14px;
     background: linear-gradient(to bottom, #333, #111);
@@ -296,21 +303,21 @@ radio {
 }
 radio:checked {
     /* Cloned directly from your switch:checked slider style */
-    background: radial-gradient(circle at center, @accent_color 0%, @accent_dark 80%);
+    background: radial-gradient(circle at center, @accent_color 30%, @accent_dark 70%);
     box-shadow: 0 0 8px @accent_color, 
                 inset 0 1px 1px rgba(255,255,255,0.5),
                 0 1px 3px rgba(0,0,0,0.8);
 }
 
 radio:hover {
-    background-color: rgba(84, 184, 255, 0.1);
-    border: 1px solid rgba(84, 184, 255, 0.5);
+    background-color: rgba(0, 180, 240, 0.1);
+    border: 1px solid rgba(0, 180, 240, 0.5);
 }
 
 /* 4. TARGET CHECKBOXES ONLY */
 check {
     background-color: rgba(255, 255, 255, 0.066); /* Faint white-ish haze */
-    border: 1px solid rgba(84, 184, 255, 0.2);   /* Subtle blue rim */
+    border: 1px solid rgba(0, 180, 240, 0.2);   /* Subtle blue rim */
     border-radius: 99px;                         /* Keep it circular */
     min-height: 16px;
     min-width: 16px;
@@ -323,8 +330,8 @@ check:checked {
   color: #171c2e; 
 }
 check:hover {
-    background-color: rgba(84, 184, 255, 0.1);
-    border: 1px solid rgba(84, 184, 255, 0.5);
+    background-color: rgba(0, 180, 240, 0.1);
+    border: 1px solid rgba(0, 180, 240, 0.5);
 }
 
 /* --- TACTILE 3D SCROLLBARS (Volume Slider Match) --- */
@@ -398,12 +405,11 @@ switch slider {
     margin: 3px;
 }
 switch:checked slider {
-    background: radial-gradient(circle at center, @accent_color 0%, @accent_dark 80%);
-    box-shadow: 0 0 8px @accent_color, 
+    background: radial-gradient(circle at center, @accent_color 30%, @accent_dark 70%);
+    box-shadow: 0 0 12px @accent_color, 
                 inset 0 1px 1px rgba(255,255,255,0.5),
                 0 2px 2px rgba(0,0,0,0.8);
 }
-/* 2. COMPACT SCALE SLIDER */
 scale contents slider {
     -gtk-icon-source: none;
     border-radius: 100%;
@@ -417,7 +423,7 @@ scale contents slider {
 }
 scale contents slider:hover,
 scale contents slider:active {
-    background: radial-gradient(circle at center, @accent_color 0%, @accent_dark 80%);
+    background: radial-gradient(circle at center, @accent_color 30%, @accent_dark 70%);
     box-shadow: 0 0 10px @accent_color, 
                 inset 0 1px 2px rgba(255,255,255,0.6);
 }	
@@ -579,7 +585,7 @@ popover contents listview > child:selected {
   color: white;
   box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4), 
               inset 0 1px 0 rgba(255, 255, 255, 0.2),
-              inset 0 0 0 1px rgba(84, 184, 255, 0.6);
+              inset 0 0 0 1px rgba(0, 180, 240, 0.6);
   /*outline: none;*/
   
 }
@@ -631,7 +637,7 @@ tabbar tab:hover {
   color: white;
   box-shadow: 0 4px 21px rgba(168, 85, 247, 0.666), 
               inset 0 1px 0 rgba(255, 255, 255, 0.2);   
-  border: 1px solid rgba(84, 184, 255, 0.666);
+  border: 1px solid rgba(0, 180, 240, 0.666);
 }
 /* Centered Bold Label */
 tabbar tab label {
@@ -642,7 +648,7 @@ tabbar tab label {
 /* Hover State for Inactive Tabs */
 tabbar tab:hover:not(:checked):not(:selected) {
   background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(84, 184, 255, 0.3);
+  border: 1px solid rgba(0, 180, 240, 0.3);
 }
 /* Kill the default bottom indicator */
 tabbar tab indicator {
@@ -661,13 +667,13 @@ searchbar entry:focus-within {
   /* Balanced the purple and blue for a smoother neon transition */
   box-shadow: 0 4px 18px rgba(168, 85, 247, 0.4), 
               inset 0 1px 0 rgba(255, 255, 255, 0.2),
-              0 0 0 1px rgba(84, 184, 255, 0.6);   
+              0 0 0 1px rgba(0, 180, 240, 0.6);   
   border: 1px solid transparent; /* Shadow handles the 'border' to prevent jumping */
   outline: none;
 }
 /* Subtle glass hover for entries */
 entry:hover:not(:focus) {
-  /*border: 1px solid rgba(84, 184, 255, 0.4);*/
+  /*border: 1px solid rgba(0, 180, 240, 0.4);*/
   background-color: rgba(255, 255, 255, 0.15);
 }
 /* 2. Target General Buttons: Hover/Active/Checked */
@@ -689,7 +695,7 @@ sidebar list row:selected,
   color: white;
   box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4), 
               inset 0 1px 0 rgba(255, 255, 255, 0.2),
-              inset 0 0 0 1px rgba(84, 184, 255, 0.6);
+              inset 0 0 0 1px rgba(0, 180, 240, 0.6);
   /*outline: none;*/
 }
 /* Fix for uneven corners (The GTK4 way) */
@@ -719,7 +725,7 @@ popover.menu contents modelbutton:last-child {
 }
 /* Standard radius for items in the middle of the list */
 popover.menu contents modelbutton {
-  border-radius: 30px;
+  border-radius: 24px;
   margin: 2px 4px;
 }
 /*********************/
@@ -757,7 +763,7 @@ headerbar entry {
 headerbar:backdrop {
   background-color: @headerbar_backdrop_color;
   background-image: none;
-  border-bottom: 1px solid rgba(84, 184, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 180, 240, 0.1);
   color: rgba(255, 255, 255, 0.5);
   
 }
@@ -772,7 +778,7 @@ row.activatable:hover {
   color: white;
   box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4), 
               inset 0 1px 0 rgba(255, 255, 255, 0.2),
-              inset 0 0 0 1px rgba(84, 184, 255, 0.6);
+              inset 0 0 0 1px rgba(0, 180, 240, 0.6);
   /*outline: none;*/
   background-image: none; 
 }
@@ -814,8 +820,8 @@ navigation-row:hover label,
 navigation-row:hover image {
   color: white;
   /* Syncs the text/icon glow with your card's blue inset */
-  text-shadow: 0 0 10px rgba(84, 184, 255, 0.5);
-  -gtk-icon-shadow: 0 0 10px rgba(84, 184, 255, 0.5);
+  text-shadow: 0 0 10px rgba(0, 180, 240, 0.5);
+  -gtk-icon-shadow: 0 0 10px rgba(0, 180, 240, 0.5);
 }
 
 /* Ensure sub-buttons (like arrows or settings gears) also flip to white */
@@ -828,7 +834,7 @@ navigation-row:hover button {
 /* Special fix for the Equalizer sidebar items */
 stacksidebar row:hover label {
     color: white;
-    text-shadow: 0 0 8px rgba(84, 184, 255, 0.6);
+    text-shadow: 0 0 8px rgba(0, 180, 240, 0.6);
 }
 /**************/
 /* 2. REMOVE CLIPPING ON THE POPUP CONTAINER */
@@ -842,11 +848,11 @@ popover.menu modelbutton:hover {
     /* Slightly reduces the shadow spread if it's still too large for the box */
     box-shadow: 0 2px 10px rgba(168, 85, 247, 0.4), 
                 inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                inset 0 0 0 1px rgba(84, 184, 255, 0.6);
+                inset 0 0 0 1px rgba(0, 180, 240, 0.6);
 }
 /*************/
 * {
-    border-radius: 30px;
+    border-radius: 24px;
 }
 /*****************************************************/
 /* Snap to 0 when taking up the whole screen */
@@ -965,3 +971,80 @@ tab:not(:checked):hover {
 }
 /*******************/
 
+tooltip {
+  background-color: @view_bg_color;
+  color: white;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2),
+              inset 0 0 0 1px rgba(0, 180, 240, 0.666);
+}
+tooltip label {
+  color: white;
+}
+
+/************************/
+/* Target the new Libadwaita overlay sheet layout */
+dialog floating-sheet sheet {
+  background-image: none;
+  background-clip: padding-box;
+  backdrop-filter: blur(20px) brightness(1.1);
+  background-color: @window_bg_color;
+  border: 2px solid rgba(0, 180, 240, 0.35);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.777);
+  border-radius: 24px;
+}
+
+/**********************************************/
+
+/* 1. Target Chromium's explicit window shell overlay node */
+window.popup.menu.chromium,
+window#ContextMenu.chromium {
+    background-color: @view-bg-color;
+    border-radius: 24px;
+}
+
+/* 2. Target the internal popover content structure */
+.chromium popover,
+.chromium popover contents,
+.chromium .menu {
+    background-color: @view-bg-color;
+    border-radius: 24px;
+}
+
+/* 3. Deep target layout viewports inside the Chromium window container */
+window.popup.menu.chromium contents,
+window.popup.menu.chromium viewport {
+    background-color: @view-bg-color;
+    border-radius: 24px;
+}
+
+/* 4. Fix selection background clipping on the very first and last menu items */
+.chromium menuitem:first-child {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.chromium menuitem:last-child {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+window.background.chromium {
+  background-color: @view_bg_color;
+}
+
+window.background.chromium headerbar.header-bar.titlebar {
+  padding: 0 12px;
+  background-color: @headerbar_color;
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 24px 24px 0 0;
+  box-shadow: inset 0 1px 0 @border_color;
+  border: none;
+}
+
+window.background.chromium headerbar.header-bar.titlebar:backdrop {
+  background-color: @headerbar_backdrop_color;
+  color: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 1px 0 @border_color;
+  border: none;
+}
