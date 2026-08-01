@@ -1,58 +1,70 @@
+/*  ------------------------------------------- *
+*    CYBER DUSK - ROUNDED GLASS                 *
+*    LINK : www.gnome-look.org/p/2357650        *
+*    Author : shant-O                           *
+*    Version : 4.1                              *
+*    Release Date : August 1st, 2026            *
+*    This file Themes GTK3 apps!                *
+*   ------------------------------------------- */
 /* ==============================================
                 DARK MODE ONLY COLORS
  ============================================== */
-@define-color nulll                 rgba(0,0,0,0);
-@define-color bg_color              rgba(0, 15, 30, 0.1);
-@define-color card_bg_color         rgba(150, 190, 220, 0.1);
-@define-color border_lite           rgba(0, 200, 250, 0.1);
-@define-color hoverr                rgba(0,220,255,0.15);
-@define-color glowy                 rgba(255, 255, 255, 0.2);
+/*   DARK NEUTRALS & BLACKS   */
+@define-color textglow              rgba(0, 0, 0, 0.8);
 @define-color shade_color           rgba(0, 0, 0, 0.3);
-@define-color appglow               rgba(5, 140, 180, 0.3);
-@define-color switchtrough          rgba(5, 140, 180, 0.3);
-@define-color lowglow               rgba(170, 90, 250, 0.5);
-@define-color border_color          rgba(0, 200, 250, 0.5);
-/**/
-@define-color bar_color             rgba(84, 184, 255, 0.6);
-@define-color glow                  rgba(255, 255, 255, 0.6);
 @define-color shadow_color          rgba(0, 0, 0, 0.7);
-@define-color sidebar_color         rgba(0, 15, 30, 0.8);
-/**/
-@define-color view_bg_color         rgba(5, 20, 40, 0.9);
-@define-color theme_bg_color        rgba(5, 20, 40, 0.9);
-@define-color window_bg_color       rgba(5, 20, 40, 0.9);
-@define-color headerbar_color       rgba(5, 20, 40, 0.9);
-@define-color dialog_bg_color       rgba(10, 25, 45, 0.9);
-@define-color chromium              rgba(10, 25, 45, 0.9); 
-@define-color popover_bg_color      rgba(5, 20, 45, 0.95);
-/**/
-@define-color accent_bg_color       rgba(9, 162, 189, 1);
-@define-color accent_color          rgba(6, 162, 201, 1);
-@define-color accent_dark           rgba(3, 108, 140, 1);
-@define-color selection_color       rgba(8, 25, 40, 1);       
-@define-color neon                  rgba(0, 220, 255, 1);
-/**/
-@define-color window_fg_color       rgba(255, 255, 255, 1);
-@define-color view_fg_color         rgba(255, 255, 255, 1);
-/**/
-@define-color grad_drk              rgb(0, 100, 150);
-@define-color grad_lit              rgb(10, 220, 250);
-/**/
-@define-color destructive_bg_color  rgba(200, 64, 83, 1); 
-@define-color destructive_color     rgba(255, 123, 114, 1);
-@define-color success_bg_color      rgba(2, 153, 105, 1);
-@define-color success_color         rgba(4, 207, 207, 1);
-@define-color warning_bg_color      rgba(205, 110, 9, 1);
-@define-color warning_color         rgba(248, 228, 92, 1);
-@define-color error_bg_color        rgba(192, 28, 40, 1);
-@define-color error_color           rgba(255, 123, 114, 1);
-/**/
+/*   WHITES & GLOWS   */
+@define-color glowy                 rgba(255, 255, 255, 0.2);
+@define-color glow                  rgba(255, 255, 255, 0.6);
+@define-color headerbar_fg_color    rgba(255, 255, 255, 0.85);
+@define-color window_fg_color       rgb(255, 255, 255);
+@define-color view_fg_color         rgb(255, 255, 255);
+/*   WARMS (ORANGE, RED, PINK)   */
+@define-color warning_bg_color      rgb(210, 70, 20);
+@define-color warning_color         rgb(235, 95, 45);
+@define-color destructive_bg_color  rgb(170, 0, 20);
+@define-color destructive_color     rgb(190, 0, 30);
+@define-color error_bg_color        rgb(155, 25, 35);
+@define-color error_color           rgb(200, 30, 40);
+/*   GREENS   */
+@define-color success_bg_color      rgb(0, 200, 130);
+@define-color success_color         rgb(0, 230, 150);
+/*   LIGHT NEONS, CYANS & BRIGHT BLUES   */
+@define-color grad_lit              rgb(0, 200, 255);
+@define-color hoverr                rgba(0, 220, 255, 0.15);
+@define-color neon                  rgb(0, 220, 255);
+@define-color accent_bg_color       rgb(40, 160, 180);
+@define-color accent_color          rgb(40, 160, 180);
+@define-color border_lite           rgba(0, 200, 250, 0.1);
+@define-color border_color          rgba(0, 200, 250, 0.5);
+@define-color appglow               rgba(6, 200, 250, 0.3);
+@define-color switchtrough          rgba(0, 100, 140, 0.4);
+@define-color accent_dark           rgb(10, 100, 130);
+@define-color grad_drk              rgb(10, 100, 130);
+@define-color bar_color             rgba(84, 184, 255, 0.6);
+@define-color card_bg_color         rgba(150, 190, 220, 0.1);
+/*   MIDNIGHTS & DEEP BLUES   */
+@define-color bg_color              rgba(0, 15, 25, 0.1);
+@define-color sidebar_color         rgba(0, 15, 25, 0.95);
+@define-color chromium              rgba(10,20,30, 0.9);
+@define-color selection_color       rgb(10,30,45);
+@define-color headerbar_bg_color    rgba(10,20,30, 0.1);
+@define-color headerbar_color       rgba(10,20,30, 0.1);
+@define-color dialog_bg_color       rgba(10,20,30, 0.9);
+@define-color theme_bg_color        rgba(10,20,30, 0.9);
+@define-color view_bg_color         rgba(10,20,30, 0.9);
+@define-color window_bg_color       rgba(10,20,30, 0.9);
+@define-color popover_bg_color      rgba(10,20,30, 0.95);
+/*   PURPLE & TRANSPARENT   */
+@define-color purpglow              rgba(170, 90, 250, 0.5);
+@define-color nulll                 rgba(0, 0, 0, 0);
+@define-color whglow                rgb(225, 235, 255);
+/*  Redefining  */
+@define-color base_color @window_bg_color;
 @define-color insensitive_bg_color @dialog_bg_color;
 @define-color insensitive_base_color @dialog_bg_color;
 @define-color theme_unfocused_bg_color @dialog_bg_color;
 @define-color theme_unfocused_base_color @dialog_bg_color;
-@define-color theme_base_color @theme_bg_color;
-@define-color base_color @window_bg_color;
 /* ==============================================
                 Main Window and Frame
  ============================================== */
@@ -60,14 +72,20 @@ window,
 window.csd,
 decoration {
     background-color: @window_bg_color;
-    border: none;
     background-clip: padding-box;
-    background-image: none;
-    box-shadow: none;
     border-radius: 30px 30px 30px 30px;
-    box-shadow: inset 0 0px 0px @null,
-                0 0px 12px @shade;
                 }
+window decoration,
+window.csd decoration,
+window.main-window decoration,
+.window-frame decoration {
+    background-color: @window_bg_color;
+    border: 2px solid @border_color;
+    border-radius: 30px 30px 30px 30px;
+    background-clip: padding-box;
+    box-shadow: 0 12px 24px @shadow,
+                0 0 12px 12px @appglow;
+}
 window > box.vertical,
 window > grid,
 window.dialog > box,
@@ -78,17 +96,6 @@ window.dialog > box,
     background-image: none;
     box-shadow: none;
     border-radius: 0px 0px 30px 30px;
-}
-window decoration,
-window.csd decoration,
-window.main-window decoration,
-.window-frame decoration {
-    background-color: @window_bg_color;
-    border: 1px solid @bar_color;
-    border-radius: 30px 30px 30px 30px;
-    background-clip: padding-box;
-    box-shadow: 0 12px 24px @shadow,
-                0 0 12px @appglow;
 }
 window.main-window {
     background-color: @view_bg_color;
@@ -126,6 +133,17 @@ window.csd:backdrop decoration, window.csd:backdrop .window-frame {
   opacity: 0.55;
   transition: opacity 0.2s ease-in-out;
 }  
+window stack, 
+window grid,
+window .main-container,
+scrolledwindow,
+viewport {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;    
+    border-bottom-left-radius: 29px;
+    border-bottom-right-radius: 29px;
+    box-shadow: none;
+}
 /* ==============================================
                 Headerbar
  ============================================== */
@@ -134,13 +152,14 @@ headerbar,
 .titlebar:not(headerbar),
 searchbar,
 searchbar > revealer > box {
+    min-height: 24px;
     background-color: @view_bg_color;
     background-image: none;
     border-radius: 30px 30px 0px 0px;
 }
 headerbar.titlebar button.titlebutton.close,
 .titlebar button.titlebutton.close {
-    margin-right: 12px;
+    margin-right: 8px;
     }           
 headerbar.titlebar button.titlebutton.close:hover,
 .titlebar button.titlebutton.close:hover {
@@ -191,8 +210,6 @@ window.dialog > box {
     background-color: @popover_bg_color;
     background-image: none;
     border-radius: 30px 30px 30px 30px;
-    padding: 4px;
-    margin: 2px;
     background-clip: padding-box;
     box-shadow: 0 12px 24px @shade,
                 0 0 12px @appglow;
@@ -202,17 +219,14 @@ popover list row:selected label,
 menu menuitem:hover label {
   color: @window_fg_color;
   font-weight: 500; 
-  text-shadow: 0 0 5px @lowglow;
+  text-shadow: 0 1px 2px @textglow;
 }
 window.popup,
 .popup,
 popover {
   background-color: @window_bg_color;
   background-image: none;
-  border: 1px solid @accent_color;
-  margin: 4px; 
-  padding: 4px;
-    border-radius: 30px;
+  border-radius: 30px;
 }
 menubar menuitem label,
 .menubar menuitem label {
@@ -222,7 +236,6 @@ menu menuitem {
   color: @window_fg_color;
 }
 menubar > menuitem {
-    padding: 4px 8px;
     background-color: transparent;
     border-radius: 30px 30px 30px 30px;
     }
@@ -238,7 +251,7 @@ separator {
 }
 menuitem label {
   color: @view_fg_color;
-  text-shadow: 0 1px 2px @shade;
+  text-shadow: 0 1px 2px @textglow;
     border-radius: 30px 30px 30px 30px;
     }
 dialog,
@@ -260,7 +273,7 @@ window.dialog * {
 dialog,
 .dialog,
 toolbar {
-    border-radius: 30px 30px 30px 30px;
+    border-radius: 0px 0px 30px 30px;
     background-color: @dialog_bg_color;
 }
 .dialog-action-area, 
@@ -278,8 +291,7 @@ window.tooltip {
     background-color: @view_bg_color;    
     background-image: none;
     border: 1px solid @border_color;                               
-    border-radius: 30px;                        
-    padding: 12px;                          
+    border-radius: 30px;                       
     box-shadow: none; 
 }
 tooltip label,
@@ -287,7 +299,23 @@ tooltip label,
 window.tooltip label {
     color: @window_fg_color;                             
     font-weight: normal;
-    text-shadow: none;
+  text-shadow: 0 1px 2px @textglow;
+}
+menu,
+.menu,
+context-menu {
+    border-radius: 24px;
+    padding: 10px;
+    border: 2px solid @border_color;
+    background-clip: padding-box; 
+}
+window.popup,
+window.background.popup,
+.background.popup,
+menu {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
 }
 /* ==============================================
         Buttons / Switches / Checkbox
@@ -357,8 +385,8 @@ button.suggested-action {
   box-shadow: 0 4px 12px @shade;
 }
 button.destructive-action {
-  background-color: rgba(200, 64, 83, 0.15); 
-  border: 1px solid rgba(224, 27, 36, 0.4);
+  background-color: @destructive_bg_color; 
+  border: 1px solid @destructive_color;
   color: @destructive_color;
   border-radius: 99px;
   box-shadow: 0 4px 12px @shade;
@@ -376,7 +404,7 @@ infobar button,
     color: @window_fg_color;
     border: 1px solid @card_bg_color;
     box-shadow: none;
-    text-shadow: none;
+  text-shadow: 0 1px 2px @textglow;
     border-radius: 30px;
 }
 button.flat,
@@ -409,7 +437,7 @@ stackswitcher button:checked,
     background-color: @view_bg_color;
     color: @view_fg_color;
     box-shadow: inset 0 0 0 1px @hoverr, 
-                0 0 12px @lowglow; 
+                0 0 12px @purpglow; 
     border-radius: 30px 30px 30px 30px;
   }
 menu button.top,
@@ -455,7 +483,7 @@ stackswitcher button:checked,
     background-color: @view_bg_color;
     color: @view_fg_color;
     box-shadow: inset 0 0 0 1px @glowy, 
-                0 0 12px @lowglow; 
+                0 0 12px @purpglow; 
 }
 button,
 .button,
@@ -477,9 +505,9 @@ headerbar button,
     }
 switch {
     background-image: none;
-    background-color: #4a4a4a;
+    background-color: @switchtrough;
     border-radius: 30px;
-    border: 1px solid #333333;
+    border: 1px solid @border_color;
     outline: none;
 }
 switch:checked {
@@ -491,9 +519,9 @@ switch:checked {
 switch slider {
     -gtk-icon-source: none;
     border-radius: 100%;
-    border: 0px solid #000;
+    border: 0px solid @shadow_color;
     background-color: @view_fg_color;
-    background: linear-gradient(to bottom, #333, #111);
+    background: linear-gradient(to bottom, @shadow_color, @shade_color);
     box-shadow: inset 0 1px 1px @glowy, 
                 0 2px 2px @shadow_color;
     min-width: 14px;
@@ -506,8 +534,7 @@ switch:checked slider {
                 inset 0 1px 1px @glow,
                 0 2px 2px @shadow_color;
 }
-switch trough, 
-scale trough {
+switch trough {
     background-image: none;
     background-color: @glowy;
     box-shadow: none;
@@ -518,39 +545,31 @@ switch:checked trough {
 }
 radio {
     -gtk-icon-source: none;
-    border-radius: 240px;
-    border: 1px solid #000;
-    min-width: 14px;
-    min-height: 14px;
-    background-image: linear-gradient(to bottom, #333, #111);
+    border: 1px solid @glowy;
+    background-color: @glowy;
     box-shadow: inset 0 1px 1px @glowy, 
-                0 1px 3px @shadow;
-}
-radio:checked {
-    background-image: radial-gradient(circle at center, @accent_color 40%, @accent_dark 60%);
-    box-shadow: 0 0 8px @accent_color, 
-                inset 0 1px 1px @glow,
-                0 1px 3px @shadow;
-}
-switch slider {
-    -gtk-icon-source: none;
-    border-radius: 240px;
-    border: 0px solid #000;
-    background-image: linear-gradient(to bottom, #333, #111);
-    box-shadow: inset 0 1px 1px @glowy, 
-                0 2px 2px @shadow;
+                0 2px 2px @shadow_color;
     min-width: 14px;
     min-height: 14px;
     margin: 3px;
+    border-radius: 100%;
 }
+radio:checked {
+    background: radial-gradient(circle at center, @grad_lit 35%, @glowy 35%);
+    box-shadow: 0 0 1px @accent_color, 
+                0 2px 2px @shadow_color;
+}
+radio:hover {
+    border: 1px solid @border_color;
+}
+
 switch:checked slider {
     background-image: radial-gradient(circle at center, @accent_color 70%, @accent_dark 60%);
     box-shadow: 0 0 8px @accent_color, 
                 inset 0 1px 1px @glow,
                 0 2px 2px @shadow;
 }
-switch trough, 
-scale trough {
+switch trough {
     background-image: none;
     background-color: @glowy; 
     box-shadow: none;
@@ -572,146 +591,177 @@ button, entry, check, radio {
                 border-color 200ms ease-out, 
                 box-shadow 200ms ease-out;
 }
+/* ----------------------------------------------------------
+              BUTTONS - DESTRUCTIVE / SUGGESTED    
+---------------------------------------------------------- */
+headerbar button.text-button {
+  box-shadow: 0 2px 4px @shadow_color;
+}
+button:active {
+  color: @view_fg_color;
+  box-shadow: inset 0 0 0 2px @glowy, 
+              0 4px 12px @purpglow;           
+  border-radius: 30px;
+  text-shadow: 0 1px 2px @textglow;
+}
+button:checked {        
+  box-shadow: inset 0 0 0 2px @border_color,
+              0 4px 12px @shadow_color;
+}
+button.suggested-action {
+  background-color: @border_color;
+  border: 2px solid @border_lite;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px @shadow_color;
+}
+button.suggested-action:hover {
+  border: 2px solid @border_lite;
+  background-color: @bar_color;
+}
+button.destructive-action {
+  background-color: alpha(@destructive_bg_color, 0.3);
+  border: 1px solid alpha(@destructive_color, 0.5);
+  color: @destructive_color;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px @shadow_color;
+  text-shadow: 0 1px 2px @textglow;
+}
+button.destructive-action:hover {
+  background-color: alpha(@destructive_bg_color, 0.4);
+  color: @destructive_color;
+  border-radius: 30px;
+  box-shadow: 0 8px 16px alpha(@destructive_color, 0.6);
+  border: 1px solid alpha(@destructive_color, 0.9);
+}
+window dialog button:not(.destructive-action):not(destructive):not(.destructive):not(.suggested-action):not(.close):not(.minimize):not(.maximize):hover,
+window button:not(.close):not(.minimize):not(.destructive):not(destructive):not(.destructive-action):not(.maximize):hover {
+  box-shadow: 0 4px 12px @purpglow, 
+              inset 0 0 0 2px @border_color;
+}
+window dialog button.destructive-action,
+window messagedialog button.destructive-action,
+window button.destructive-action {
+  background-color: alpha(@destructive_bg_color, 0.3);
+  border: 1px solid alpha(@destructive_color, 0.5);
+  color: @destructive_color;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px @shadow_color;
+  text-shadow: 0 1px 2px @textglow;
+}
+window dialog button.destructive-action:hover,
+window button.destructive-action:hover {
+  background-color: alpha(@destructive_bg_color, 0.4);
+  color: @destructive_color;
+  border-radius: 30px;
+  box-shadow: 0 8px 16px alpha(@destructive_color, 0.6);
+  border: 1px solid alpha(@destructive_color, 0.9);
+}
 /* ==============================================
                 Scrollbar, Progressbar
  ============================================== */
-scrollbar trough {
-    background-color: transparent;
-    background-image: none;
-    border: none;
-    box-shadow: none;
-}
-scrollbar slider {
-    -gtk-icon-source: none;
-    background-color: @glowy; 
-    border: 2px solid transparent; 
-    background-clip: padding-box;
-    border-radius: 12px; 
-    min-width: 4px;
-    min-height: 4px;
-    transition: all 0.1s ease-in-out;
-}
-scrollbar slider:hover,
-scrollbar slider:hover:active,
-scrollbar slider:active {
-    background-image: none;
-    background-color: @accent_bg_color; 
-    border: 1px solid transparent; 
-    min-width: 4px;
-    margin: 1px;
-    box-shadow: 0 0 10px @bar_color, 
-                inset 0 1px 1px @glowy;
-}
-scrollbar trough {
-    background-image: linear-gradient(to right, @shade_color, @shade_color);
-    border: none;
-    box-shadow: inset 2px 0 5px @shadow;
-}
-scrollbar slider {
-    background-image: linear-gradient(to bottom, @accent_color, @accent_dark);
-    border: 1px solid #000;
-    border-radius: 12px;
-    margin: 2px;
-    min-width: 4px;
-    min-height: 4px;
-    box-shadow: 0 0 6px @lowglow, 
-                inset 0 1px 1px @glowy;
-}
-levelbar trough {
-    background-color: @shade_color;
-    background-image: none;
-    border: 1px solid #000;
-    border-radius: 6px;
-    padding: 2px;
-    box-shadow: inset 0 2px 4px @shadow;
-}
-levelbar block {
-    border-radius: 2px;
-    border: 1px solid #000;
-    min-height: 8px;
-    margin: 1px;
-    background-image: linear-gradient(to bottom, @accent_color, @accent_dark);
-    box-shadow: 0 0 8px @bar_color, 
-                inset 0 1px 1px @glowy;
-}
-levelbar block.empty {
-    background-color: @shade_color;
-    background-image: none;
-    box-shadow: none;
-    border: 1px solid #111;
-}
-levelbar block.low,
-levelbar block.high,
-levelbar block.full {
-    background-image: linear-gradient(to bottom, @accent_color, @accent_dark);
-}
-levelbar trough {
-    background: @shade_color;
-    padding: 2px;
-    border-radius: 6px;
-    box-shadow: inset 0 2px 4px @shadow;
-}
-levelbar block {
-    background-image: linear-gradient(to bottom, @accent_color, @accent_dark);
-    border: 1px solid #000;
-    border-radius: 2px;
-    box-shadow: 0 0 8px @lowglow;
-}
-progressbar trough,
-progressbar progress {
-    min-height: 8px;
-    padding: 0;
-    margin: 0;
-    border-radius: 4px;
-}
-progressbar progress {
-    background-image: linear-gradient(to right, rgb(40, 140, 230), rgb(84, 184, 255));
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
+progressbar {
 }
 progressbar trough {
-    background-image: linear-gradient(to bottom, #111, #222);
-    border: 1px solid #000;
-    border-radius: 30px;
-    min-height: 10px;
-    box-shadow: inset 0 2px 4px @shadow;
+    background: @bg_color; 
+    border: none;    
+    min-height: 8px;      
+    box-shadow: inset 0 1px 1px @shade_color;
+    border-radius: 12px;
 }
 progressbar progress {
-    background-image: linear-gradient(to bottom, @accent_color, @accent_dark);
-    border-radius: 30px;
+    background: linear-gradient(to right, @grad_drk, @grad_lit);
+    border: none;
+    min-height: 8px;
+    border-radius: 12px;
     box-shadow: inset 0 1px 0 @glowy, 
-                0 0 15px @lowglow;
+                0 0 15px @bar_color; 
+}
+scale {
+}
+scale trough {
+    background: @card_bg_color; 
+    border: none;    
+    min-height: 8px;      
+    box-shadow: inset 0 1px 1px @shade_color;
+    border-radius: 12px;
+}
+scale highlight {
+    background: linear-gradient(to right, @grad_drk, @grad_lit);
+    border: none;
+    min-height: 8px;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0 @glowy, 
+                0 0 15px @bar_color;
 }
 scale slider {
     -gtk-icon-source: none;
-    border-radius: 240px;
-    border: 1px solid #000;
-    background-image: linear-gradient(to bottom, #333, #111);
-    box-shadow: inset 0 1px 1px @glowy, 
-                0 2px 4px @shadow;
+    border-radius: 100%;
+    border: 1px solid @bg_color;
+    background: radial-gradient(circle at center, @grad_lit 70%, @grad_drk 20%);
     min-width: 12px;
     min-height: 12px;
     margin: -3px; 
+    box-shadow: 0 0 12px @bar_color, 
+                inset 0 1px 1px @glow,
+                0 1px 1px @shadow_color;
 }
-scale.slider {
-    background-image: radial-gradient(circle at center, @accent_color 0%, @accent_dark 80%);
-    border: 1px solid #000;
-    border-radius: 240%;
-    min-width: 12px;
-    min-height: 12px;
-    box-shadow: 0 0 10px @accent_color, inset 0 1px 1px @glow;
-}
-scale slider:hover,
-scale slider:active {
-    background-image: radial-gradient(circle at center, @accent_color 0%, @accent_dark 80%);
+scale contents slider:hover,
+scale contents slider:active {
+    background: radial-gradient(circle at center, @grad_lit 70%, @grad_drk 20%);
     box-shadow: 0 0 10px @accent_color, 
                 inset 0 1px 2px @glow;
 }
-scale trough {
-    background-image: linear-gradient(to bottom, #111, #222);
-    border-radius: 30px;
+levelbar trough {
+    background-color: @bg_color;
+    border: none;
+    padding: 0;
+    min-height: 8px;
+    border-radius: 12px;
+}
+levelbar block {
+    min-height: 8px;
+    border-radius: 12px;
+    border: none;
+}
+levelbar block.filled,
+levelbar block.low,
+levelbar block.high,
+levelbar block.full {
+    background: linear-gradient(to right, @grad_drk, @grad_lit);
+    box-shadow: 0 0 8px @bar_color;
+}
+scrollbar trough {
+    background: transparent;
+    border: none;
+    box-shadow: inset 0 0 0 @null;
+}
+scrollbar slider {
+    -gtk-icon-source: none;
+    border-radius: 4px;
+    background: linear-gradient(to right, @grad_drk, @grad_lit);
+    box-shadow: 0 0 3px @purpglow, 
+                inset 0 1px 1px @glowy;
+    margin: 1px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    min-width: 5px;
     min-height: 6px;
+    transition: all 0.1s ease-in-out;
+}
+scrollbar button {
+  min-width: 0;
+  min-height: 0;
+  background-image: none;
+  border: none;
+}
+scrollbar slider:hover,
+scrollbar slider:active,
+scrollbar slider:hover:active {
+    background-color: @accent_bg_color;
+    background: linear-gradient(to right, @grad_drk, @grad_lit);
+    box-shadow: 0 0 3px @purpglow, 
+                inset 0 1px 1px @glowy;
+    margin: 1px;
 }
 /* ==============================================
                 Notebook
@@ -742,7 +792,7 @@ notebook label,
 notebook stack label,
 notebook grid label {
     color: @window_fg_color;
-    text-shadow: none;
+  text-shadow: 0 1px 2px @textglow;
 }
 notebook viewport,
 notebook grid,
@@ -773,7 +823,7 @@ notebook check {
 }
 notebook {
   background-color: @window_bg_color;
-  background: none; /*69*/
+  background: none;
 }
 notebook tab:not(:checked),
 notebook tab:not(:selected) {
@@ -785,26 +835,26 @@ notebook tab:not(:selected) {
   }
 notebook tab:checked,
 notebook tab:selected {
-  background-color: @view_bg_color;
-  background-image: none;
-  color: @window_fg_color;
-  box-shadow: inset 0 -2px 0 0 @accent_bg_color;
-    border-radius: 30px;
+  background-color: @accent_dark;
+  color: @view_fg_color;
+  box-shadow: 0 2px 6px @shadow_color,
+              inset 0 0 0 1px @border_color;                
+  border-radius: 30px;
+  text-shadow: 0 1px 2px @textglow;
 }
 notebook tab:not(:checked):hover,
 notebook tab:not(:selected):hover {
-  background-color: alpha(@window_fg_color, 0.05);
-  border-radius: 30px 30px 30px 30px;
+  background-color: alpha(@bar_color, 0.5);
   }
 notebook tab:checked, 
 notebook tab:selected,
 notebook tab:hover {
-  background-color: @view_bg_color;
+  background-color: @accent_dark;
   color: @view_fg_color;
-  box-shadow: 4px 4px 5px @lowglow, 
-              inset 0 1px 0 @card_bg_color;   
-  border: 1px solid @border_color;
-  border-radius: 30px 30px 30px 30px;
+  box-shadow: 0 2px 6px @shadow_color,
+              inset 0 0 0 1px @border_color;                
+  border-radius: 30px;
+  text-shadow: 0 1px 2px @textglow;
   }
 /* ==============================================
                Entry , Searchbar, Labels
@@ -813,7 +863,8 @@ searchbar {
     background-color: @window_bg_color;
     background-image: none;
     color: @view_fg_color;
-    border-radius: 30px;}
+    border-radius: 30px;
+    }
 entry, textview, text {
     background-color: @card_bg_color;
 }
@@ -874,7 +925,7 @@ searchbar {
   border-right: none;
   background-color: @view_bg_color;
   border: 1px solid @glowy;
-  box-shadow: inset 0 1px 1px @lowglow, 
+  box-shadow: inset 0 1px 1px @purpglow, 
               0 12px 30px @shadow;
 }
 paned,
@@ -903,11 +954,20 @@ placessidebar {
 }
 stacksidebar row:hover label {
     color: @view_fg_color;
-    text-shadow: 0 0 8px @glowy;
+  text-shadow: 0 1px 2px @textglow;
 }
 /* ==============================================
                View area
  ============================================== */
+GtkToolPalette,
+GtkToolItemGroup,
+.tool-palette,
+.tool-item {
+    background: none;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+}
 .view,
 iconview,
 list,
@@ -933,15 +993,6 @@ treeview {
 }
 .view:drop(active) {
     background-color: @window_bg_color;
-}
-GtkToolPalette,
-GtkToolItemGroup,
-.tool-palette,
-.tool-item {
-    background: none;
-    background-color: transparent;
-    background-image: none;
-    border: none;
 }
 .primary-toolbar,
 .secondary-toolbar {
@@ -971,7 +1022,7 @@ row:hover label,
 listrow:hover label,
 listitem:hover label {
     color: @window_fg_color;
-    text-shadow: 0 0 4px @hoverr;
+  text-shadow: 0 1px 2px @textglow;
 }
 .card:hover label,
 .card:hover image,
@@ -980,7 +1031,7 @@ listitem:hover label {
 row.activatable:hover label,
 row.activatable:hover image {
   color: @view_fg_color;
-  text-shadow: 0 0 10px @appglow;
+  text-shadow: 0 1px 2px @textglow;
   -gtk-icon-shadow: 0 0 10px @appglow;
 }
 /* ==============================================
@@ -989,14 +1040,14 @@ row.activatable:hover image {
 selection, .selection, :selected, *:selected, *:selected:focus, *:selected:backdrop,
 entry selection, entry:selected, textview text selection, 
 flowboxchild:selected, grid:selected, list row:selected {
-  background-color: @accent_bg_color;
-  color: black;
   border: 1px solid @border_color;
+  background: @selection_color;
+  background-color: @selection_color; 
+  color: @view_fg_color;
+  box-shadow: 0 4px 12px @purpglow, 
+              inset 0 0 0 2px @border_color;
+  text-shadow: 0 1px 2px @textglow;
   border-radius: 30px;
-  box-shadow: 2px 3px 4px @lowglow;
-  border-radius: 30px 30px 30px 30px;
-  font-weight: bold;
-  margin: 4px; 
 }
 /* ==============================================
                Hover
@@ -1009,27 +1060,26 @@ toolbar button:hover,
 headerbar button:hover,
 actionbar button:hover,
 .linked button:hover {
-    background-color: @view_bg_color;
+  background: @selection_color; 
     color: @window_fg_color;
     box-shadow: inset 0 0 0 1px @glowy, 
-                0 0 12px @lowglow;
+                0 0 12px @purpglow;
 }
 popover button:hover,
 popover modelbutton:hover,
 popover list row:hover,
 menu menuitem:hover,
 popover list row:selected {
-  background-color: @view_bg_color;
+  background: @selection_color; 
   color: @view_fg_color;
-  box-shadow: 2px 2px 2px @lowglow, 
+  box-shadow: 2px 2px 2px @purpglow, 
               inset 0 0px 0 @glowy,
               inset 0 0 0 1px @border_color;
   border-radius: 30px 30px 30px 30px;
-  padding: 4px;
   } 
 popover modelbutton:hover,
 menu menuitem:hover {
-    box-shadow: 0 2px 10px @lowglow, 
+    box-shadow: 0 2px 10px @purpglow, 
                 inset 0 1px 0 @hoverr,
                 inset 0 0 0 1px @border_color;
   border-radius: 30px 30px 30px 30px;
@@ -1054,31 +1104,87 @@ notebook tab:hover:not(:checked):not(:selected) {
   border: 1px solid @border_color;
   border-radius: 99px;
 }
-/* NATIVE GTK3 HOVER STATES - INCLUDING SIDEBAR PANELS & LIST ITEMS */
 button:hover,
 button:backdrop:hover,
 entry:hover,
-/*menu menuitem:hover,
-.menu item:hover,*/
 row:hover,
 list row:hover,
-listitem:hover,               /* Target universal list items */
-.sidebar row:hover,          /* Target standard GTK sidebar rows */
-stacksidebar row:hover,      /* Target GNOME settings style sidebars */
+listitem:hover,           
+.sidebar row:hover,         
+stacksidebar row:hover,
 treeview.view button:hover,
 combobox:hover,
 combobox button:hover {
     background-image: none;
-    background-color: rgba(0, 240, 255, 0.08); /* Transparent neon-cyan */
-    border-radius: 30px;                       /* Match your 30px corner radius */
-    border: none;                              /* Kill physical border to fix jumping */
-    
-    /* Inset shadow creates the 1px neon border without adding physical size */
-    box-shadow: inset 0 0 0 1px rgba(0, 240, 255, 0.3);
+    background-color: @hoverr; 
+    border-radius: 30px;                       
+    border: none;                          
+    box-shadow: inset 0 0 2px 1px @neon;
+}
+menu,
+.menu,
+context-menu {
+    padding: 6px;
+}
+menu menuitem,
+.menu menuitem {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin: 2px 2px;
+    border-radius: 6px; 
+}
+menu menuitem:hover,
+menu menuitem:selected,
+.menu menuitem:hover,
+.menu menuitem:selected {
+    margin: 2px 4px;
 }
 
-
+/* ----------------------------------------------------------
+                    TEXT SHADOW / DEPTH      
+---------------------------------------------------------- */
+.dark label:not(:disabled):not(.dim-label),
+.dark .title, 
+.dark .heading, 
+.dark windowtitle label {
+  text-shadow: 0 1px 2px @textglow;
+}
+.dark label selection,
+.dark label:disabled * {
+    text-shadow: none;
+}
+/* ----------------------------------------------------------
+                          ANIMATIONS      
+---------------------------------------------------------- */
+popover, 
+.popover, 
+menu, 
+.menu, 
+tooltip, 
+.tooltip, 
+dialog, 
+.dialog, 
+window.dialog {
+  animation: popupFadeIn 0.4s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+popover contents {
+  animation: popupFadeIn 0.4s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+toastoverlay > toast {
+  animation: slideUpFade 0.44s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+bottomsheet,
+.bottom-sheet,
+dialog.bottom,
+window.dialog.bottom {
+  animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.osd,
+.navigation-sidebar {
+  animation: popupFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
 /* ==============================================
-      < < < < < JULY 6TH 2026 > > > > >
+      < < < < < AUGUST 1ST 2026 > > > > >
  ============================================== */
-
