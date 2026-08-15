@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="cyber-dusk-cobalt" _name="Cyber Dusk Cobalt" version="1.0">
+  <author>shant-O</author>
+  <_description>Cobalt syntax highlighters over Cyber Dusk glass canvas layers</_description>
+
+  <!-- Cyber Dusk Core Palette Elements -->
+  <color name="midnight"                    value="#0a141e"/>
+  <color name="white"                       value="#ffffff"/>
+  <color name="neon_cyan"                   value="#00dcff"/>
+  <color name="purple_glow"                 value="#aa5afa"/>
+  <color name="shade_black"                 value="#000000"/>
+  
+  <!-- Cobalt Text Engine Color Adaptations -->
+  <color name="faded_yellow"                value="#ffee80"/>
+  <color name="bright_orange"               value="#ff9d00"/>
+  <color name="nail_polish_pink"            value="#ff0044"/>
+  <color name="neon_yellow"                 value="#ffdd00"/>
+  <color name="sky_blue"                    value="#54b8ff"/>
+  <color name="teal_blue"                   value="#80ffbb"/>
+  <color name="spring_green"                value="#00e696"/>
+  <color name="dark_red"                    value="#c81e28"/>
+  <color name="bluish_grey"                 value="#777777"/>
+
+  <!-- Global Settings -->
+  <style name="text"                        foreground="white" background="midnight"/>
+  <style name="selection"                   background="purple_glow"/>
+  <style name="cursor"                      foreground="neon_cyan"/>
+  <style name="current-line"                background="shade_black"/>
+  <style name="line-numbers"                foreground="purple_glow" background="midnight"/>
+  <style name="draw-spaces"                 foreground="bluish_grey"/>
+  <style name="background-pattern"          background="midnight"/>
+
+  <!-- Brackets & Search -->
+  <style name="bracket-match"               background="purple_glow" bold="true"/>
+  <style name="bracket-mismatch"            background="dark_red"/>
+  <style name="search-match"                foreground="midnight" background="neon_cyan"/>
+
+  <!-- Comments and Code Highlighting -->
+  <style name="def:comment"                 foreground="sky_blue" italic="true"/>
+  <style name="def:shebang"                 foreground="sky_blue" italic="true"/>
+  <style name="def:constant"                foreground="faded_yellow"/>
+  <style name="def:string"                  foreground="spring_green"/>
+  <style name="def:special-constant"        foreground="nail_polish_pink" bold="true"/>
+  <style name="def:number"                  foreground="nail_polish_pink"/>
+  <style name="def:floating-point"          foreground="nail_polish_pink"/>
+  <style name="def:boolean"                 foreground="nail_polish_pink"/>
+  <style name="def:keyword"                 foreground="bright_orange" bold="true"/>
+  <style name="def:builtin"                 foreground="bright_orange" bold="true"/>
+  <style name="def:statement"               foreground="bright_orange"/>
+  <style name="def:type"                    foreground="teal_blue"/>
+
+  <!-- Specific Language Hooks -->
+  <style name="sh:function"                 foreground="neon_yellow"/>
+  <style name="xml:element-name"            foreground="teal_blue"/>
+  <style name="def:error"                   foreground="white" background="dark_red" bold="true"/>
+</style-scheme>
