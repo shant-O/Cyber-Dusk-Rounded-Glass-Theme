@@ -2,8 +2,8 @@
 *    CYBER DUSK - ROUNDED GLASS                 *
 *    LINK : www.gnome-look.org/p/2357650        *
 *    Author : shant-O                           *
-*    Version : 4.1                              *
-*    Release Date : August 1st, 2026            *
+*    Version : 5.0                              *
+*    Release Date : August 15th 2026            *
 *    This file Themes GTK4 apps!                *
 *   ------------------------------------------- */
 /* ==============================================
@@ -15,6 +15,7 @@
           --view-bg-color:          rgba(10,20,30, 0.9);
           --headerbar-bg-color:     rgba(10,20,30, 0.1); }
 /*   DARK NEUTRALS & BLACKS   */
+
 @define-color textglow              rgb(0, 0, 0);
 @define-color shade_color           rgba(0, 0, 0, 0.3);
 @define-color shadow_color          rgba(0, 0, 0, 0.7);
@@ -49,11 +50,10 @@
 @define-color bar_color             rgba(84, 184, 255, 0.6);
 @define-color card_bg_color         rgba(150, 190, 220, 0.1);
 /*   MIDNIGHTS & DEEP BLUES   */
-@define-color bg_color              rgba(0, 15, 25, 0.1);
-@define-color sidebar_color         rgba(0, 15, 25, 0.95);
+@define-color bg_color              rgba(0, 10, 22, 0.1);
+@define-color sidebar_color         rgba(0, 10, 22, 0.95);
 @define-color chromium              rgba(10,20,30, 0.9);
 @define-color selection_color       rgb(10,30,45);
-@define-color headerbar_bg_color    rgba(10,20,30, 0.1);
 @define-color headerbar_color       rgba(10,20,30, 0.1);
 @define-color dialog_bg_color       rgba(10,20,30, 0.9);
 @define-color theme_bg_color        rgba(10,20,30, 0.9);
@@ -65,6 +65,7 @@
 @define-color nulll                 rgba(0, 0, 0, 0);
 @define-color whglow                rgb(225, 235, 255);
 /*  Redefining  */
+@define-color content_view_bg @view_bg_color;
 @define-color base_color @window_bg_color;
 @define-color insensitive_bg_color @dialog_bg_color;
 @define-color insensitive_base_color @dialog_bg_color;
@@ -180,7 +181,7 @@ window.nautilus-window .nautilus-progress-indicator popover contents row {
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 6px;
-    padding-right: 0px;
+    padding-right: 0;
 }
 /* ----------------------------------------------------------
                         GNOME TOAST
@@ -422,7 +423,7 @@ text {
   padding-left: 8px;
   padding-right: 8px;
   margin: 2px;
-  caret-color: @accent_bg_color;
+  caret-color: @neon;
   border-radius: 30px;
   }
 entry.search-bar,
@@ -535,9 +536,11 @@ button.suggested-action {
   border-radius: 30px;
   box-shadow: 0 4px 12px @shadow_color;
 }
+button.suggested-action:checked {
+  background-color: @success_color;
+}
 button.suggested-action:hover {
-  border: 2px solid @border_lite;
-  background-color: @bar_color;
+  border: 2px solid @border_color;
 }
 button.destructive-action {
   background-color: alpha(@destructive_bg_color, 0.3);
@@ -547,12 +550,17 @@ button.destructive-action {
   box-shadow: 0 4px 12px @shadow_color;
   text-shadow: 0 1px 2px @textglow;
 }
+button.destructive-action:checked {
+  background-color: alpha(@warning_bg_color, 0.5);
+  border: 1px solid alpha(@warning_color, 1);
+  color: @view_fg_color;
+  box-shadow: 0 4px 12px @warning_color;
+}
 button.destructive-action:hover {
-  background-color: alpha(@destructive_bg_color, 0.4);
-  color: @destructive_color;
-  border-radius: 30px;
-  box-shadow: 0 8px 16px alpha(@destructive_color, 0.6);
-  border: 1px solid alpha(@destructive_color, 0.9);
+  background-color: alpha(@destructive_bg_color, 0.6);
+  color: @view_fg_color;
+  box-shadow: 0 4px 12px @destructive_color;
+  border: 1px solid alpha(@destructive_color, 1);
 }
 /* ----------------------------------------------------------
                       DIALOG BUTTONS     
@@ -692,7 +700,7 @@ window.main-window,
   box-shadow: 0 12px 12px @shadow_color;
   }
 headerbar {
-  background-color: @headerbar_bg_color;
+  background-color: @headerbar_color;
   background-image: none;
   padding: 0 6px;
   transition: all 200ms ease;
@@ -702,7 +710,7 @@ headerbar.titlebar,
 .navigation-view headerbar,
 adwheaderbar {
   background-image: none;
-  background-color: @headerbar_bg_color;
+  background-color: @headerbar_color;
   color: @view_fg_color;
   box-shadow: none;
 }
@@ -939,84 +947,107 @@ window.fullscreen decoration {
     border-radius: 0px;
     box-shadow: none;
 }
+
 /* ----------------------------------------------------------
                           CHROMIUM     
 ---------------------------------------------------------- */
-window.chromium, 
-window.brave-browser,
-window.chromium-browser,
-window.chromium drawingarea,
-window.brave-browser drawingarea,
-window.background.chromium,
-window.chromium,
-.chromium,
-window.background.chromium viewport,
-window.background.chromium contents,
-settings-ui, 
-html, 
-body,
-window.chromium body,
-window.chromium.body
-    {
+window.background.chromium {
     background: @chromium;
     background-color: @chromium;
     border-radius: 30px;
-    }
-window.background.chromium contents selection,
-window.background.chromium text selection,
-window.background.chromium *:selected,
-window.background.chromium selection:focus,
-window.background.chromium selection:backdrop,
-window.background.chromium popover.menu contents modelbutton:selected,
-window.background.chromium popover.menu contents modelbutton:hover,
-window.background.chromium menu contents item:selected 
-    {
-    background-color: @accent_dark;
-    color: @view_fg_color;
-    border-radius: 30px;
-    text-shadow: 0 1px 2px @textglow;
-    }
-window.background.chromium selection,
-window.background.chromium text selection 
-    {
-    background-color: @grad_lit;
-    color: @view_fg_color;
-    border-radius: 30px;
-    text-shadow: 0 1px 2px @textglow;
-    }
-window.background.chromium selection 
-    {
-    outline: 1px solid @glowy;
-    outline-offset: -1px;
-    border-radius: 30px;
-    }
+}
 window.popup.menu.chromium,
 window#ContextMenu.chromium,
 .chromium popover,
 .chromium popover contents,
 .chromium .menu,
 window.popup.menu.chromium contents,
-window.popup.menu.chromium viewport {
-    background-color: @popover_bg_color;
+window.popup.menu.chromium viewport,
+window.background.chromium popover.background,
+window.background.chromium popover,
+window.background.chromium popover.menu contents,
+window.background.chromium menu contents,
+window.background.chromium popover.submenu contents,
+window.background.chromium submenu contents,
+window.background.chromium popup.submenu contents,
+window.background.chromium .menu contents,
+window.background.chromium .submenu contents,
+window.background.chromium .popup contents {
+    background-color: rgba(10,20,30, 0.6);
     border-radius: 30px;
-    }
+}
+window.background.chromium popover.menu contents modelbutton:hover,
+window.background.chromium popover.submenu contents modelbutton:hover,
+window.background.chromium popup.submenu contents modelbutton:hover,
+window.background.chromium .submenu contents modelbutton:hover {
+    background: @selection_color;
+    color: @view_fg_color;
+    text-shadow: 0 1px 2px @textglow;
+}
+window.background.chromium headerbar.header-bar.titlebar {
+    padding: 0 12px;
+    background: linear-gradient(to left, @theme_bg_color, @headerbar_bg_color); 
+    color: @glow;
+    box-shadow: inset 0 1px 0 @border_color;
+    border: none;
+    border-radius: 30px; 
+}
 .chromium menuitem:first-child {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    }
+}
 .chromium menuitem:last-child {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    }
-window.background.chromium headerbar.header-bar.titlebar {
-  padding: 0 12px;
-  background-color: rgba(10,20,30, 0.6);
-  color: @glow;
-  border-radius: 30px 30px 0 0;
-  box-shadow: inset 0 1px 0 @border_color;
-  border: none;
-  border-radius: 30px;
-    }  
+}
+window.background.chromium entry,
+window.background.chromium textview,
+.chromium entry,
+.chromium textview {
+    border-radius: 30px;
+    background-color: @shade_color;
+    color: @view_fg_color;
+    border: 1px solid @border_color;
+    transition: all 250ms ease-in-out;
+}
+window.background.chromium entry:focus,
+window.background.chromium entry:focus-within,
+window.background.chromium textview:focus,
+.chromium entry:focus,
+.chromium entry:focus-within {
+    border-radius: 30px;
+    background-color: @chromium;
+    color: @view_fg_color;
+    box-shadow: inset 0 0 0 1px @border_color;
+}
+window.background.chromium,
+window.chromium,
+.chromium,
+chromium-browser {
+    border-radius: 30px ;
+}
+window.background.chromium .headerbar,
+window.background.chromium .titlebar,
+window.background.chromium decoration {
+    border-radius: 30px 30px 0px 0px ;
+}
+window.background.chromium menu,
+window.background.chromium .menu,
+window.background.chromium .popup,
+window.background.chromium tooltip,
+.chromium menu,
+.chromium .menu {
+    border-radius: 30px ;
+}
+window.background.chromium .window-frame {
+    border-radius: 30px ;
+    box-shadow: 0 0 0 1px transparent ;
+}
+window.background.chromium *,
+window.chromium * {
+    border-radius: 30px ;
+}
+
 /* ----------------------------------------------------------
                     TEXT SHADOW / DEPTH      
 ---------------------------------------------------------- */
@@ -1092,44 +1123,6 @@ window.dialog.bottom {
 .navigation-sidebar {
   animation: popupFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                ::::::::::EXPERIMENTAL CODES HERE::::::::::
-  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-window.chrome-page-properties,
-window.browser-window,
-.browser-window {
-  background-color: @popover_bg_color;
-}
-window.browser-window textview,
-window.browser-window entry,
-.location-bar,
-#omnibox {
-  background-color: @chromium;
-  color: @view_fg_color;
-  border-radius: 30px;
-  border: 1px solid @border_color;
-}
-window.browser-window entry,
-window.browser-window textview,
-.browser-window .location-bar,
-window entry {
-  border-radius: 30px;
-  background-clip: padding-box;
-  transition: all 250ms ease-in-out;
-  background-color: @shade_color; 
-}
-window.browser-window entry:focus,
-window.browser-window entry:focus-within,
-window entry:focus,
-window entry:focus-within {
-  border-radius: 30px;
-  background-color: @chromium;
-  color: @view_fg_color;
-  box-shadow: 0 0 18px @purpglow, 
-              inset 0 1px 0 @glowy,
-              inset 0 0 0 1px @border_color;
-}
-
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                      > > > > > > > >> > > > AUGUST 1st, 2026
+                      > > > > > > > >> > > > AUGUST 4th, 2026
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
