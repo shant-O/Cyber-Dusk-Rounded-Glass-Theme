@@ -2,14 +2,14 @@
 *    CYBER DUSK - ROUNDED GLASS                 *
 *    LINK : www.gnome-look.org/p/2357650        *
 *    Author : shant-O                           *
-*    Version : 4.1                              *
-*    Release Date : August 1st, 2026            *
+*    Version : 5.0                              *
+*    Release Date : August 15th 2026             *
 *    This file Themes The Gnome Shell           *
 *   ------------------------------------------- */
 stage {
-    -st-accent-color: rgba(0, 200, 250, 0.5);
-    -st-accent-bg-color: rgba(13, 36, 66, 1);
-    -st-accent-fg-color: white;
+    -st-accent-color: rgba(0, 180, 240, 0.5) !important;   
+    -st-accent-bg-color: rgba(13, 36, 66, 1) !important;   
+    -st-accent-fg-color: white !important;   
 }
 /* =====================================
                   PANEL
@@ -17,27 +17,27 @@ stage {
 #panel,
 #panel:overview,
 .solid #panel {
-    background-color: rgba(5,20,35, 0.7);
-    height: 30px;    
-    border-bottom: 2px solid rgba(0, 200, 250, 0.5);
-    width: -1px; 
-    margin: 0px;
-    padding: 0px;
-    border-radius: 0px;
+    background-color: rgba(10,20,30, 0.6) !important;
+    height: 30px !important;    
+    border-bottom: 2px solid rgba(0, 180, 240, 0.5) !important;
+    width: -1px !important; 
+    margin: 0px !important;   
+    padding: 0px !important;   
+    border-radius: 0px !important;   
 }
 #panel .panel-corner,
 .panel-corner {
-    -panel-corner-radius: 0px;
-    -panel-corner-background-color: transparent;
-    -panel-corner-border-color: transparent;
+    -panel-corner-radius: 0px !important;   
+    -panel-corner-background-color: transparent !important;   
+    -panel-corner-border-color: transparent !important;   
 }
 .panel-main-box {
-    margin: 0px;
-    padding: 0px;
-    spacing: 0px; 
+    margin: 0px !important;   
+    padding: 0px !important;   
+    spacing: 0px !important;    
 }
 #panelRight {
-    padding-right: 0px;
+    padding-right: 0px !important;   
 }
 /* =====================================
               PILL MAGICK
@@ -45,25 +45,25 @@ stage {
 #panel .panel-button StBoxLayout,
 #panel .panel-button StIcon,
 #panel .panel-button StLabel {
-    vertical-align: middle;
+    vertical-align: middle !important;
 }
 #panel .panel-button,
 #panel .date-menu-button {
-    background-color: rgba(5,20,35, 1) !important;
-    border-radius: 30px;    
-    padding: 0px 0px;    
-    margin: 2px 2px;    
-    border: 2px solid rgba(0, 200, 250, 0.5) !important;
-    height: auto;
-    min-height: 0;
+    background-color: rgba(20,40,50, 1) !important;
+    border-radius: 30px !important;       
+    padding: 0px 0px !important;       
+    margin: 2px 2px !important;       
+    border: 2px solid rgba(0, 180, 240, 0.5) !important;
+    height: auto !important;   
+    min-height: 0 !important;   
 }
 #panel .panel-button:hover,
 #panel .date-menu-button:hover {
-    background-color: rgba(5,20,35, 1);
-    box-shadow: inset 0 0 8px rgba(0, 200, 250, 0.8),
-                0 0 10px rgba(0, 200, 250, 0.4);
-    border: 2px solid rgba(0, 200, 250, 0.7);
-    border-radius: 30px;
+    background-color: rgba(5,25,35, 1) !important;
+    box-shadow: inset 0 0 8px rgba(0, 180, 240, 0.8),
+                0 0 10px rgba(0, 180, 240, 0.4) !important;
+    border: 2px solid rgba(0, 180, 240, 0.7) !important;
+    border-radius: 30px !important;   
 }
 #panel .panel-button:active,
 #panel .panel-button:checked,
@@ -71,10 +71,10 @@ stage {
 #panel .date-menu-button:active,
 #panel .date-menu-button:checked,
 #panel .date-menu-button:focus {
-    background-color: rgba(5,20,35, 1);     
-    border: 2px solid rgba(0, 200, 250, 0.9) !important;  
-    box-shadow: inset 0 0 10px rgba(0, 200, 250, 0.8),
-                0 0 12px rgba(0, 200, 250, 0.7) !important;
+    background-color: rgba(5,25,35, 1) !important;        
+    border: 2px solid rgba(0, 180, 240, 0.9) !important;  
+    box-shadow: inset 0 0 10px rgba(0, 180, 240, 0.8),
+                0 0 12px rgba(0, 180, 240, 0.7) !important;
 }
 /* =============================================
    6. GLOBAL POPUP MENUS & SELECTION MARKERS
@@ -82,20 +82,20 @@ stage {
 .datemenu-menu,
 .quick-settings,
 .popup-menu-content {
-    background-color: rgba(10,25,40, 0.8);
-    border: 2px solid rgba(0, 200, 250, 0.7);
-    color: rgba(255, 255, 255, 1.0);
-    margin: 2px;
-    padding: 12px;
-    border-radius: 30px;
-    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.6);
+    background-color: rgba(10,30,45, 0.8) !important;
+    border: 2px solid rgba(0, 180, 240, 0.7) !important;
+    color: rgba(255, 255, 255, 1.0) !important;   
+    margin: 2px !important;   
+    padding: 12px !important;   
+    border-radius: 30px !important;   
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.6) !important;
 }
 .sub-menu,
 .popup-sub-menu {
-    background-color: rgba(10,25,40, 0.8);
-    border: 2px solid rgba(0, 200, 250, 0.3);
-    color: rgba(250, 250, 250, 0.9);
-    border-radius: 24px !important;
+    background-color: rgba(10,30,45, 0.8) !important;
+    border: 2px solid rgba(0, 180, 240, 0.3) !important;
+    color: rgba(250, 250, 250, 0.9) !important;   
+    border-radius: 24px !important !important;
 }
 .popup-menu,
 .popup-menu-boxpointer,
@@ -106,56 +106,56 @@ stage {
 .popup-menu-item:hover,
 .popup-menu-item.selected,
 .popup-sub-menu {
-    border-radius: 30px;
+    border-radius: 30px !important;   
 }
 .sub-menu StButton,
 .popup-sub-menu StButton {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 30px;
-  color: rgba(255, 255, 255, 1.0);
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 30px !important;   
+  color: rgba(255, 255, 255, 1.0) !important;   
 }
 .popup-menu-section {
-  background-color: transparent;
+  background-color: transparent !important;   
 }
 .sub-menu .popup-menu-item:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 30px; 
+  background-color: rgba(255, 255, 255, 0.05) !important;   
+  border-radius: 30px !important;    
 }
 .popup-menu-item StButton.button,
 .popup-menu-item .button,
 .vitals-menu-action-button {
-    color: rgba(255, 255, 255, 1.0);
-    box-shadow: inset 0 0 6px 12px rgba(0, 200, 250, 0.2);
+    color: rgba(255, 255, 255, 1.0) !important;   
+    box-shadow: inset 0 0 6px 12px rgba(0, 180, 240, 0.2) !important;
 }
 .popup-menu-item StButton.button:hover,
 .vitals-menu-action-button:hover {
-    box-shadow: inset 0 0 6px 12px rgba(0, 200, 250, 0.7);
+    box-shadow: inset 0 0 6px 12px rgba(0, 180, 240, 0.7) !important;
 }
 .popup-menu-item StButton.button:checked,
 .vitals-menu-action-button:checked {
-    background-color: rgba(5,20,35, 0.85);
+    background-color: rgba(5,25,35, 0.85);
     color: rgba(255, 255, 255, 1.0);
-    border: 2px solid rgba(0, 200, 250, 0.5); 
+    border: 2px solid rgba(0, 180, 240, 0.5); 
     border-radius: 30px; 
-    box-shadow: inset 0px 0px 8px 12px rgba(0, 200, 250, 0.3);
+    box-shadow: inset 0px 0px 8px 12px rgba(0, 180, 240, 0.3);
 }
 .popup-menu-item:active,
 .popup-menu-item:checked,
 .popup-sub-menu .popup-menu-item:checked {
-    background-color: rgba(5,20,35, 0.85);
+    background-color: rgba(5,25,35, 0.85) !important;
     color: rgba(255, 255, 255, 1.0);
-    border: 2px solid rgba(0, 200, 250, 0.5); 
+    border: 2px solid rgba(0, 180, 240, 0.5) !important; 
     border-radius: 30px;
-    box-shadow: inset 0px 0px 8px 0px rgba(0, 200, 250, 0.3);
+    box-shadow: inset 0px 0px 8px 0px rgba(0, 180, 240, 0.3) !important;
 }
 .popup-menu-item:checked .popup-menu-ornament {
-    color: rgba(0, 200, 250, 0.5);
+    color: rgba(0, 180, 240, 0.5);
 }
 .message-list-section StButton,
 .message-list-section StButton.button,
 .message-list-section .button {
-    background-color: rgba(5,20,35, 0.8);
-    border: 0px solid rgba(0, 200, 250, 0.2); 
+    background-color: rgba(5,25,35, 0.8) !important;
+    border: 0px solid rgba(0, 180, 240, 0.2) !important;
     border-radius: 30px;
     color: rgba(255, 255, 255, 1.0);
     box-shadow: none;
@@ -164,16 +164,16 @@ stage {
 .message-list-section .button:hover,
 .message-list-section StButton.button:focus,
 .message-list-section .button:focus {
-    background-color: rgba(0, 200, 250, 0.15); 
-    border-color: rgba(0, 200, 250, 0.6);
+    background-color: rgba(0, 180, 240, 0.15); 
+    border-color: rgba(0, 180, 240, 0.6);
     color: rgba(255, 255, 255, 1.0);
 }
 .datemenu-displays-box .message,
 .datemenu-displays-box .world-clocks-button,
 .datemenu-displays-box .weather-button,
 .datemenu-displays-box StButton {
-    background-color: rgba(5,20,35, 0.8);
-    border: 0px solid rgba(0, 200, 250, 0.2);
+    background-color: rgba(5,25,35, 0.8);
+    border: 0px solid rgba(0, 180, 240, 0.2);
     border-radius: 30px;
     color: rgba(255, 255, 255, 1.0);
     box-shadow: none;
@@ -182,8 +182,8 @@ stage {
 .datemenu-displays-box .world-clocks-button:hover,
 .datemenu-displays-box .weather-button:hover,
 .datemenu-displays-box StButton:hover {
-    background-color: rgba(5,20,35, 0.8);
-    border-color: rgba(0, 200, 250, 0.6);
+    background-color: rgba(5,25,35, 0.8);
+    border-color: rgba(0, 180, 240, 0.6);
 }
 .datemenu-displays-box,
 .datemenu-displays-section {
@@ -203,7 +203,7 @@ stage {
 .message-list-clear-button:hover {
     background-color: rgba(15, 40, 70, 0.9);
     color: rgba(255, 255, 255, 1.0);
-    border: 2px solid rgba(0, 200, 250, 0.7);
+    border: 2px solid rgba(0, 180, 240, 0.7);
     border-radius: 30px; 
     box-shadow: none;
     transition: all 200ms ease;
@@ -225,15 +225,15 @@ stage {
 .calendar-day:hover,
 .calendar-day-base:focus,
 .calendar-day:focus {
-    background-color: rgba(5,20,35, 0.855); 
+    background-color: rgba(5,25,35, 0.855); 
     color: rgba(255, 255, 255, 1.0); 
-    box-shadow: inset 0px 0px 15px 0px rgba(0, 200, 250, 0.5);
+    box-shadow: inset 0px 0px 15px 0px rgba(0, 180, 240, 0.5);
 }
 .calendar-today {
-  background-color: rgba(0, 200, 250, 0.5);
+  background-color: rgba(0, 180, 240, 0.5);
   color: rgba(13, 36, 66, 1.0);
   font-weight: bold;
-  border: 2px solid rgba(0, 200, 250, 0.5);
+  border: 2px solid rgba(0, 180, 240, 0.5);
   border-radius: 13px; 
 }
 .calendar-other-month-day {
@@ -263,7 +263,7 @@ stage {
   background-color: rgba(255, 255, 255, 0.15);
 }
 .calendar-day-heading {
-  color: rgba(0, 200, 250, 0.8); 
+  color: rgba(0, 180, 240, 0.8); 
   font-weight: bold;
   font-size: 1.0em;
   padding-bottom: 8px;
@@ -284,9 +284,8 @@ stage {
 .quick-settings .quick-settings-system-item StButton:first-child {
     background: rgba(0, 160, 100, 1) !important;
     border-radius: 24px !important;
-    color: black;
+    color: black !important;
 }
-
 .quick-settings-user-box StButton.icon-button:last-child,
 .quick-settings .quick-settings-system-item StButton:last-child {
     background-color: #e01b24 !important;
@@ -299,7 +298,6 @@ stage {
 .quick-settings .quick-settings-system-item StButton:last-child:hover {
     background-color: #f66151 !important; 
 }
-
 .quick-settings, 
 .datemenu-menu, 
 .popup-menu-content,
@@ -308,101 +306,102 @@ stage {
 .calendar,
 .quick-toggle,
 .quick-settings-tile {
-    color: rgba(255, 255, 255, 1.0);
+    color: rgba(255, 255, 255, 1.0) !important;   
 }
 .slider {
-    -bar-level-active-background-color: rgba(0, 200, 250, 0.9);
-    -bar-level-background-color: rgba(255, 255, 255, 0.1);
+    -bar-level-active-background-color: rgba(0, 180, 240, 0.9) !important;
+    -bar-level-background-color: rgba(255, 255, 255, 0.1) !important;
 }
 .slider-handle {
-    background-color: rgba(255, 255, 255, 1.0);
-    border: 2px solid rgba(0, 200, 250, 0.5);
-    border-radius: 30px; 
+    background-color: rgba(255, 255, 255, 1.0) !important;
+    border: 2px solid rgba(0, 180, 240, 0.5) !important;
+    border-radius: 30px !important; 
 }
 .quick-toggle-menu {
     background-color: rgba(10, 30, 50, 0.9) !important;
-    border: 2px solid rgba(0, 200, 250, 0.5) !important;
+    border: 2px solid rgba(0, 180, 240, 0.5) !important;
     color: rgba(255, 255, 255, 1.0);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6) !important;
 }
 .quick-toggle-menu .popup-menu-item:focus, 
 .quick-toggle-menu .popup-menu-item:hover {
-    background-color: rgba(5,20,35, 0.85);
-    border: 2px solid rgba(0, 200, 250, 0.5);
+    background-color: rgba(5,25,35, 0.85) !important;
+    border: 2px solid rgba(0, 180, 240, 0.5) !important;
     color: rgba(255, 255, 255, 1.0);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6) !important;
 }
 .quick-settings StIcon,
 .popup-menu-item StIcon,
 .message StIcon,
 .quick-toggle StIcon,
 .quick-toggle-menu-button StIcon {
-    color: rgba(255, 255, 255, 1.0); 
-    -st-icon-style: symbolic;
+    color: rgba(255, 255, 255, 1.0) !important; 
+    -st-icon-style: symbolic !important;   
+    
 }
 .quick-settings .icon-button {
-    background-color: rgba(10, 30, 50, 0.9);
-    color: rgba(255, 255, 255, 1.0);
-    border: 0px solid rgba(0, 200, 250, 0.5); 
-    box-shadow: inset 0 0 12px rgba(0, 200, 250, 0.3);
+    background-color: rgba(10, 30, 50, 0.9) !important;
+    color: rgba(255, 255, 255, 1.0) !important;   
+    border: none !important;
+    box-shadow: inset 0 0 12px rgba(0, 180, 240, 0.3) !important;
 }
 .popup-menu-item:hover,
 .popup-menu-item:focus {
-    background-color: rgba(5,20,35, 0.85);
-    border: 2px solid rgba(0, 200, 250, 0.5);
+    background-color: rgba(5,25,35, 0.85);
+    border: 2px solid rgba(0, 180, 240, 0.5);
     color: rgba(255, 255, 255, 1.0);
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
 }
 .quick-toggle {
-    background-color: rgba(255, 255, 255, 0.05); 
+    background-color: rgba(255, 255, 255, 0.05) !important;
 }
 .quick-toggle:checked,
 .quick-toggle-menu-button:checked {
-    background-color: rgba(10, 30, 50, 0.9);
-    border: 2px solid rgba(0, 200, 250, 0.5);
+    background-color: rgba(10, 30, 50, 0.9) !important;
+    border: 2px solid rgba(0, 180, 240, 0.5) !important;
     color: rgba(255, 255, 255, 1.0);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6) !important;
 }
 .quick-toggle-separator {
-    background-color: transparent;
-    width: 0px;
-    margin: 0;
-    padding: 0;
-    border: none;
+    background-color: transparent !important;   
+    width: 0px !important;   
+    margin: 0 !important;   
+    padding: 0 !important;   
+    border: none !important;   
 }
 .quick-toggle:hover, 
 .quick-settings-tile:hover,
 .quick-toggle-menu-button:hover {
-    background-color: rgba(5,20,35, 0.855); 
-    color: rgba(255, 255, 255, 1.0); 
-    border: 2px solid rgba(0, 200, 250, 0.5);
-    box-shadow: inset 0px 0px 15px 0px rgba(0, 200, 250, 0.5);
+    background-color: rgba(5,25,35, 0.855) !important;    
+    color: rgba(255, 255, 255, 1.0) !important;    
+    border: 2px solid rgba(0, 180, 240, 0.5) !important;   
+    box-shadow: inset 0px 0px 15px 0px rgba(0, 180, 240, 0.5) !important;
 }
 .quick-settings-tile:hover,
 .quick-toggle-menu-button:hover {
-    background-color: rgba(5,20,35, 0.855); 
-    color: rgba(255, 255, 255, 1.0); 
-    border: 2px solid rgba(0, 200, 250, 0.5);
-    box-shadow: inset 0px 0px 15px 0px rgba(0, 200, 250, 0.5);
+    background-color: rgba(5,25,35, 0.855) !important;    
+    color: rgba(255, 255, 255, 1.0) !important;    
+    border: 2px solid rgba(0, 180, 240, 0.5) !important;   
+    box-shadow: inset 0px 0px 15px 0px rgba(0, 180, 240, 0.5) !important;
 }
 .quick-settings .icon-button:hover,
 .quick-settings-system-menu StButton:hover {
-  background-color: rgba(0, 200, 250, 0.3);
+  background-color: rgba(0, 180, 240, 0.3) !important;   
 }
 .quick-toggle-menu .popup-menu-item,
 .quick-toggle-menu .popup-menu-item StLabel,
 .quick-settings-menu .popup-menu-item .clutter-text,
 .quick-settings-menu .popup-menu-item label {
-    color: rgba(255, 255, 255, 1.0);
+    color: rgba(255, 255, 255, 1.0) !important;   
 }
 .quick-slider .slider,
 .slider {
-    height: 24px;
-    -barlevel-height: 24px;
-    -barlevel-background-color: rgba(0, 200, 250, 0.1);
-    -barlevel-active-background-color: rgba(0, 160, 200, 0.7);
-    color: rgba(0, 220, 255, 1);
-    -slider-handle-radius: 6px;
+    height: 24px !important;   
+    -barlevel-height: 24px !important;   
+    -barlevel-background-color: rgba(0, 180, 240, 0.1) !important;
+    -barlevel-active-background-color: rgba(0, 160, 200, 0.7) !important;
+    color: rgba(0, 220, 255, 1) !important;   
+    -slider-handle-radius: 6px !important;   
 }
 /* =====================================
             TOGGLE SWITCH
@@ -437,8 +436,8 @@ stage {
 .message,
 .notification-banner {
     color: rgba(255, 255, 255, 1.0);
-    background-color: rgba(5,20,35, 0.855); 
-    border: 2px solid rgba(0, 200, 250, 0.5); 
+    background-color: rgba(5,25,35, 0.855); 
+    border: 2px solid rgba(0, 180, 240, 0.5); 
     border-radius: 26px;
     box-shadow: inset 0px 0px 12px 0px rgba(0, 240, 240, 0.3);
     padding: 12px;
@@ -446,47 +445,47 @@ stage {
 .message:hover, 
 .message:focus,
 .notification-banner:hover {
-    border: 2px solid rgba(0, 200, 250, 0.9);
-    box-shadow: inset 0px 0px 24px 0px rgba(0, 200, 250, 0.3); 
+    border: 2px solid rgba(0, 180, 240, 0.9);
+    box-shadow: inset 0px 0px 24px 0px rgba(0, 180, 240, 0.3); 
 }
 .notification-button {
     color: rgba(255, 255, 255, 1.0);
-    background-color: rgba(5,20,35, 0.5);
-    border: 2px solid rgba(0, 200, 250, 0.5);
+    background-color: rgba(5,25,35, 0.5);
+    border: 2px solid rgba(0, 180, 240, 0.5);
     border-radius: 30px;
     margin: 4px;
 }
 .notification-button:focus,
 .notification-button:hover {
-    background-color: rgba(0, 200, 250, 0.6); 
+    background-color: rgba(0, 180, 240, 0.6); 
     color: rgba(255, 255, 255, 1.0);
     border-radius: 30px;
-    box-shadow: inset 0px 0px 12px 0px rgba(0, 200, 250, 0.8);
+    box-shadow: inset 0px 0px 12px 0px rgba(0, 180, 240, 0.8);
 }
 /* =====================================
           SCREENSHOT PANEL
 ===================================== */
 .screenshot-ui-panel,
 .screenshot-ui-menu {
-  background-color: rgba(5,20,35, 0.8);
+  background-color: rgba(5,25,35, 0.8);
   border-radius: 30px; 
-  border: 2px solid rgba(0, 200, 250, 0.5);
+  border: 2px solid rgba(0, 180, 240, 0.5);
 }
 .screenshot-ui-panel StButton,
 .screenshot-ui-panel .button,
 .screenshot-ui-type-button,
 .screenshot-ui-capture-button {
-  background-color: rgba(5,20,35, 0.55); 
+  background-color: rgba(5,25,35, 0.55); 
   color: rgba(255, 255, 255, 1.0);
   border-radius: 30px;
-  border: 2px solid rgba(0, 200, 250, 0.3); 
+  border: 2px solid rgba(0, 180, 240, 0.3); 
 }
 .screenshot-ui-panel StButton:hover,
 .screenshot-ui-panel .button:hover,
 .screenshot-ui-type-button:hover,
 .screenshot-ui-capture-button:hover {
-  background-color: rgba(0, 200, 250, 0.25); 
-  border-color: rgba(0, 200, 250, 1.0); 
+  background-color: rgba(0, 180, 240, 0.25); 
+  border-color: rgba(0, 180, 240, 1.0); 
   color: rgba(255, 255, 255, 1.0);
 }
 .screenshot-ui-panel StButton:checked,
@@ -494,7 +493,7 @@ stage {
 .screenshot-ui-type-button:checked,
 .screenshot-ui-capture-button:checked,
 .screenshot-ui-panel StButton:active {
-  background-color: rgba(0, 200, 250, 0.9); 
+  background-color: rgba(0, 180, 240, 0.9); 
   color: rgba(13, 36, 66, 1.0);
   border: 2px solid rgba(255, 255, 255, 1.0);
   border-radius: 30px;
@@ -553,7 +552,7 @@ stage {
     background-color: rgba(15, 30, 50, 0.6); 
     color: rgba(115, 225, 255, 1.0);
     border-radius: 30px;
-    border: 2px solid rgba(0, 200, 250, 0.05);
+    border: 2px solid rgba(0, 180, 240, 0.05);
     font-weight: bold;
 }
 .keyboard-key:active,
@@ -561,77 +560,82 @@ stage {
     background-color: rgba(0, 240, 255, 1.0);
     color: rgba(0, 0, 0, 1.0);
     border-radius: 30px;
-    box-shadow: inset 0px 0px 10px 0px rgba(0, 200, 250, 0.5);
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 180, 240, 0.5);
 }
 /* =====================================
                 OSD
 ===================================== */
 .osd-window {
-    background-color: rgba(5,20,35, 0.7);
-    border-radius: 24px;
-    border: 2px solid rgba(0, 200, 250, 0.5);
+    background-color: rgba(5,25,35, 0.7) !important;
+    border-radius: 24px !important;
+    border: 2px solid rgba(0, 180, 240, 0.5) !important;
 }
 .osd-window .level {
-    -barlevel-active-background-color: rgba(0, 200, 250, 1.0); 
-    -barlevel-background-color: rgba(0, 200, 250, 0.15); 
-    color: rgba(0, 200, 250, 1.0);
-    opacity: 1.0; 
-    height: 12px;
+    -barlevel-active-background-color: rgba(0, 180, 240, 1.0) !important; 
+    -barlevel-background-color: rgba(0, 180, 240, 0.15) !important; 
+    color: rgba(0, 180, 240, 1.0) !important;   
+    opacity: 1.0 !important; 
+    height: 12px !important;
 }
 .osd-window StIcon {
-    filter: drop-shadow(0 0 8px rgba(0, 200, 250, 0.5));
+    filter: drop-shadow(0 0 8px rgba(0, 180, 240, 0.5)) !important;
 }
 /* =====================================
                POLKIT
 ===================================== */
 .user-icon {
-  background-size: contain;
-  color: rgba(255, 255, 255, 0.7);
-  border-radius: 9999px;
-  icon-size: 164px;
+  background-size: contain !important;
+  color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 99px !important;
+  icon-size: 128px !important;
+  color: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  background: transparent !important;       
 }
 .user-icon:hover {
-  color: white;
+  color: white !important;   
 }
 .user-icon StIcon {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 99px;
-  padding: 12px;
-  width: 40px;
-  height: 40px;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 99px !important;
+  padding: 12px !important;
+  width: 40px !important;
+  height: 40px !important;
 }
 .user-icon.user-avatar {
-  border: 2px rgba(255, 255, 255, 0.7);
+  border: 2px rgba(84,184,255, 0.3) !important;
 }
 .user-widget.vertical .user-icon {
-  icon-size: 128px;
+  icon-size: 128px !important;
 }
 .user-widget.vertical .user-icon StIcon {
-  padding: 20px;
-  padding-top: 18px;
-  padding-bottom: 22px;
-  width: 88px;
-  height: 88px;
+  padding: 20px !important;
+  padding-top: 18px !important;
+  padding-bottom: 22px !important;
+  width: 88px !important;
+  height: 88px !important;
 }
 .modal-dialog {
-    width: 320px;
-    background-color: rgba(5,20,35, 0.85);
-    border-radius: 30px;
-    border: 1px solid rgba(0, 200, 250, 0.4);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    width: 320px !important;   
+    background-color: rgba(5,25,35, 0.85) !important;   
+    border-radius: 30px !important;   
+    border: 1px solid rgba(0, 180, 240, 0.4) !important;   
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6) !important;   
 }
 .modal-dialog .user-avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 60px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    margin: 10px auto;
+    width: 120px !important;   
+    height: 120px !important;   
+    border-radius: 60px !important;   
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;   
+    margin: 10px auto !important;   
 }
 .prompt-dialog-main-layout {
-    spacing: 12px;
-    padding: 20px;
+    spacing: 12px !important; 
+    padding: 20px !important;
 }
 .prompt-dialog-password-entry {
+    color: red;
     width: 240px;
     background-color: rgba(255, 50, 100, 0.1);
     border-image: none !important;
@@ -641,32 +645,43 @@ stage {
     box-shadow: none !important;
 }
 .modal-dialog-button-box {
-    spacing: 10px;
-    padding-top: 10px;
+    spacing: 10px !important;
+    padding-top: 10px !important;
 }
 .modal-dialog-button {
-    border-radius: 30px;
+    border-radius: 30px !important;
 }
+.user-widget {
+    background-color: transparent !important;
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+.user-widget:hover, .user-widget:focus, .user-widget:checked {
+    background-color: transparent !important;
+    background: none !important;
+}
+
 /* =====================================
           NOTIFICATION STACK
 ===================================== */
 .candidate-popup,
 .message-list-section,
 .notification-banner {
-    margin-bottom: 12px;
+    margin-bottom: 12px !important;
 }
 .notification-banner .notification-stack-wrapper,
 .message-list .notification-group .notification-sequence-container {
-    margin-top: 6px;
-    spacing: 6px;
+    margin-top: 6px !important;
+    spacing: 6px !important;
 }
 .notification-group {
-    spacing: 4px;
-    margin-bottom: 8px;
+    spacing: 4px !important;
+    margin-bottom: 8px !important;
 }
 .notification-group .message {
-    margin: 4px 0;
-    padding: 8px;
+    margin: 4px 0 !important;
+    padding: 8px !important;
 }
 /* =====================================
               ALT+F2
@@ -675,9 +690,10 @@ stage {
 .run-dialog .st-entry,
 .run-dialog .search-entry, 
 .run-dialog StEntry {
-    background-color: rgba(255, 255, 255, 0.1);
+    color: cyan !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
     border-image: none !important;
-    border: 1px solid rgba(0, 200, 250, 0.4) !important;
+    border: 1px solid rgba(0, 180, 240, 0.4) !important;
     padding: 6px 12px;
     border-radius: 24px;
     box-shadow: none !important;
@@ -686,7 +702,7 @@ stage {
 .run-dialog .search-entry:focused,
 .run-dialog .st-entry:focused, 
 .run-dialog StEntry:focused {
-    border: 1px solid rgba(0, 200, 250, 0.6) !important;
+    border: 1px solid rgba(0, 180, 240, 0.6) !important;
     box-shadow: none !important;
 }
 /* Random */
@@ -710,15 +726,15 @@ stage {
 .calendar,
 .message-title,
 .world-clocks-label {
-    text-shadow: 1px 1px 0px rgb(0, 0, 0);
+    text-shadow: 1px 1px 0px rgb(0, 0, 0) !important;   
 }
 .popup-menu-item:disabled,
 #panel .panel-button:disabled,
 .app-well-app:disabled .overview-icon,
 .caption,
 .muted-label {
-    text-shadow: none !important;
+    text-shadow: none !important !important;   
 }
 /* =====================================
-            > > > > AUGUST 1st 2026
+            > > > > AUGUST 6TH 2026
 ===================================== */
