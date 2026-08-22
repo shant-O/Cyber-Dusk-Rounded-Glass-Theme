@@ -5,8 +5,6 @@
 
 🎭This theme has contrasted gradiant effects to make the theme vibrant even on dark mode🌌
 
-📌Light Version of this theme "Snowy Dawn Gnome Theme" is available at:
-🔗https://www.gnome-look.org/p/2364953/
 
 🛠️Installation:
 🔹1. Extract the archive.
@@ -28,5 +26,4 @@ having any ⚠️gtk-* folder inside the themes folder causes the gnome
 desktop to freeze⚠️, so its best practice to MOVE them beforehand]
 
 
-🪧If you have any tips/suggestions or feedback
-they are always welcome. A review is also much appreciated. Have a good day!
+⚠️⚠️ Made and tested in Gnome 50.4, NOT guaranteed for other flavors of gnome such as Ubuntu DE etc.
