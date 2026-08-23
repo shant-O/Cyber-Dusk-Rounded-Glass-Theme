@@ -2,15 +2,15 @@
 *    CYBER DUSK - ROUNDED GLASS                 *
 *    LINK : www.gnome-look.org/p/2357650        *
 *    Author : shant-O                           *
-*    Version : 5.0                              *
-*    Release Date : August 15th, 2026            *
+*    Version : 6.0                              *
+*    Release Date : tbd 2026           *
 *    This file Themes GTK3 apps!                *
 *   ------------------------------------------- */
 /* ==============================================
                 DARK MODE ONLY COLORS
  ============================================== */
 /*   DARK NEUTRALS & BLACKS   */
-@define-color textglow              rgba(0, 0, 0, 0.8);
+@define-color textglow              rgb(0, 0, 0);
 @define-color shade_color           rgba(0, 0, 0, 0.3);
 @define-color shadow_color          rgba(0, 0, 0, 0.7);
 /*   WHITES & GLOWS   */
@@ -19,101 +19,113 @@
 @define-color headerbar_fg_color    rgba(255, 255, 255, 0.85);
 @define-color window_fg_color       rgb(255, 255, 255);
 @define-color view_fg_color         rgb(255, 255, 255);
-/*   WARMS (ORANGE, RED, PINK)   */
-@define-color warning_bg_color      rgb(210, 70, 20);
-@define-color warning_color         rgb(235, 95, 45);
-@define-color destructive_bg_color  rgb(170, 0, 20);
-@define-color destructive_color     rgb(190, 0, 30);
-@define-color error_bg_color        rgb(155, 25, 35);
+/*   ACTION COLORS - BLUE ORANGE RED GREEN   */
+@define-color suggest_color         rgb(0, 163, 204);
+@define-color suggest_dark          rgb(0, 122, 153);
+@define-color warning_color         rgb(255, 85, 0);
+@define-color destructive_color     rgb(255, 0, 65);
+@define-color destructive_dark      rgb(70, 0, 20);
+@define-color destructive_fg        rgb(255, 230, 230);
 @define-color error_color           rgb(200, 30, 40);
-/*   GREENS   */
+@define-color success_color         rgb(0, 204, 153);
+@define-color success_dark          rgb(0, 128, 77);
+@define-color warning_bg_color      rgb(210, 70, 20);
+@define-color destructive_bg_color  rgb(170, 0, 20);
+@define-color error_bg_color        rgb(155, 25, 35);
 @define-color success_bg_color      rgb(0, 200, 130);
-@define-color success_color         rgb(0, 230, 150);
 /*   LIGHT NEONS, CYANS & BRIGHT BLUES   */
 @define-color grad_lit              rgb(0, 200, 255);
-@define-color hoverr                rgba(0, 220, 255, 0.15);
-@define-color neon                  rgb(0, 220, 255);
-@define-color accent_bg_color       rgb(40, 160, 180);
-@define-color accent_color          rgb(40, 160, 180);
+@define-color grad_drk              rgb(0, 100, 155);
+@define-color hoverr                rgba(240, 240, 250, 0.15);
+@define-color neon                  rgb(0, 230, 255);
+@define-color accent_bg_color       rgb(0, 165, 200);
+@define-color accent_color          rgb(0, 185, 230);
+@define-color accent_dark           rgb(0, 110, 150);
 @define-color border_lite           rgba(0, 200, 250, 0.1);
 @define-color border_color          rgba(0, 200, 250, 0.6);
 @define-color appglow               rgba(6, 200, 250, 0.3);
 @define-color switchtrough          rgba(0, 100, 140, 0.4);
-@define-color accent_dark           rgb(10, 100, 130);
-@define-color grad_drk              rgb(10, 100, 130);
+@define-color switch                rgba(100,150,200,0.25);
 @define-color bar_color             rgba(84, 184, 255, 0.6);
 @define-color card_bg_color         rgba(150, 190, 220, 0.1);
 /*   MIDNIGHTS & DEEP BLUES   */
-@define-color bg_color              rgba(0, 15, 25, 0.1);
-@define-color sidebar_color         rgba(0, 15, 25, 0.95);
-@define-color chromium              rgba(10,20,30, 0.6);
-@define-color selection_color       rgb(20,40,50);
-@define-color headerbar_bg_color    rgba(10,20,30, 0.3);
-@define-color headerbar_color       rgba(10,20,30, 0.3);
-@define-color dialog_bg_color       rgba(10,20,30, 0.3);
-@define-color theme_bg_color        rgba(10,20,30, 0.3);
-@define-color view_bg_color         rgba(10,20,30, 0.3);
-@define-color window_bg_color       rgba(10,20,30, 0.3);
-@define-color popover_bg_color      rgba(10,20,30, 0.8);
+@define-color bg_color              rgba(0, 10, 22, 0.1);
+@define-color sidebar_color         rgba(0, 10, 22, 0.7);
+@define-color selection_color       rgb(10,30,45);
 /*   PURPLE & TRANSPARENT   */
-@define-color purpglow              rgba(170, 90, 250, 0.5);
-@define-color nulll                 rgba(0,0,0,0);
-@define-color whglow                rgb(225, 235, 255);
+@define-color purpglow              rgba(180, 90, 250, 0.5);
 /*  Redefining  */
+@define-color --accent-bg-color        rgb(0, 165, 200);
+@define-color --accent-color           rgb(0, 185, 230);
+@define-color --window-bg-color        rgba(10,20,30, 0.7);
+@define-color --view-bg-color          rgba(10,20,30, 0.5);
+@define-color --theme-bg-color         rgba(10,20,30, 0.5);
+@define-color --headerbar-bg-color     rgba(10,20,30, 0.25);
+@define-color theme_bg_color           rgba(10,20,30, 0.5);
+@define-color headerbar_color          rgba(10,20,30, 0.01);
 
-@define-color content_view_bg @view_bg_color;
-@define-color base_color @window_bg_color;
-@define-color insensitive_bg_color @dialog_bg_color;
-@define-color insensitive_base_color @dialog_bg_color;
-@define-color theme_unfocused_bg_color @dialog_bg_color;
-@define-color theme_unfocused_base_color @dialog_bg_color;
+@define-color headerbar_bg_color       rgba(10,20,30, 0.25);
+@define-color popover_bg_color         @theme_bg_color;
+@define-color dialog_bg_color          @theme_bg_color;
+@define-color view_bg_color            @theme_bg_color;
+@define-color window_bg_color          @theme_bg_color;
+@define-color chromium                 @theme_bg_color;
+@define-color content_view_bg          @theme_bg_color;
+@define-color base_color               @theme_bg_color;
+@define-color insensitive_bg_color     @theme_bg_color;
+@define-color insensitive_base_color   @theme_bg_color;
+@define-color theme_unfocused_bg_color @theme_bg_color;
+@define-color theme_unfocused_base_color @theme_bg_color;
 
 /* ==============================================
                 WINDOW
  ============================================== */
-window {
-    background-color: @window_bg_color;
-    background-clip: padding-box;
-    border-radius: 30px 30px 30px 30px;
-                }
-decoration {
-    background-color: @window_bg_color;
-    background-clip: padding-box;
-    border-radius: 30px 30px 30px 30px;
-                }                
-window.csd {
-    border-radius: 0px 0px 30px 30px;
-                }
 window decoration,
 window.csd decoration,
 window.main-window decoration,
 .window-frame decoration {
-    background-color: @window_bg_color;
-    border: 2px solid @border_color;
-    border-radius: 30px 30px 30px 30px;
+    border-radius: 30px;
     background-clip: padding-box;
-    box-shadow: 0 12px 24px @shadow,
-                0 0 12px 12px @appglow;
+    box-shadow: 0 4px 12px @shadow_color;
+}
+decoration {
+    background-color: @window_bg_color;
+    background-clip: padding-box;
+    border-radius: 30px;
+}
+window {
+    background-color: @window_bg_color;
+    background-clip: padding-box;
+    border-radius: 0px 0px 30px 30px;
 }
 window > box.vertical,
 window > grid,
 window.dialog > box,
 .background > box {
-    background-color: @window_bg_color;
+    background-color: transparent;
     border: none;
     background-clip: padding-box;
     background-image: none;
     box-shadow: none;
     border-radius: 0px 0px 30px 30px;
 }
-window.main-window {
-    background-color: @view_bg_color;
-    background-image: none;
-    border-radius: 30px 30px 30px 30px;
-    }
 window.background.stack,
 stack > grid > scrolledwindow {
-    background-color: @window_bg_color;
+    background-color: transparent;
+}
+window.main-window {
+    background-clip: padding-box;
+    background-color: transparent;
+    background-image: none;
+    border-radius: 30px;
+    }
+window.csd frame {
+    background-clip: padding-box;
+    border-radius: 30px;
+    }
+background.csd {
+    background-clip: padding-box;
+    border-radius: 0px 0px 30px 30px;
 }
 window.csd:backdrop, window.main-window:backdrop,
 window.csd:backdrop decoration, window.csd:backdrop .window-frame {
@@ -125,11 +137,15 @@ window grid,
 window .main-container,
 scrolledwindow,
 viewport {
+    background-clip: padding-box;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;    
     border-bottom-left-radius: 29px;
     border-bottom-right-radius: 29px;
     box-shadow: none;
+}
+window.csd decoration {
+    border: 2px solid @border_color;
 }
 /* ==============================================
                View area
@@ -164,8 +180,8 @@ list row:not(:selected) {
 .secondary-toolbar {
     background-color: @view_bg_color;
     background-image: none;
-
     }
+
 separator {
   background-color: @glowy;
   min-height: 0px;
@@ -185,11 +201,39 @@ paned > separator {
   margin: 0;
   outline: none;
 }
- /* ==============================================
+/**/
+window treeview.view {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+}
+window.background.csd.unified,
+window > deck,
+window > deck > box,
+window > deck > box > leaflet,
+window > deck > box > leaflet > box,
+window > deck > box > leaflet > box > scrolledwindow {
+    background: transparent;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+}
+window > deck,
+window > box {
+    background-clip: padding-box;
+}
+
+/* ==============================================
                 titlebar
- ============================================== */
+============================================== */
+menubar,
+.menubar {
+    min-height: 20px;
+    background-color: @headerbar_bg_color;
+    background-image: none;
+    border-radius: 0px 0px 0px 0px;
+}
 .titlebar {
-    border: none;
     min-height: 20px;
     background-color: @headerbar_color;
     background-image: none;
@@ -197,7 +241,7 @@ paned > separator {
 }
 .titlebar:not(headerbar) {
     min-height: 20px;
-    background-color: transparent;
+    background-color: @headerbar_bg_color;
     background-image: none;
     border-radius: 30px 30px 30px 30px;
 }
@@ -239,8 +283,7 @@ context-menu {
     background-color: @popover_bg_color;
     box-shadow: none;
     border: none;
-    border-radius: 24px;
-    border: 1px solid @border_color;
+    border-radius: 30px;
     background-clip: padding-box; 
 }
 menu menuitem,
@@ -251,7 +294,7 @@ menu menuitem,
     border: 1px solid transparent;
     box-shadow: inset 0 1px 2px transparent,
                 0 2px 6px transparent;
-    border-radius: 24px;
+    border-radius: 30px;
     background-clip: padding-box;
     }
 menu menuitem:hover,
@@ -260,7 +303,7 @@ menu menuitem:hover,
     border: 1px solid transparent;
     box-shadow: inset 0 1px 2px @border_color,
                 0 2px 6px @purpglow;
-    border-radius: 24px;
+    border-radius: 30px;
     background-clip: padding-box;    
 }
  /* ==============================================
@@ -269,69 +312,10 @@ menu menuitem:hover,
 switch image {
     opacity: 0;
 }
-switch {
-    background-image: none;
-    background-color: @switchtrough;
-    border-radius: 30px;
-    border: 1px solid @border_color;
-    outline: none;
-}
-switch slider {
-    -gtk-icon-source: none;
-    border-radius: 100%;
-    border: 0px solid @shadow_color;
-    background-color: @view_fg_color;
-    background: linear-gradient(to bottom, @shadow_color, @shade_color);
-    box-shadow: inset 0 1px 1px @glowy, 
-                0 2px 2px @shadow_color;
-    min-width: 14px;
-    min-height: 14px;
-    margin: 3px;
-  }
-switch trough {
-    background-image: none;
-    background-color: @glowy;
-    box-shadow: none;
-}
-switch:checked {
-    background-color: @accent_dark;
-    border: 1px solid @shade_color;
-    box-shadow: inset 0 2px 4px @shade_color;
-    border-radius: 99px;
-}
-switch:checked slider {
-    background-image: radial-gradient(circle at center, @accent_color 35%, @accent_dark 35%);
-    box-shadow: 0 0 8px @accent_color, 
-                inset 0 1px 1px @glow,
-                0 2px 2px @shadow;
-}
-switch:checked trough {
-    background-color: @switchtrough;
-    border: 1px solid @accent_bg_color;
-}
-radio {
-    -gtk-icon-source: none;
-    border: 1px solid @glowy;
-    background-color: @glowy;
-    box-shadow: inset 0 1px 1px @glowy, 
-                0 2px 2px @shadow_color;
-    min-width: 14px;
-    min-height: 14px;
-    margin: 3px;
-    border-radius: 100%;
-}
-radio:checked {
-    background: radial-gradient(circle at center, @grad_lit 35%, @glowy 35%);
-    box-shadow: 0 0 1px @accent_color, 
-                0 2px 2px @shadow_color;
-}
-radio:hover {
-    border: 1px solid @border_color;
-}
 check {
     background-color: @glowy; 
     border: 1px solid @border_lite; 
-    border-radius: 99px;                   
+    border-radius: 100%;                   
     min-height: 16px;
     min-width: 16px;
     margin-right: 8px;
@@ -340,9 +324,61 @@ check:checked {
   background-image: none;
   background-color: @accent_color;
   border-color: @grad_lit;
-  color: @selection_color; 
+  color: @shadow_color; 
   transition: all 200ms ease-in-out;
   }
+check:hover {
+    border: 1px solid @border_color;
+}
+radio {
+    -gtk-icon-source: none;
+    border: none;
+    background-color: @glowy;
+    box-shadow: inset 0 1px 1px @glowy, 
+                0 2px 2px @shadow_color;
+    border-radius: 100%;
+}
+radio:checked {
+    background: radial-gradient(circle at center, @neon 40%, @glowy 40%);
+    box-shadow: inset 0 1px 1px @switch, 
+                0 2px 2px @shadow_color;
+}
+radio:hover {
+    border: 1px solid @border_color;
+}
+switch trough {
+    background-image: none;
+    background-color: @view_bg_color;
+    box-shadow: none;
+}
+switch slider {
+    -gtk-icon-source: none;
+    border-radius: 100%;
+    border: none;
+    background-color: @card_bg_color;
+    background: linear-gradient(to bottom, @shadow_color, @glow);
+    box-shadow: inset 0 1px 2px @glow, 
+                0 2px 6px @shadow_color;
+    min-width: 14px;
+    min-height: 14px;
+    margin: 3px;
+  }
+switch:checked {
+    background-color: @switch;
+    box-shadow: 0 2px 6px @shade_color,
+                inset 0 1px 1px @glowy;
+    border-radius: 99px;
+}
+switch:checked slider {
+    background: linear-gradient(to top, @grad_lit, @grad_drk);
+    box-shadow: 0 0 12px @accent_color, 
+                inset 0 1px 1px @glow,
+                0 2px 6px @shadow_color;
+}
+switch:checked trough {
+    background: linear-gradient(to right, @grad_drk, @grad_lit);
+    border: 1px solid @accent_dark;
+}
 arrow,
 .arrow,
 menuitem arrow {
@@ -360,7 +396,7 @@ menuitem:hover arrow,
 menuitem:selected arrow {
     background-color: @accent_color;
     border-color: @grad_lit;
-    color: @selection_color;                       
+    color: @shadow_color;                       
     transition: all 200ms ease-in-out;
 }
 /* ==============================================
@@ -533,8 +569,20 @@ flowboxchild:selected, grid:selected, list row:selected {
   background: @accent_dark;
   box-shadow: none;
   text-shadow: 0 1px 2px @textglow;
-  border-radius: 24px;
+  border-radius: 30px;
   transition: all 200ms ease;
+}
+row:selected,
+node:selected,
+treeview.view:selected,
+list:selected,
+.sidebar:selected,
+grid:selected {
+    background-color: @accent_dark;
+}
+row:selected:backdrop,
+node:selected:backdrop {
+    background-color: @accent_dark;
 }
 /* ----------------------------------------------------------
                     tooltips & dialogs 
@@ -582,6 +630,11 @@ dialog border {
     border-style: none;
     border-width: 0px;
 }
+dialog decoration {
+  border: 1px solid @border_color;
+  box-shadow: 0 4px 12px @shade_color;
+  }
+
  /* ==============================================
                 POPUPS
  ============================================== */
@@ -612,6 +665,12 @@ notebook tab {
   }
 notebook tab label {
 }
+notebook label,
+notebook stack label,
+notebook grid label {
+  color: @window_fg_color;
+  text-shadow: 0 1px 2px @textglow;
+}
 notebook,
 notebook stack,
 notebook > stack > grid,
@@ -620,12 +679,6 @@ notebook > stack > viewport {
   background-image: none;
   background-color: transparent;
   border: 1px solid transparent;
-}
-notebook label,
-notebook stack label,
-notebook grid label {
-    color: @window_fg_color;
-  text-shadow: 0 1px 2px @textglow;
 }
 notebook viewport,
 notebook grid,
@@ -653,42 +706,29 @@ notebook radio,
 notebook check {
     color: @window_fg_color;
 }
-notebook {
-  background-image: none;
-  background-color: transparent;
-  border: 1px solid transparent;
+notebook tabs tab {
+  border-radius: 12px;
+  padding: 0px 12px;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  background: linear-gradient(to bottom, @switch, @card_bg_color);
+  box-shadow: 0 4px 12px @shade_color;
+  }
+notebook tabs tab:hover {
+  background: linear-gradient(to top, @switch, @card_bg_color);
+  box-shadow: 0 4px 8px @purpglow;
 }
-notebook tab:not(:checked),
-notebook tab:not(:selected) {
-  background-color: @view_bg_color;
-  background-image: none;
-  color: alpha(@window_fg_color, 0.6); 
-  border: none;
-   border-radius: 99px;
-  }
-notebook tab:checked,
-notebook tab:selected {
-  background-color: @accent_dark;
-  color: @view_fg_color;
-  box-shadow: 0 2px 6px @shadow_color,
-              inset 0 0 0 1px @border_color;                
-  border-radius: 30px;
+notebook tabs tab:checked,
+notebook tabs tab:active {
   text-shadow: 0 1px 2px @textglow;
+  background-color: @accent_dark;
+  box-shadow: 0 4px 12px @shadow_color;
 }
-notebook tab:not(:checked):hover,
-notebook tab:not(:selected):hover {
-  background-color: alpha(@bar_color, 0.5);
-  }
-notebook tab:checked, 
-notebook tab:selected,
-notebook tab:hover {
-  background-color: @accent_dark;
-  color: @view_fg_color;
-  box-shadow: 0 2px 6px @shadow_color,
-              inset 0 0 0 1px @border_color;                
-  border-radius: 30px;
+notebook tabs tab:checked:hover,
+notebook tabs tab:active:hover {
   text-shadow: 0 1px 2px @textglow;
-  }
+  box-shadow: 0 4px 8px @purpglow;
+}
 /* ==============================================
                 BUTTONS
  ============================================== */
@@ -820,7 +860,7 @@ headerbar button,
     background-image: none;
     background-color: @card_bg_color;
     color: @window_fg_color;
-    border-radius: 24px;
+    border-radius: 30px;
     }
 toolbar button,
 .toolbar button {
@@ -891,6 +931,10 @@ combobox button:hover {
               inset 0 0 0 1px @border_color;
   border-radius: 30px;
 }
+menubar menuitem:hover,
+menubar menuitem:hover:not(:checked):not(:selected),
+menubar menuitem:checked:hover,
+menubar menuitem:selected:hover,
 menu button.top:hover,
 menu button.bottom:hover,
 .menu button.top:hover,
@@ -1018,7 +1062,6 @@ window.dialog.bottom {
 /* ----------------------------------------------------------
                   FULLSCREEN BORDER FIX      
 ---------------------------------------------------------- */
-
 window.maximized,
 window.fullscreen,
 window.toplevel.maximized,
@@ -1028,7 +1071,6 @@ window.toplevel.fullscreen,
     border-radius: 0px;
     border-width: 0px;
     border-style: none;
-    box-shadow: none;
 }
 window.maximized headerbar,
 window.fullscreen headerbar,
@@ -1046,11 +1088,10 @@ window.fullscreen.titlebar,
     border-radius: 0px;
     border-width: 0px;
     border-style: none;
-    box-shadow: none;
     border-color: transparent;
     border-image: none;
 }
-.maximized decoration,
+/*.maximized decoration,
 .fullscreen decoration,
 window.maximized decoration,
 window.fullscreen decoration {
@@ -1060,7 +1101,7 @@ window.fullscreen decoration {
     box-shadow: none;
     border-color: transparent;
     border-image: none;
-}
+}*/
 window.maximized,
 window.fullscreen,
 .maximized,
@@ -1068,7 +1109,6 @@ window.fullscreen,
     border-radius: 0px;
     border-width: 0px;
     border-style: none;
-    box-shadow: none;
     border-color: transparent;
     border-image: none;
 }
@@ -1089,5 +1129,104 @@ treeview.view:selected {
     border-radius: 0px;
 }
 /* ................................................................
-                            AUGUST 4th 2026
+                            AUGUST 21st 2026
 ................................................................... */
+
+*:not(window):not(dialog) box.horizontal:last-child {
+    margin: 4px;
+}
+
+
+/***********/
+/* ===================================================================
+   DISTRIBUTION ENGINE COMPATIBILITY PATCH (GTK3 - ZORIN OS & UBUNTU)
+   =================================================================== */
+
+/* 1. Legacy Application Sidebar Harmonization
+   Transforms flat legacy panels into your rounded glass layout */
+.sidebar,
+.sidebar list,
+.sidebar row,
+stacksidebar,
+stacksidebar row,
+.navigation-pane,
+.sidebar-pane scrolledwindow {
+    background-color: @sidebar_color;
+    border-radius: 24px;
+    margin: 8px;
+    border: 1px solid @border_lite;
+}
+
+/* 2. Ubuntu Files (Nautilus) Classic Status Pill Fix
+   Cleans up the floating overlay bubble border inside legacy file managers */
+.nautilus-window .floating-bar,
+window.main-window .floating-bar,
+.floating-bar {
+    background-color: @popover_bg_color;
+    border: 1px solid @border_color;
+    border-radius: 30px;
+    color: @view_fg_color;
+    box-shadow: 0 4px 12px @shadow_color;
+}
+
+/* 3. GTK3 Split Titlebar Partition Removals
+   Erases engine divider hash fragments passing through multi-pane header bars */
+headerbar separator,
+headerbar .separator,
+.titlebar separator,
+.titlebar .separator,
+headerbar.titlebar separator {
+    background-color: transparent;
+    background-image: none;
+    min-width: 0px;
+    min-height: 0px;
+}
+
+/* 4. Tiling & Snapping Border Constraints
+   Mutes outer boundaries when windows drop into specialized snapping fields */
+window.csd.maximized,
+window.csd.tiled,
+window.csd.tiled-left,
+window.csd.tiled-right,
+window.maximized,
+window.tiled,
+decoration.maximized,
+decoration.tiled {
+    border: none;
+    box-shadow: none;
+    border-radius: 0px;
+}
+/****/
+
+
+window.background paned,
+window.background paned separator,
+window.background .sidebar,
+window.background stack {
+    border: none;
+    border-style: none;
+    box-shadow: none;
+}
+window.background scrolledwindow,
+window.background viewport,
+window.background .view,
+window.background treeview {
+    border: none;
+    border-style: none;
+    box-shadow: none;
+}
+window.background actionbar,
+window.background .bottom-bar,
+window.background box.horizontal,
+window.background box.vertical {
+    border: none;
+    border-style: none;
+    box-shadow: none;
+}
+window.background decoration {
+    border: 1px solid @border_color;
+    box-shadow: 0 4px 16px @shadow_color;
+}
+
+* { outline: none;
+    border-style: none; }
