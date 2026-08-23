@@ -1,0 +1,10 @@
+## run on the terminal from inside this directory:
+
+# For ptyxis style profile: CDRG
+cp -rvf org.gnome.ptyxis ~/.local/share/
+
+# For Gnome text editor style profile: CDRG
+# Requires SUDO for system directory
+sudo cp -rvf gtksourceview-5 /usr/share/
+
+# After copying, go to each app's preference to select the styles!
