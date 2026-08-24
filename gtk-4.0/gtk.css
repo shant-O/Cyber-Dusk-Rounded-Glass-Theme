@@ -57,7 +57,7 @@
 @define-color headerbar_bg_color    rgba(10,20,30, 0.1);
 @define-color popover_bg_color      rgba(10,20,30, 0.95);
 @define-color theme_bg_color        rgba(10,20,30, 0.9);
-
+@define-color chromium              rgba(10,20,30, 0.7);
 
 /*   PURPLE & TRANSPARENT   */
 @define-color purpglow              rgba(180, 90, 250, 0.5);
