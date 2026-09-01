@@ -1,7 +1,7 @@
 ## run on the terminal from inside this directory:
 
 # For ptyxis style profile: CDRG-TWILIGHT
-cp -rvf org.gnome.ptyxis ~/.local/share/
+cp -rvf org.gnome.Ptyxis ~/.local/share/
 
 # For Gnome text editor style profile: CDRG-TWILIGHT
 # Requires SUDO for system directory
