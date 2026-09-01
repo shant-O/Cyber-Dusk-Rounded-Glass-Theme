@@ -1,10 +1,10 @@
 /*  ------------------------------------------- *
-*    CDRG - TWILIGHT                            *
+*    CDRG - Twilight                            *
 *    LINK : www.gnome-look.org/p/2357650        *
 *    Author : shant-O                           *
-*    Version : 6.0                              *
-*    Release Date : tbd 2026             *
-*    This file styles GTK3 Apps                 *
+*    Version : 6.1                              *
+*    Release Date : September 1st, 2026         *
+*    This file Themes GTK3 apps!                *
 *   ------------------------------------------- */
 /* ==============================================
                 DARK MODE ONLY COLORS
@@ -77,6 +77,15 @@
 @define-color insensitive_base_color @dialog_bg_color;
 @define-color theme_unfocused_bg_color @dialog_bg_color;
 @define-color theme_unfocused_base_color @dialog_bg_color;
+
+
+* {
+  background-clip: padding-box;
+  background-color: transparent;
+  background: transparent;
+  outline: none;
+  border-style: none;
+}
 
 /* ==============================================
                 WINDOW
@@ -276,6 +285,7 @@ searchbar > revealer > box {
  /* ==============================================
                 MENUS
  ============================================== */
+
 menu,
 .menu,
 context-menu {
@@ -477,7 +487,9 @@ levelbar block.full {
 scrollbar trough {
     background: transparent;
     border: none;
-    box-shadow: inset 0 0 0 @null;
+    box-shadow: none;
+    min-width: 5px;
+    margin: 1px;
 }
 scrollbar slider {
     -gtk-icon-source: none;
@@ -486,26 +498,31 @@ scrollbar slider {
     box-shadow: 0 0 3px @purpglow, 
                 inset 0 1px 1px @glowy;
     margin: 1px;
-    border: 2px solid transparent;
+    border: none;
     background-clip: padding-box;
-    min-width: 5px;
-    min-height: 6px;
+    min-width: 4px;
+    min-height: 4px;
     transition: all 0.1s ease-in-out;
+}
+scrollbar slider:active {
+    background-color: @accent_bg_color;
+    background: linear-gradient(to right, @grad_drk, @grad_lit);
+    box-shadow: 0 0 3px @purpglow, 
+                inset 0 1px 1px @glowy;
+    margin: 1px;
+}
+scrollbar slider:hover,
+scrollbar slider:hover:active {
+    background-color: @accent_bg_color;
+    background: linear-gradient(to right, @grad_drk, @grad_lit);
+    box-shadow: 0 0 3px @purpglow, 
+                inset 0 1px 1px @glow;
 }
 scrollbar button {
   min-width: 0;
   min-height: 0;
   background-image: none;
   border: none;
-}
-scrollbar slider:hover,
-scrollbar slider:active,
-scrollbar slider:hover:active {
-    background-color: @accent_bg_color;
-    background: linear-gradient(to right, @grad_drk, @grad_lit);
-    box-shadow: 0 0 3px @purpglow, 
-                inset 0 1px 1px @glowy;
-    margin: 1px;
 }
 /* ==============================================
                Entry , Searchbar
@@ -1102,6 +1119,7 @@ window.fullscreen decoration {
     box-shadow: none;
     border-color: transparent;
     border-image: none;
+    border:none;
 }*/
 window.maximized,
 window.fullscreen,
@@ -1129,15 +1147,9 @@ treeview.view:selected {
 #blueman-manager cell {
     border-radius: 0px;
 }
-/* ................................................................
-                            AUGUST 21st 2026
-................................................................... */
-
 *:not(window):not(dialog) box.horizontal:last-child {
     margin: 4px;
 }
-
-
 /***********/
 /* ===================================================================
    DISTRIBUTION ENGINE COMPATIBILITY PATCH (GTK3 - ZORIN OS & UBUNTU)
@@ -1154,24 +1166,9 @@ stacksidebar row,
 .sidebar-pane scrolledwindow {
     background-color: @sidebar_color;
     border-radius: 24px;
-    margin: 8px;
+    margin: 12px;
     border: 1px solid @border_lite;
 }
-
-/* 2. Ubuntu Files (Nautilus) Classic Status Pill Fix
-   Cleans up the floating overlay bubble border inside legacy file managers */
-.nautilus-window .floating-bar,
-window.main-window .floating-bar,
-.floating-bar {
-    background-color: @popover_bg_color;
-    border: 1px solid @border_color;
-    border-radius: 30px;
-    color: @view_fg_color;
-    box-shadow: 0 4px 12px @shadow_color;
-}
-
-/* 3. GTK3 Split Titlebar Partition Removals
-   Erases engine divider hash fragments passing through multi-pane header bars */
 headerbar separator,
 headerbar .separator,
 .titlebar separator,
@@ -1182,9 +1179,6 @@ headerbar.titlebar separator {
     min-width: 0px;
     min-height: 0px;
 }
-
-/* 4. Tiling & Snapping Border Constraints
-   Mutes outer boundaries when windows drop into specialized snapping fields */
 window.csd.maximized,
 window.csd.tiled,
 window.csd.tiled-left,
@@ -1197,9 +1191,6 @@ decoration.tiled {
     box-shadow: none;
     border-radius: 0px;
 }
-/****/
-
-
 window.background paned,
 window.background paned separator,
 window.background .sidebar,
@@ -1228,7 +1219,4 @@ window.background decoration {
     border: 1px solid @border_color;
     box-shadow: 0 4px 16px @shadow_color;
 }
-
-* { outline: none;
-    border-style: none; }
 
