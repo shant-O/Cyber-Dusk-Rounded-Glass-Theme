@@ -2,8 +2,8 @@
 *    CYBER DUSK - ROUNDED GLASS                 *
 *    LINK : www.gnome-look.org/p/2357650        *
 *    Author : shant-O                           *
-*    Version : 6.0                              *
-*    Release Date : tbd 2026            *
+*    Version : 6.1                              *
+*    Release Date : September 1st, 2026         *
 *    This file Themes GTK4 apps!                *
 *   ------------------------------------------- */
 /* ==============================================
@@ -13,15 +13,14 @@
           --accent-color:           rgb(0, 185, 230);
           --window-bg-color:        rgba(10,20,30, 0.9);
           --view-bg-color:          rgba(10,20,30, 0.9);
-          --headerbar-bg-color:     rgba(10,20,30, 0.1); }
+          --headerbar-bg-color:     rgba(10,20,30, 0.01); }
 /*   DARK NEUTRALS & BLACKS   */
-
-@define-color textglow              rgb(0, 0, 0);
+@define-color textglow              rgb(46, 52, 64);        
 @define-color shade_color           rgba(0, 0, 0, 0.3);
 @define-color shadow_color          rgba(0, 0, 0, 0.7);
 /*   WHITES & GLOWS   */
-@define-color glowy                 rgba(255, 255, 255, 0.2);
-@define-color glow                  rgba(255, 255, 255, 0.6);
+@define-color glowy                 rgba(236, 239, 244, 0.15); 
+@define-color glow                  rgba(229, 233, 240, 0.5); 
 @define-color headerbar_fg_color    rgba(255, 255, 255, 0.85);
 @define-color window_fg_color       rgb(255, 255, 255);
 @define-color view_fg_color         rgb(255, 255, 255);
@@ -53,8 +52,8 @@
 @define-color bg_color              rgba(0, 10, 22, 0.1);
 @define-color sidebar_color         rgba(0, 10, 22, 0.95);
 @define-color selection_color       rgb(10,30,45);
-@define-color headerbar_color       rgba(10,20,30, 0.1);
-@define-color headerbar_bg_color    rgba(10,20,30, 0.1);
+@define-color headerbar_color       rgba(10,20,30, 0.01);
+@define-color headerbar_bg_color    rgba(10,20,30, 0.01);
 @define-color popover_bg_color      rgba(10,20,30, 0.95);
 @define-color theme_bg_color        rgba(10,20,30, 0.9);
 @define-color chromium              rgba(10,20,30, 0.7);
@@ -203,6 +202,31 @@ statuspage {
 .navigation-view:drop(active) {
     background-color: @bg_color;
 }
+splitview > list,
+adwviewswitcherbar,
+.sidebar-pane list,
+.navigation-sidebar-container list,
+window.csd navigation-split-view .sidebar {
+  background-image: none;
+  background-clip: padding-box;
+  margin: 12px;
+  border-right: none;
+  border-radius: 24px;
+  background-color: @sidebar_color;
+  border: 1px solid @border_lite;
+  box-shadow: inset 0 1px 1px @glowy, 
+              0px 4px 12px @shadow_color;
+  text-shadow: 0 1px 2px @textglow;
+}
+separator {
+    background-image: none;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    border-style: none;
+    
+}
 /* ----------------------------------------------------------
                         GNOME TOAST
 ---------------------------------------------------------- */
@@ -316,7 +340,8 @@ popover contents listview > child:selected {
 }
 popover > contents,
 popover.menu contents {
-  backdrop-filter: blur(20px) brightness(1.1);
+  backdrop-filter: blur(20px) saturate(2.0) brightness(1.2);
+
 }
 popover contents list,
 popover contents listview {
@@ -339,7 +364,7 @@ popover contents listview > child:selected label {
 dialog floating-sheet sheet {
   background-image: none;
   background-clip: padding-box;
-  backdrop-filter: blur(20px) brightness(1.1);
+  backdrop-filter: blur(20px) saturate(2.0) brightness(1.2);
   background-color: @popover_bg_color;
   border: 1px solid @border_color;
   box-shadow: 0 12px 24px @shadow_color;
@@ -677,6 +702,15 @@ window dialog button:active {
 /* ----------------------------------------------------------
         WINDOWS / HEADERBAR / WINDOWCONTROLBUTTONS    
 ---------------------------------------------------------- */
+headerbar separation,
+headerbar separator,
+adwheaderbar .separator,
+headerbar.titlebar .separator {
+    background-color: transparent;
+    background-image: none;
+    min-width: 0px;
+    min-height: 0px;
+}
 windowcontrols button {
   background: transparent;
   border: none;
@@ -728,7 +762,7 @@ window:backdrop .navigation-pane,
 window:backdrop .nautilus-window {
     background-color: transparent;
     background-image: none;
-    backdrop-filter: blur(20px) brightness(1.1);
+    backdrop-filter: blur(20px) saturate(2.0) brightness(1.2);
     box-shadow: none;
 }
 window.csd:backdrop,
@@ -744,6 +778,17 @@ window.csd:backdrop {
   padding: 0;
   border-radius: 30px;
   }
+window.csd.maximized,
+window.csd.tiled,
+window.csd.tiled-left,
+window.csd.tiled-right,
+window.maximized,
+window.tiled {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
 /* ----------------------------------------------------------
           MAIN WINDOW / FRAME / HEADERBAR / GLOW    
 ---------------------------------------------------------- */
@@ -838,6 +883,7 @@ scale contents slider:active {
                 inset 0 1px 2px @glow;
     border-radius: 100%;
 }
+
 levelbar trough {
     background-color: @bg_color;
     border: none;
@@ -863,6 +909,7 @@ scrollbar trough {
     border: none;
     box-shadow: none;
     min-width: 5px;
+    margin: 1px;
 }
 scrollbar slider {
     -gtk-icon-source: none;
@@ -874,17 +921,22 @@ scrollbar slider {
     border: none;
     background-clip: padding-box;
     min-width: 4px;
-    min-height: 6px;
+    min-height: 4px;
     transition: all 0.1s ease-in-out;
 }
-scrollbar slider:hover,
-scrollbar slider:active,
-scrollbar slider:hover:active {
+scrollbar slider:active {
     background-color: @accent_bg_color;
     background: linear-gradient(to right, @grad_drk, @grad_lit);
     box-shadow: 0 0 3px @purpglow, 
                 inset 0 1px 1px @glowy;
     margin: 1px;
+}
+scrollbar slider:hover,
+scrollbar slider:hover:active {
+    background-color: @accent_bg_color;
+    background: linear-gradient(to right, @grad_drk, @grad_lit);
+    box-shadow: 0 0 3px @purpglow, 
+                inset 0 1px 1px @glow;
 }
 scrollbar button {
   min-width: 0;
@@ -1039,6 +1091,7 @@ window.background.chromium .submenu contents,
 window.background.chromium .popup contents {
     background-color: @chromium;
     border-radius: 30px;
+    backdrop-filter: blur(20px) saturate(2.0) brightness(1.2);
 }
 window.background.chromium popover.menu contents modelbutton:hover,
 window.background.chromium popover.submenu contents modelbutton:hover,
@@ -1050,10 +1103,11 @@ window.background.chromium .submenu contents modelbutton:hover {
 }
 window.background.chromium headerbar.header-bar.titlebar {
     padding: 0 12px;
-    background: linear-gradient(to right, @view_bg_color, @popover_bg_color); 
+    background: linear-gradient(to right, @view_bg_color, @chromium);
     color: @glow;
     border: none;
-    border-radius: 30px; 
+    border-radius: 30px;
+    backdrop-filter: blur(40px) saturate(2.0) brightness(1.2);
 }
 .chromium menuitem:first-child {
     border-top-left-radius: 30px;
@@ -1087,27 +1141,30 @@ window.background.chromium,
 window.chromium,
 .chromium,
 chromium-browser {
-    border-radius: 30px ;
+    border-radius: 30px;
 }
 window.background.chromium .headerbar,
 window.background.chromium .titlebar,
 window.background.chromium decoration {
-    border-radius: 30px 30px 0px 0px ;
-}
+    border-radius: 30px;
+    backdrop-filter: blur(20px) saturate(2.0) brightness(1.2);
+    }
 window.background.chromium menu,
 window.background.chromium .menu,
 window.background.chromium .popup,
 window.background.chromium tooltip,
 .chromium menu,
 .chromium .menu {
-    border-radius: 30px ;
-}
+    border-radius: 30px;
+    backdrop-filter: blur(20px) saturate(2.0) brightness(1.2);
+    }
 window.background.chromium .window-frame {
-    border-radius: 30px ;
-}
+    border-radius: 30px;
+    backdrop-filter: blur(20px) saturate(2.0) brightness(1.2);
+    }
 window.background.chromium *,
 window.chromium * {
-    border-radius: 30px ;
+    border-radius: 30px;
 }
 
 /* ----------------------------------------------------------
@@ -1186,56 +1243,5 @@ window.dialog.bottom {
   animation: popupFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                      > > > > > > > >> > > > AUGUST 21st, 2026
+                      > > > > > > > >> > > > AUGUST 25th, 2026
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-/* ===================================================================
-   DISTRIBUTION ENGINE COMPATIBILITY PATCH (ZORIN OS & UBUNTU)
-   =================================================================== */
-
-/* 1. Zorin Appearance & Modern Libadwaita Sidebar Styling
-   Transforms boxy layout split-views into your signature rounded glass look */
-splitview > list,
-adwviewswitcherbar,
-.sidebar-pane list,
-.navigation-sidebar-container list,
-window.csd navigation-split-view .sidebar {
-    background-color: @sidebar_color;
-    border-radius: 24px;
-    margin: 8px;
-    border: 1px solid @border_lite;
-}
-
-/*/* 2. Ubuntu Nautilus Floating Status Bar Fix
-   Styles the floating directory popup pill at the bottom right corner
-.nautilus-window .floating-bar,
-window.main-window .floating-bar {
-    background-color: @popover_bg_color;
-    border: 1px solid @border_color;
-    border-radius: 30px;
-    color: @view_fg_color;
-    box-shadow: 0 4px 12px @shadow_color;
-}*/
-
-/* 3. Headerbar Split Overlap Fix
-   Wipes out default gray engine partition dividers cutting through your glass headers */
-headerbar separation,
-headerbar separator,
-adwheaderbar .separator,
-headerbar.titlebar .separator {
-    background-color: transparent;
-    background-image: none;
-    min-width: 0px;
-    min-height: 0px;
-}
-
-/* 4. Window Snapping & Tiling Stability
-   Prevents custom outer window border shadows from clipping during tiling states */
-window.csd.maximized,
-window.csd.tiled,
-window.csd.tiled-left,
-window.csd.tiled-right,
-window.maximized,
-window.tiled {
-    border: none;
-    box-shadow: none;
-}
