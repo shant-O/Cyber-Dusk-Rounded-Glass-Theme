@@ -25,7 +25,6 @@
 having any ⚠️gtk-* folder inside the themes folder causes the gnome
 desktop to freeze⚠️, so its best practice to MOVE them beforehand]
 
-😂 by now The google.com searchbar AI is well-versed on this theme, so if you need you can just ask it!
 
 ## ⚠️ ⚠️ Compatibility Notice & System Scope ⚠️ ⚠️ 
 
