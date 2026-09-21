@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=CyberDusk-RoundedGlass
+Comment=Glass-morphism theme with Retro/Cyber-Punk accents
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=CyberDusk-RoundedGlass
+IconTheme=Adwaita
+CursorTheme=Adwaita
+

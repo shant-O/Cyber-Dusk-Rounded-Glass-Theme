@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="cdrg-twilight" _name="CDRG Twilight" version="1.0">
+  <author>shant-O</author>
+  <_description>Cobalt syntax highlighters over CDRG Twilight canvas layers</_description>
+
+  <!-- Cyber Dusk Core Palette Elements - Shifted to Slate Frost -->
+  <color name="midnight"                    value="#2a323c"/>
+  <color name="night"                       value="#3d4957"/>
+  <color name="white"                       value="#ffffff"/>
+  <color name="neon_cyan"                   value="#00dcff"/>
+  <color name="purple_glow"                 value="#aa5afa"/>
+  <color name="shade_black"                 value="#15191e"/>
+  
+  <!-- Cobalt Text Engine Color Adaptations -->
+  <color name="faded_yellow"                value="#ffee80"/>
+  <color name="key"                         value="#fb9937"/>
+  <color name="nail_polish_pink"            value="#e83061"/>
+  <color name="neon_yellow"                 value="#ffdd00"/>
+  <color name="sky_blue"                    value="#54b8ff"/>
+  <color name="teal_blue"                   value="#00e6ac"/>
+  <color name="spring_green"                value="#33ff77"/>
+  <color name="dark_red"                    value="#c81e28"/>
+  <color name="bluish_grey"                 value="#8fb4d6"/>
+
+<!-- Color Palette Definitions -->
+<color name="editor_bg"           value="#4a5768"/> <!-- Slate Frost Glass background -->
+<color name="electric_pink"       value="#df73a6"/> <!-- Toned-down, soft violet-pink for preprocessors -->
+<color name="soft_blue"           value="#b3ffda"/> <!-- Low-saturation cyan-blue for identifiers -->
+<color name="slate_gray"          value="#63364d"/> <!-- Muted slate for clean, readable documentation -->
+<color name="mint_green"          value="#66c2a5"/> <!-- Soft, distinct mint for doc elements -->
+<color name="warning_yellow"      value="#d4a35c"/> <!-- Desaturated amber-orange for warning blocks/notes -->
+
+<!-- Preprocessor & Includes -->
+<style name="def:preprocessor"             foreground="electric_pink"/>
+
+<!-- Object Oriented Elements -->
+<style name="def:identifier"               foreground="soft_blue"/>
+<style name="def:specifier"                foreground="key" bold="true"/>
+
+<!-- Documentation -->
+<style name="def:documentation"            foreground="slate_gray" italic="true"/>
+<style name="def:doc-comment-element"      foreground="mint_green" bold="true"/>
+
+<!-- Underlines, Errors, and Notes -->
+<style name="def:error"                    foreground="white" background="dark_red" underline="true"/>
+<style name="def:underlined"               underline="true"/>
+<style name="def:note"                     foreground="midnight" background="warning_yellow" bold="true"/> 
+
+<style name="def:link-text"                foreground="soft_blue" underline="true"/>
+<style name="def:link-destination"         foreground="electric_pink" italic="true"/>
+<style name="def:emphasis"                 italic="true"/>
+<style name="def:strong-emphasis"          bold="true"/>
+
+<style name="def:list-marker"              foreground="key"/> <!-- Soft Orange -->
+<style name="def:inline-code"              foreground="soft_blue"/> <!-- Toned-down Cyan -->
+
+<style name="def:heading"                  foreground="mint_green" bold="true"/>
+<style name="def:block-quote"              foreground="slate_gray" italic="true"/>
+
+  <!-- Global Settings -->
+  <style name="text"                        foreground="white" background="midnight"/>
+  <style name="selection"                   background="bluish_grey"/>
+  <style name="cursor"                      foreground="neon_cyan"/>
+  <style name="current-line"                background="shade_black"/>
+  <style name="line-numbers"                foreground="nail_polish_pink" background="night"/>
+  <style name="draw-spaces"                 foreground="bluish_grey"/>
+  <style name="background-pattern"          background="midnight"/>
+
+  <!-- Brackets & Search -->
+  <style name="bracket-match"               background="purple_glow" bold="true"/>
+  <style name="bracket-mismatch"            background="dark_red"/>
+  <style name="search-match"                foreground="midnight" background="neon_cyan"/>
+
+  <!-- Comments and Code Highlighting -->
+  <style name="def:comment"                 foreground="sky_blue" italic="true"/>
+  <style name="def:shebang"                 foreground="sky_blue" italic="true"/>
+  <style name="def:constant"                foreground="faded_yellow"/>
+  <style name="def:string"                  foreground="spring_green"/>
+  <style name="def:special-constant"        foreground="nail_polish_pink" bold="true"/>
+  <style name="def:number"                  foreground="nail_polish_pink"/>
+  <style name="def:floating-point"          foreground="nail_polish_pink"/>
+  <style name="def:boolean"                 foreground="nail_polish_pink"/>
+  <style name="def:keyword"                 foreground="key" bold="true"/>
+  <style name="def:builtin"                 foreground="key" bold="true"/>
+  <style name="def:statement"               foreground="key"/>
+  <style name="def:type"                    foreground="teal_blue"/>
+
+  <!-- Specific Language Hooks -->
+  <style name="sh:function"                 foreground="neon_yellow"/>
+  <style name="xml:element-name"            foreground="faded_yellow"/>
+  <style name="def:error"                   foreground="white" background="dark_red" bold="true"/>
+</style-scheme>

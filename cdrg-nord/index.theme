@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=CDRG-Nord
+Comment=Glass-morphism theme with Nordic accents
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=CDRG-Nord
+IconTheme=Adwaita
+CursorTheme=Adwaita
+

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=CDRG-Yaru
+Comment=Glass-morphism theme with Ubuntu-Yaru accents
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=CDRG-Yaru
+IconTheme=Adwaita
+CursorTheme=Adwaita
+

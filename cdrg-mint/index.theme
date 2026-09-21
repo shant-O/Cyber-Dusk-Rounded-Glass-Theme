@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=CDRG-Mint
+Comment=Glass-morphism theme with Mint Green accents
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=CDRG-Mint
+IconTheme=Adwaita
+CursorTheme=Adwaita
+

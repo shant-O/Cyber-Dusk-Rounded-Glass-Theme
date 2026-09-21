@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=CDRG-Fedora
+Comment=Glass-morphism theme with Fedora blue accents
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=CDRG-Fedora
+IconTheme=Adwaita
+CursorTheme=Adwaita
+
